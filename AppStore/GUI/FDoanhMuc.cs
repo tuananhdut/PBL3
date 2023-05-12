@@ -271,13 +271,17 @@ namespace GiaoDien
             tbPhoneNumber_NV.Enabled = true;
             tbFullname_NV.Enabled = true;
             tbAddress_NV.Enabled = true;
+            btResetPasswork.Enabled = true;
+            btChangePosition.Enabled = true;
         }
         private void lockingEmployeeInformation()
         {
             tbUsenameNV.Enabled = false;
             tbPhoneNumber_NV.Enabled = false;
             tbFullname_NV.Enabled = false;
+            btResetPasswork.Enabled = false;
             tbAddress_NV.Enabled = false;
+            btChangePosition.Enabled = false;
         }
         private void btAdd_NV_Click(object sender, EventArgs e)
         {
@@ -286,6 +290,8 @@ namespace GiaoDien
 
             // mở khóa các tb thông tin khách hàng
             UnlockingEmployeeInformation();
+            btChangePosition.Enabled = false;
+            btResetPasswork.Enabled = false;
 
             //khóa chức năng khác
             btEditNV.Enabled = false;
@@ -422,6 +428,27 @@ namespace GiaoDien
             {
                 e.Handled = true; // Ngăn chặn sự kiện KeyPress
                 MessageBox.Show("vui lòng nhập số", "thông báo");
+            }
+        }
+
+        private void btResetPasswork_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn reset lại mật khẩu không?", "Xác nhận", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                AccountBLL.Intance.resetPasswork(Convert.ToInt32(tbEmployeeID_NV.Text));
+                MessageBox.Show("Reset mật khẩu thành công", "Thông Báo");
+            }
+        }
+
+        private void btChangePosition_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn chuyển nhân viên này thành quản lý không?", "Xác nhận", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                AccountBLL.Intance.changePosition(Convert.ToInt32(tbEmployeeID_NV.Text));
+                MessageBox.Show("Chức vụ của nhân viên này thành quản lý", "Thông Báo");
+                loangDTGVAccount();
             }
         }
     }

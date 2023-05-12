@@ -34,6 +34,7 @@ namespace GiaoDien
             {
                 AccountBLL.Intance.changPassWork(acc.AccountID, tbNewPasswork.Text);
                 MessageBox.Show("đổi mật khẩu thành công", "thông báo");
+                this.Close();
             }
         }
     }

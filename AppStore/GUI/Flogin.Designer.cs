@@ -34,8 +34,8 @@
             this.cbViewPasswork = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbPasswork = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tbUsername = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,6 +102,14 @@
             this.tbPasswork.Text = "123";
             this.tbPasswork.UseSystemPasswordChar = true;
             // 
+            // tbUsername
+            // 
+            this.tbUsername.Location = new System.Drawing.Point(210, 94);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(202, 22);
+            this.tbUsername.TabIndex = 1;
+            this.tbUsername.Text = "TuanAnh";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -111,14 +119,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Đăng Nhập";
             // 
-            // tbUsername
-            // 
-            this.tbUsername.Location = new System.Drawing.Point(210, 94);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(202, 22);
-            this.tbUsername.TabIndex = 1;
-            this.tbUsername.Text = "TuanAnh";
-            // 
             // Flogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -127,7 +127,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Flogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Đăng Nhập";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

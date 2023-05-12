@@ -113,6 +113,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.btResetPasswork = new System.Windows.Forms.Button();
+            this.btChangePosition = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -875,6 +877,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.btChangePosition);
+            this.groupBox6.Controls.Add(this.btResetPasswork);
             this.groupBox6.Controls.Add(this.tbUsenameNV);
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.tbPhoneNumber_NV);
@@ -988,6 +992,30 @@
             this.label20.Size = new System.Drawing.Size(94, 16);
             this.label20.TabIndex = 0;
             this.label20.Text = "Mã Nhân Viên ";
+            // 
+            // btResetPasswork
+            // 
+            this.btResetPasswork.Enabled = false;
+            this.btResetPasswork.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.btResetPasswork.Location = new System.Drawing.Point(917, 161);
+            this.btResetPasswork.Name = "btResetPasswork";
+            this.btResetPasswork.Size = new System.Drawing.Size(213, 33);
+            this.btResetPasswork.TabIndex = 16;
+            this.btResetPasswork.Text = "Reset Mật Khẩu";
+            this.btResetPasswork.UseVisualStyleBackColor = true;
+            this.btResetPasswork.Click += new System.EventHandler(this.btResetPasswork_Click);
+            // 
+            // btChangePosition
+            // 
+            this.btChangePosition.Enabled = false;
+            this.btChangePosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.btChangePosition.Location = new System.Drawing.Point(652, 161);
+            this.btChangePosition.Name = "btChangePosition";
+            this.btChangePosition.Size = new System.Drawing.Size(238, 33);
+            this.btChangePosition.TabIndex = 17;
+            this.btChangePosition.Text = "Chuyển Chức Vụ";
+            this.btChangePosition.UseVisualStyleBackColor = true;
+            this.btChangePosition.Click += new System.EventHandler(this.btChangePosition_Click);
             // 
             // FDoanhMuc
             // 
@@ -1108,5 +1136,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.Button btResetPasswork;
+        private System.Windows.Forms.Button btChangePosition;
     }
 }

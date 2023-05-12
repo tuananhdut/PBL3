@@ -10,6 +10,5 @@ namespace BLL
     {
         Admin,// tài khoản quản lý
         User,// tài khoản nhân viên
-        trash// tài khoản khóa 
     }
 }
