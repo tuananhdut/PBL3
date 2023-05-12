@@ -57,5 +57,37 @@ namespace GiaoDien
                 MessageBox.Show("vui lòng nhập số", "thông báo");
             }
         }
+
+        private void btResetEmployss_Click(object sender, EventArgs e)
+        {
+            tbEmployssName.Text = "";
+            tbEmployssID.Text = "";
+            tbEmployssAddress.Text = "";
+            tbEmployssPhone.Text = "";
+            dtgvEmployss.Rows.Clear();
+        }
+
+        private void btSearchEmployss_Click(object sender, EventArgs e)
+        {
+            List<Account> li = new List<Account>();
+            try
+            {
+                int id = Convert.ToInt32(tbEmployssID.Text);
+                li = AccountBLL.Intance.searchAccount(tbCustomerName.Text, tbEmployssAddress.Text, tbEmployssPhone.Text,id);
+            }
+            catch (Exception)
+            {
+                li = AccountBLL.Intance.searchAccount(tbEmployssName.Text, tbEmployssAddress.Text, tbEmployssPhone.Text);
+            }
+            finally
+            {
+                dtgvEmployss.Rows.Clear();
+                foreach (var account in li)
+                {
+                    dtgvEmployss.Rows.Add(account.AccountID, account.FullName, account.PhoneNumber, account.Address);
+                }
+            }
+           
+        }
     }
 }

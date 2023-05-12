@@ -111,5 +111,39 @@ namespace BLL
             account.Password = HashPassword(newPasswork);
             AccountDAL.Intance.addOrUpdateAccount(account);
         }
+        public void changePosition(int id)
+        {
+            Account account = AccountDAL.Intance.GetAccountByID(id);
+            account.Position = 0;
+            AccountDAL.Intance.addOrUpdateAccount(account);
+        }
+        public void resetPasswork(int id)
+        {
+            Account account = AccountDAL.Intance.GetAccountByID(id);
+            account.Password = new Account().Password;
+            AccountDAL.Intance.addOrUpdateAccount(account);
+        }
+        public List<Account> searchAccount(string name, string address, string phone, int? id = null)
+        {
+            if (id == null && name == "" && address == "" && phone == "") return new List<Account>();
+            List<Account> li = AccountDAL.Intance.getALLAccount();
+            if (id != null)
+            {
+                li = li.Where(p => p.AccountID == id).ToList();
+            }
+            if (name != "")
+            {
+                li = li.Where(p => p.FullName.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+            }
+            if (address != "")
+            {
+                li = li.Where(p => p.Address.IndexOf(address, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+            }
+            if (phone != "")
+            {
+                li = li.Where(p => p.PhoneNumber == phone).ToList();
+            }
+            return li;
+        }
     }
 }
