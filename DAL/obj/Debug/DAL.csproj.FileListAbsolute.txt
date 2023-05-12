@@ -1,0 +1,24 @@
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\bin\Debug\DAL.dll.config
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\bin\Debug\DAL.dll
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\bin\Debug\DAL.pdb
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\bin\Debug\EntityFramework.dll
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\bin\Debug\EntityFramework.xml
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\obj\Debug\DAL.dll
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\obj\Debug\DAL.pdb
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\DAL\bin\Debug\DAL.dll.config
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\DAL\bin\Debug\DAL.dll
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\DAL\bin\Debug\DAL.pdb
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\DAL\bin\Debug\EntityFramework.dll
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\DAL\bin\Debug\EntityFramework.xml
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\DAL\obj\Debug\DAL.dll
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\DAL\obj\Debug\DAL.pdb

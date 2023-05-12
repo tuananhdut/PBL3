@@ -1,0 +1,60 @@
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.FBaoCao.resources
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.FDoanhMuc.resources
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.FHoaDon.resources
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.Fmain.resources
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.Flogin.resources
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.FQuanLyTaiKhoan.resources
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.FTimKiem.resources
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.exe
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.pdb
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\bin\Debug\GiaoDien.exe
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\bin\Debug\GiaoDien.pdb
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\bin\Debug\EntityFramework.dll
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\bin\Debug\EntityFramework.xml
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\bin\Debug\BLL.dll
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\bin\Debug\BLL.pdb
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\bin\Debug\GiaoDien.exe.config
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\bin\Debug\BLL.dll.config
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\bin\Debug\DAL.dll
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\bin\Debug\DAL.pdb
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\bin\Debug\DAL.dll.config
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.Hang.resources
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.FTheLoai.resources
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.FdoiMK.resources
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\bin\Debug\GiaoDien.exe.config
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\bin\Debug\GiaoDien.exe
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\bin\Debug\GiaoDien.pdb
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\bin\Debug\BLL.dll
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\bin\Debug\DAL.dll
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\bin\Debug\EntityFramework.dll
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\bin\Debug\BLL.pdb
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\bin\Debug\BLL.dll.config
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\bin\Debug\DAL.pdb
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\bin\Debug\DAL.dll.config
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\bin\Debug\EntityFramework.xml
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FdoiMK.resources
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FBaoCao.resources
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FDoanhMuc.resources
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FHoaDon.resources
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.Fmain.resources
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.Flogin.resources
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FQuanLyTaiKhoan.resources
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FTheLoai.resources
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FTimKiem.resources
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.Hang.resources
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.exe
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.pdb

@@ -1,0 +1,30 @@
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\bin\Debug\BLL.dll
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\bin\Debug\BLL.pdb
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\obj\Debug\BLL.dll
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\obj\Debug\BLL.pdb
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\bin\Debug\EntityFramework.dll
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\bin\Debug\EntityFramework.xml
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\bin\Debug\DAL.dll
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\bin\Debug\DAL.pdb
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\bin\Debug\DAL.dll.config
+C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\bin\Debug\BLL.dll.config
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\bin\Debug\BLL.dll.config
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\bin\Debug\BLL.dll
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\bin\Debug\BLL.pdb
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\bin\Debug\DAL.dll
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\bin\Debug\EntityFramework.dll
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\bin\Debug\DAL.pdb
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\bin\Debug\DAL.dll.config
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\bin\Debug\EntityFramework.xml
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\obj\Debug\BLL.dll
+C:\Users\tuanh\OneDrive\Máy tính\PBL3_appstore\BLL\obj\Debug\BLL.pdb
