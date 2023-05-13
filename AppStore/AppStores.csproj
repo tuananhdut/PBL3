@@ -9,12 +9,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>AppStore</RootNamespace>
     <AssemblyName>AppStore</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -62,6 +63,7 @@
     <Compile Include="BLL\AccountBLL.cs" />
     <Compile Include="BLL\Authorization.cs" />
     <Compile Include="BLL\CustomerBLL.cs" />
+    <Compile Include="BLL\DTO\CBBItem.cs" />
     <Compile Include="BLL\InvoiceBLL.cs" />
     <Compile Include="BLL\InvoiceDetailBLL.cs" />
     <Compile Include="BLL\ProductBLL.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="BLL\DTO\AppStore.cs" />
     <Compile Include="BLL\DTO\Category.cs" />
     <Compile Include="BLL\DTO\Customer.cs" />
+    <Compile Include="DAL\CatagoryDAL.cs" />
     <Compile Include="DAL\CustomerDAL.cs" />
     <Compile Include="BLL\DTO\Invoice.cs" />
     <Compile Include="DAL\InvoiceDAL.cs" />
@@ -139,23 +142,6 @@
     <Compile Include="GUI\Hang.Designer.cs">
       <DependentUpon>Hang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202305111526329_TA1.cs" />
-    <Compile Include="Migrations\202305111526329_TA1.designer.cs">
-      <DependentUpon>202305111526329_TA1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202305120335281_TA2.cs" />
-    <Compile Include="Migrations\202305120335281_TA2.designer.cs">
-      <DependentUpon>202305120335281_TA2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202305120345467_TA3.cs" />
-    <Compile Include="Migrations\202305120345467_TA3.designer.cs">
-      <DependentUpon>202305120345467_TA3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202305120402068_TA4.cs" />
-    <Compile Include="Migrations\202305120402068_TA4.designer.cs">
-      <DependentUpon>202305120402068_TA4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\FBaoCao.resx">
@@ -188,18 +174,6 @@
     <EmbeddedResource Include="GUI\Hang.resx">
       <DependentUpon>Hang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305111526329_TA1.resx">
-      <DependentUpon>202305111526329_TA1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305120335281_TA2.resx">
-      <DependentUpon>202305120335281_TA2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305120345467_TA3.resx">
-      <DependentUpon>202305120345467_TA3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305120402068_TA4.resx">
-      <DependentUpon>202305120402068_TA4.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -208,6 +182,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -49,6 +49,20 @@ namespace DAL
             db.Products.Remove(p);
             db.SaveChanges();
         }
-        
+        public List<Product> TimKiemTheoGia(int gia1, int gia2)
+        {
+            List<Product> result = new List<Product>();
+            var a = db.Products.Where(p => p.SalePrice >= gia1 && p.SalePrice <= gia2);
+            result = a.ToList();
+            return result;
+        }
+        public List<Product> TimKiemTheoMaTL(int ID)
+        {
+            return db.Products.Where(p => p.CategoryID == ID).ToList();
+        }
+        public List<Product> TimKiemTheoMaHang(int ID)
+        {
+            return db.Products.Where(p => p.ManufacturerID == ID).ToList();
+        }
     }
 }
