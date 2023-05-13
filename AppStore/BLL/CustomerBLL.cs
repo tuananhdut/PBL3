@@ -41,7 +41,7 @@ namespace BLL
         public void removeCustomer(int id)
         {
             Customer customer = CustomerDAL.Intance.getCustomerByID(id);
-            if (customer.Invoices.Count == 0 && customer != null)
+            if (CustomerDAL.Intance.getQuantityInvoiceByCustomerID(id) == 0 && customer != null)
             {
                 CustomerDAL.Intance.removeCustomer(customer);
             }

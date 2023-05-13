@@ -58,5 +58,9 @@ namespace DAL
             db.Accounts.Remove(acc);
             db.SaveChanges();
         }
+        public int getQuantityInvoiceByAccountID(int id)
+        {
+           return  db.Accounts.Where(p => p.AccountID == id && p.Flag == true).Select(e => e.Invoices.Count).FirstOrDefault();
+        }
     }
 }

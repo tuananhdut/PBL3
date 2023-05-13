@@ -91,7 +91,7 @@ namespace BLL
         public void removeAccountByID(int id)
         {
             Account account = AccountDAL.Intance.GetAccountByID(id);
-            if (account.Invoices.Count == 0 && account != null)
+            if (AccountDAL.Intance.getQuantityInvoiceByAccountID(id) == 0 && account != null)
             {
                 AccountDAL.Intance.removeAccount(account);
             }

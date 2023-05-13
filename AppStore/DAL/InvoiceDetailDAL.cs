@@ -38,9 +38,9 @@ namespace DAL
         }
 
         // trả về danh sách InvoiceDetail theo invoiceID
-        public List<InvoiceDetail> getListInvoiceDetailByInvoiceID(int id)
+        public dynamic getListInvoiceDetailByInvoiceID(int id)
         {
-            return db.InvoiceDetails.Where(p=>p.InvoiceID == id ).ToList();
+            return db.InvoiceDetails.Where(p=>p.InvoiceID == id ).Select(p=> new {p.Product.ProductName}).ToList();
         }
     }
 }

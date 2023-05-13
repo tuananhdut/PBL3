@@ -48,5 +48,9 @@ namespace DAL
             db.Customers.Remove(customer);
             db.SaveChanges();
         }
+        public int getQuantityInvoiceByCustomerID(int id)
+        {
+            return db.Customers.Where(p => p.CustomerID == id && p.Flag == true).Select(e => e.Invoices.Count).FirstOrDefault();
+        }
     }
 }

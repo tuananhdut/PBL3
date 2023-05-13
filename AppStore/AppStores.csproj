@@ -145,6 +145,7 @@
     <Compile Include="GUI\Hang.Designer.cs">
       <DependentUpon>Hang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\FBaoCao.resx">

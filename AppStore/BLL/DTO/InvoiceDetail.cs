@@ -25,5 +25,7 @@ namespace DAL
 
         public virtual Invoice Invoice { get; set; }
         public virtual Product Product { get; set; }
+
+      
     }
 }
