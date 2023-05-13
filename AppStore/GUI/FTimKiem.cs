@@ -1,10 +1,12 @@
-﻿using BLL;
+﻿using AppStore.BLL.DTO;
+using BLL;
 using DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.ModelConfiguration.Configuration;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -88,6 +90,39 @@ namespace GiaoDien
                 }
             }
            
+        }
+        // Tìm kiếm điện thoại
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dtgv_DSTKDT.Columns[0].HeaderText = "Mã điện thoại";
+            dtgv_DSTKDT.Columns[1].HeaderText = "Tên điện thoại";
+            dtgv_DSTKDT.Columns[2].HeaderText = "Giá bán";
+            dtgv_DSTKDT.Columns[3].HeaderText = "Màu sắc";
+            dtgv_DSTKDT.Columns[4].HeaderText = "Hãng";
+            dtgv_DSTKDT.Columns[5].HeaderText = "Thể loại";
+        }
+
+        private void but_resert_Click(object sender, EventArgs e)
+        {
+            SetThongTinTK();
+        }
+        private void SetThongTinTK()
+        {
+            txtTenDT.Text = "";
+            txtMaDT.Text = "";
+            txtGiaMin.Text = "0";
+            txtGiaMax.Text = "";
+            txtTenHang.Text = "";
+            txtTenTL.Text = "";
+            cbbMaHang.Text = "";
+            cbbMaTL.Text = "";
+        }
+
+        private void but_Search_Click(object sender, EventArgs e)
+        {
+            //if(txtTenDT.Text==""&& )
+            //List<Product> result = new List<Product>();
+            
         }
     }
 }

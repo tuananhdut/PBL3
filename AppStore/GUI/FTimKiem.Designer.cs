@@ -31,26 +31,20 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgv_DSTKDT = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.but_Search = new System.Windows.Forms.Button();
+            this.but_resert = new System.Windows.Forms.Button();
+            this.cbbMaHang = new System.Windows.Forms.ComboBox();
+            this.cbbMaTL = new System.Windows.Forms.ComboBox();
+            this.txtTenHang = new System.Windows.Forms.TextBox();
+            this.txtTenTL = new System.Windows.Forms.TextBox();
+            this.txtTenDT = new System.Windows.Forms.TextBox();
+            this.txtMaDT = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -97,7 +91,13 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label24 = new System.Windows.Forms.Label();
             this.dtgvEmployss = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tbEmployssPhone = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.tbEmployssAddress = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.btSearchEmployss = new System.Windows.Forms.Button();
@@ -106,15 +106,13 @@
             this.tbEmployssID = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbEmployssPhone = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtGiaMin = new System.Windows.Forms.TextBox();
+            this.txtGiaMax = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_DSTKDT)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).BeginInit();
@@ -142,7 +140,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dtgv_DSTKDT);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
@@ -162,36 +160,35 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "Danh Sách Tìm Kiếm";
             // 
-            // dataGridView1
+            // dtgv_DSTKDT
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 345);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1146, 229);
-            this.dataGridView1.TabIndex = 1;
+            this.dtgv_DSTKDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_DSTKDT.Location = new System.Drawing.Point(18, 345);
+            this.dtgv_DSTKDT.Name = "dtgv_DSTKDT";
+            this.dtgv_DSTKDT.RowHeadersWidth = 51;
+            this.dtgv_DSTKDT.RowTemplate.Height = 24;
+            this.dtgv_DSTKDT.Size = new System.Drawing.Size(1146, 229);
+            this.dtgv_DSTKDT.TabIndex = 1;
+            this.dtgv_DSTKDT.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.checkBox5);
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtGiaMax);
+            this.groupBox1.Controls.Add(this.txtGiaMin);
+            this.groupBox1.Controls.Add(this.label29);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.but_Search);
+            this.groupBox1.Controls.Add(this.but_resert);
+            this.groupBox1.Controls.Add(this.cbbMaHang);
+            this.groupBox1.Controls.Add(this.cbbMaTL);
+            this.groupBox1.Controls.Add(this.txtTenHang);
+            this.groupBox1.Controls.Add(this.txtTenTL);
+            this.groupBox1.Controls.Add(this.txtTenDT);
+            this.groupBox1.Controls.Add(this.txtMaDT);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,122 +199,71 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Tìm Kiếm";
             // 
-            // button2
+            // but_Search
             // 
-            this.button2.Location = new System.Drawing.Point(933, 184);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 39);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Tìm Kiếm";
-            this.button2.UseVisualStyleBackColor = true;
+            this.but_Search.Location = new System.Drawing.Point(933, 184);
+            this.but_Search.Name = "but_Search";
+            this.but_Search.Size = new System.Drawing.Size(111, 39);
+            this.but_Search.TabIndex = 23;
+            this.but_Search.Text = "Tìm Kiếm";
+            this.but_Search.UseVisualStyleBackColor = true;
+            this.but_Search.Click += new System.EventHandler(this.but_Search_Click);
             // 
-            // button1
+            // but_resert
             // 
-            this.button1.Location = new System.Drawing.Point(776, 184);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 39);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Làm Mới";
-            this.button1.UseVisualStyleBackColor = true;
+            this.but_resert.Location = new System.Drawing.Point(776, 184);
+            this.but_resert.Name = "but_resert";
+            this.but_resert.Size = new System.Drawing.Size(106, 39);
+            this.but_resert.TabIndex = 22;
+            this.but_resert.Text = "Làm Mới";
+            this.but_resert.UseVisualStyleBackColor = true;
+            this.but_resert.Click += new System.EventHandler(this.but_resert_Click);
             // 
-            // checkBox5
+            // cbbMaHang
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.Location = new System.Drawing.Point(379, 195);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(108, 20);
-            this.checkBox5.TabIndex = 21;
-            this.checkBox5.Text = "Trên 13 Triệu";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.cbbMaHang.FormattingEnabled = true;
+            this.cbbMaHang.Location = new System.Drawing.Point(899, 30);
+            this.cbbMaHang.Name = "cbbMaHang";
+            this.cbbMaHang.Size = new System.Drawing.Size(220, 28);
+            this.cbbMaHang.TabIndex = 12;
             // 
-            // checkBox4
+            // cbbMaTL
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(189, 195);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(107, 20);
-            this.checkBox4.TabIndex = 20;
-            this.checkBox4.Text = "Từ 7-13 Triệu";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.cbbMaTL.FormattingEnabled = true;
+            this.cbbMaTL.Location = new System.Drawing.Point(531, 36);
+            this.cbbMaTL.Name = "cbbMaTL";
+            this.cbbMaTL.Size = new System.Drawing.Size(220, 28);
+            this.cbbMaTL.TabIndex = 11;
             // 
-            // checkBox3
+            // txtTenHang
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(531, 145);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(100, 20);
-            this.checkBox3.TabIndex = 19;
-            this.checkBox3.Text = "Từ 4-7 Triệu";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.txtTenHang.Enabled = false;
+            this.txtTenHang.Location = new System.Drawing.Point(899, 89);
+            this.txtTenHang.Name = "txtTenHang";
+            this.txtTenHang.Size = new System.Drawing.Size(220, 27);
+            this.txtTenHang.TabIndex = 10;
             // 
-            // checkBox2
+            // txtTenTL
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(379, 145);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(100, 20);
-            this.checkBox2.TabIndex = 18;
-            this.checkBox2.Text = "Từ 2-4 Triệu";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.txtTenTL.Enabled = false;
+            this.txtTenTL.Location = new System.Drawing.Point(531, 84);
+            this.txtTenTL.Name = "txtTenTL";
+            this.txtTenTL.Size = new System.Drawing.Size(220, 27);
+            this.txtTenTL.TabIndex = 9;
             // 
-            // checkBox1
+            // txtTenDT
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(189, 144);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(101, 20);
-            this.checkBox1.TabIndex = 13;
-            this.checkBox1.Text = "Dưới 2 Triệu";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.txtTenDT.Location = new System.Drawing.Point(189, 94);
+            this.txtTenDT.Name = "txtTenDT";
+            this.txtTenDT.Size = new System.Drawing.Size(220, 27);
+            this.txtTenDT.TabIndex = 8;
             // 
-            // comboBox2
+            // txtMaDT
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(899, 30);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(220, 28);
-            this.comboBox2.TabIndex = 12;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(531, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 28);
-            this.comboBox1.TabIndex = 11;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(899, 89);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(220, 27);
-            this.textBox4.TabIndex = 10;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(531, 84);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(220, 27);
-            this.textBox3.TabIndex = 9;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(189, 94);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(220, 27);
-            this.textBox2.TabIndex = 8;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(189, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(220, 27);
-            this.textBox1.TabIndex = 7;
+            this.txtMaDT.Location = new System.Drawing.Point(189, 36);
+            this.txtMaDT.Name = "txtMaDT";
+            this.txtMaDT.Size = new System.Drawing.Size(220, 27);
+            this.txtMaDT.TabIndex = 7;
             // 
             // label7
             // 
@@ -358,16 +304,6 @@
             this.label4.Size = new System.Drawing.Size(87, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Mã Thể Loại";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(28, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Mức Giá";
             // 
             // label2
             // 
@@ -835,6 +771,34 @@
             this.dtgvEmployss.Size = new System.Drawing.Size(1146, 229);
             this.dtgvEmployss.TabIndex = 7;
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Mã Nhân Viên";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 200;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Tên Nhân Viên ";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 200;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Số Điện Thoại";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 200;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Địa Chỉ";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 205;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.tbEmployssPhone);
@@ -854,6 +818,24 @@
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông Tin Tìm kiếm Nhân Viên";
+            // 
+            // tbEmployssPhone
+            // 
+            this.tbEmployssPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.tbEmployssPhone.Location = new System.Drawing.Point(824, 36);
+            this.tbEmployssPhone.Name = "tbEmployssPhone";
+            this.tbEmployssPhone.Size = new System.Drawing.Size(220, 27);
+            this.tbEmployssPhone.TabIndex = 27;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label25.Location = new System.Drawing.Point(663, 41);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(98, 17);
+            this.label25.TabIndex = 26;
+            this.label25.Text = "Số Điện Thoại";
             // 
             // tbEmployssAddress
             // 
@@ -929,51 +911,39 @@
             this.label28.TabIndex = 0;
             this.label28.Text = "Mã Nhân Viên";
             // 
-            // Column5
+            // label3
             // 
-            this.Column5.HeaderText = "Mã Nhân Viên";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 200;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(28, 157);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 17);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Mức giá min";
             // 
-            // Column6
+            // label29
             // 
-            this.Column6.HeaderText = "Tên Nhân Viên ";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 200;
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label29.Location = new System.Drawing.Point(28, 217);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(86, 17);
+            this.label29.TabIndex = 25;
+            this.label29.Text = "Mức giá max";
             // 
-            // Column7
+            // txtGiaMin
             // 
-            this.Column7.HeaderText = "Số Điện Thoại";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 200;
+            this.txtGiaMin.Location = new System.Drawing.Point(189, 152);
+            this.txtGiaMin.Name = "txtGiaMin";
+            this.txtGiaMin.Size = new System.Drawing.Size(220, 27);
+            this.txtGiaMin.TabIndex = 26;
             // 
-            // Column8
+            // txtGiaMax
             // 
-            this.Column8.HeaderText = "Địa Chỉ";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 205;
-            // 
-            // tbEmployssPhone
-            // 
-            this.tbEmployssPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.tbEmployssPhone.Location = new System.Drawing.Point(824, 36);
-            this.tbEmployssPhone.Name = "tbEmployssPhone";
-            this.tbEmployssPhone.Size = new System.Drawing.Size(220, 27);
-            this.tbEmployssPhone.TabIndex = 27;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label25.Location = new System.Drawing.Point(663, 41);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(98, 17);
-            this.label25.TabIndex = 26;
-            this.label25.Text = "Số Điện Thoại";
+            this.txtGiaMax.Location = new System.Drawing.Point(189, 212);
+            this.txtGiaMax.Name = "txtGiaMax";
+            this.txtGiaMax.Size = new System.Drawing.Size(220, 27);
+            this.txtGiaMax.TabIndex = 27;
             // 
             // FTimKiem
             // 
@@ -986,7 +956,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_DSTKDT)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -1016,26 +986,20 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgv_DSTKDT;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button but_Search;
+        private System.Windows.Forms.Button but_resert;
+        private System.Windows.Forms.ComboBox cbbMaHang;
+        private System.Windows.Forms.ComboBox cbbMaTL;
+        private System.Windows.Forms.TextBox txtTenHang;
+        private System.Windows.Forms.TextBox txtTenTL;
+        private System.Windows.Forms.TextBox txtTenDT;
+        private System.Windows.Forms.TextBox txtMaDT;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
@@ -1094,5 +1058,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.TextBox tbEmployssPhone;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtGiaMax;
+        private System.Windows.Forms.TextBox txtGiaMin;
     }
 }
