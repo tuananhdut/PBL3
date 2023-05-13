@@ -139,23 +139,6 @@
     <Compile Include="GUI\Hang.Designer.cs">
       <DependentUpon>Hang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202305111526329_TA1.cs" />
-    <Compile Include="Migrations\202305111526329_TA1.designer.cs">
-      <DependentUpon>202305111526329_TA1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202305120335281_TA2.cs" />
-    <Compile Include="Migrations\202305120335281_TA2.designer.cs">
-      <DependentUpon>202305120335281_TA2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202305120345467_TA3.cs" />
-    <Compile Include="Migrations\202305120345467_TA3.designer.cs">
-      <DependentUpon>202305120345467_TA3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202305120402068_TA4.cs" />
-    <Compile Include="Migrations\202305120402068_TA4.designer.cs">
-      <DependentUpon>202305120402068_TA4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\FBaoCao.resx">
@@ -187,18 +170,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Hang.resx">
       <DependentUpon>Hang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305111526329_TA1.resx">
-      <DependentUpon>202305111526329_TA1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305120335281_TA2.resx">
-      <DependentUpon>202305120335281_TA2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305120345467_TA3.resx">
-      <DependentUpon>202305120345467_TA3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305120402068_TA4.resx">
-      <DependentUpon>202305120402068_TA4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
