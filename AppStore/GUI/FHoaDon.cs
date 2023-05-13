@@ -63,7 +63,7 @@ namespace GiaoDien
         private void setCBBProuctID()
         {
             
-            cbbProductID.Items.AddRange(ProductBLL.Intance.getALLProduct().ToArray());
+            cbbProductID.Items.AddRange(ProductBLL.Intance.GetProductsBLL().ToArray());
         }
         private void cbbProductID_SelectedIndexChanged(object sender, EventArgs e)
         {

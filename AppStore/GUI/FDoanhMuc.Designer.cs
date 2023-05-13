@@ -44,20 +44,20 @@
             this.btAdd_DT = new System.Windows.Forms.Button();
             this.dtgvProduct_DT = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbProductName_DT = new System.Windows.Forms.TextBox();
+            this.gb_TTDT = new System.Windows.Forms.GroupBox();
+            this.txtProductName_DT = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.tbManufacturer_DT = new System.Windows.Forms.TextBox();
-            this.tbCatagory_DT = new System.Windows.Forms.TextBox();
+            this.txtManufacturer_DT = new System.Windows.Forms.TextBox();
+            this.txtCatagory_DT = new System.Windows.Forms.TextBox();
             this.cbbManufacturer_DT = new System.Windows.Forms.ComboBox();
             this.cbbCategory_DT = new System.Windows.Forms.ComboBox();
-            this.tbDescription_DT = new System.Windows.Forms.TextBox();
-            this.tbProductID_DT = new System.Windows.Forms.TextBox();
-            this.tbSalePrice_DT = new System.Windows.Forms.TextBox();
-            this.tbCostPrice_DT = new System.Windows.Forms.TextBox();
-            this.tbQuantity_DT = new System.Windows.Forms.TextBox();
+            this.txtDescription_DT = new System.Windows.Forms.TextBox();
+            this.txtProductID_DT = new System.Windows.Forms.TextBox();
+            this.txtSalePrice_DT = new System.Windows.Forms.TextBox();
+            this.txtCostPrice_DT = new System.Windows.Forms.TextBox();
+            this.txtQuantity_DT = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -103,6 +103,8 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btChangePosition = new System.Windows.Forms.Button();
+            this.btResetPasswork = new System.Windows.Forms.Button();
             this.tbUsenameNV = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbPhoneNumber_NV = new System.Windows.Forms.TextBox();
@@ -113,14 +115,12 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.btResetPasswork = new System.Windows.Forms.Button();
-            this.btChangePosition = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProduct_DT)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gb_TTDT.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_KH)).BeginInit();
@@ -191,7 +191,7 @@
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.dtgvProduct_DT);
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.gb_TTDT);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -252,6 +252,7 @@
             this.btDel_DT.TabIndex = 3;
             this.btDel_DT.Text = "Xóa";
             this.btDel_DT.UseVisualStyleBackColor = true;
+            this.btDel_DT.Click += new System.EventHandler(this.btDel_DT_Click_1);
             // 
             // btEdit_DT
             // 
@@ -271,6 +272,7 @@
             this.btSave_DT.TabIndex = 1;
             this.btSave_DT.Text = "Lưu";
             this.btSave_DT.UseVisualStyleBackColor = true;
+            this.btSave_DT.Click += new System.EventHandler(this.btSave_DT_Click_1);
             // 
             // btAdd_DT
             // 
@@ -284,6 +286,7 @@
             // 
             // dtgvProduct_DT
             // 
+            this.dtgvProduct_DT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvProduct_DT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvProduct_DT.Location = new System.Drawing.Point(15, 321);
             this.dtgvProduct_DT.Name = "dtgvProduct_DT";
@@ -292,6 +295,7 @@
             this.dtgvProduct_DT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvProduct_DT.Size = new System.Drawing.Size(1134, 181);
             this.dtgvProduct_DT.TabIndex = 3;
+            this.dtgvProduct_DT.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtgvProduct_DT_DataBindingComplete);
             // 
             // groupBox2
             // 
@@ -302,42 +306,42 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "HÌnh Ảnh";
             // 
-            // groupBox1
+            // gb_TTDT
             // 
-            this.groupBox1.Controls.Add(this.tbProductName_DT);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.label24);
-            this.groupBox1.Controls.Add(this.tbManufacturer_DT);
-            this.groupBox1.Controls.Add(this.tbCatagory_DT);
-            this.groupBox1.Controls.Add(this.cbbManufacturer_DT);
-            this.groupBox1.Controls.Add(this.cbbCategory_DT);
-            this.groupBox1.Controls.Add(this.tbDescription_DT);
-            this.groupBox1.Controls.Add(this.tbProductID_DT);
-            this.groupBox1.Controls.Add(this.tbSalePrice_DT);
-            this.groupBox1.Controls.Add(this.tbCostPrice_DT);
-            this.groupBox1.Controls.Add(this.tbQuantity_DT);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(15, 16);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(672, 272);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông Tin Điện Thoại";
+            this.gb_TTDT.Controls.Add(this.txtProductName_DT);
+            this.gb_TTDT.Controls.Add(this.label8);
+            this.gb_TTDT.Controls.Add(this.label23);
+            this.gb_TTDT.Controls.Add(this.label24);
+            this.gb_TTDT.Controls.Add(this.txtManufacturer_DT);
+            this.gb_TTDT.Controls.Add(this.txtCatagory_DT);
+            this.gb_TTDT.Controls.Add(this.cbbManufacturer_DT);
+            this.gb_TTDT.Controls.Add(this.cbbCategory_DT);
+            this.gb_TTDT.Controls.Add(this.txtDescription_DT);
+            this.gb_TTDT.Controls.Add(this.txtProductID_DT);
+            this.gb_TTDT.Controls.Add(this.txtSalePrice_DT);
+            this.gb_TTDT.Controls.Add(this.txtCostPrice_DT);
+            this.gb_TTDT.Controls.Add(this.txtQuantity_DT);
+            this.gb_TTDT.Controls.Add(this.label11);
+            this.gb_TTDT.Controls.Add(this.label10);
+            this.gb_TTDT.Controls.Add(this.label9);
+            this.gb_TTDT.Controls.Add(this.label7);
+            this.gb_TTDT.Controls.Add(this.label6);
+            this.gb_TTDT.Controls.Add(this.label5);
+            this.gb_TTDT.Controls.Add(this.label2);
+            this.gb_TTDT.Enabled = false;
+            this.gb_TTDT.Location = new System.Drawing.Point(15, 16);
+            this.gb_TTDT.Name = "gb_TTDT";
+            this.gb_TTDT.Size = new System.Drawing.Size(672, 272);
+            this.gb_TTDT.TabIndex = 1;
+            this.gb_TTDT.TabStop = false;
+            this.gb_TTDT.Text = "Thông Tin Điện Thoại";
             // 
-            // tbProductName_DT
+            // txtProductName_DT
             // 
-            this.tbProductName_DT.Enabled = false;
-            this.tbProductName_DT.Location = new System.Drawing.Point(427, 29);
-            this.tbProductName_DT.Name = "tbProductName_DT";
-            this.tbProductName_DT.Size = new System.Drawing.Size(179, 22);
-            this.tbProductName_DT.TabIndex = 28;
+            this.txtProductName_DT.Location = new System.Drawing.Point(427, 29);
+            this.txtProductName_DT.Name = "txtProductName_DT";
+            this.txtProductName_DT.Size = new System.Drawing.Size(179, 22);
+            this.txtProductName_DT.TabIndex = 28;
             // 
             // label8
             // 
@@ -366,21 +370,21 @@
             this.label24.TabIndex = 25;
             this.label24.Text = "Mã Thể loại";
             // 
-            // tbManufacturer_DT
+            // txtManufacturer_DT
             // 
-            this.tbManufacturer_DT.Enabled = false;
-            this.tbManufacturer_DT.Location = new System.Drawing.Point(427, 114);
-            this.tbManufacturer_DT.Name = "tbManufacturer_DT";
-            this.tbManufacturer_DT.Size = new System.Drawing.Size(179, 22);
-            this.tbManufacturer_DT.TabIndex = 24;
+            this.txtManufacturer_DT.Enabled = false;
+            this.txtManufacturer_DT.Location = new System.Drawing.Point(427, 114);
+            this.txtManufacturer_DT.Name = "txtManufacturer_DT";
+            this.txtManufacturer_DT.Size = new System.Drawing.Size(179, 22);
+            this.txtManufacturer_DT.TabIndex = 24;
             // 
-            // tbCatagory_DT
+            // txtCatagory_DT
             // 
-            this.tbCatagory_DT.Enabled = false;
-            this.tbCatagory_DT.Location = new System.Drawing.Point(427, 73);
-            this.tbCatagory_DT.Name = "tbCatagory_DT";
-            this.tbCatagory_DT.Size = new System.Drawing.Size(179, 22);
-            this.tbCatagory_DT.TabIndex = 23;
+            this.txtCatagory_DT.Enabled = false;
+            this.txtCatagory_DT.Location = new System.Drawing.Point(427, 73);
+            this.txtCatagory_DT.Name = "txtCatagory_DT";
+            this.txtCatagory_DT.Size = new System.Drawing.Size(179, 22);
+            this.txtCatagory_DT.TabIndex = 23;
             // 
             // cbbManufacturer_DT
             // 
@@ -389,6 +393,7 @@
             this.cbbManufacturer_DT.Name = "cbbManufacturer_DT";
             this.cbbManufacturer_DT.Size = new System.Drawing.Size(151, 24);
             this.cbbManufacturer_DT.TabIndex = 22;
+            this.cbbManufacturer_DT.SelectedIndexChanged += new System.EventHandler(this.cbbManufacturer_DT_SelectedIndexChanged);
             // 
             // cbbCategory_DT
             // 
@@ -397,43 +402,44 @@
             this.cbbCategory_DT.Name = "cbbCategory_DT";
             this.cbbCategory_DT.Size = new System.Drawing.Size(151, 24);
             this.cbbCategory_DT.TabIndex = 21;
+            this.cbbCategory_DT.SelectedIndexChanged += new System.EventHandler(this.cbbCategory_DT_SelectedIndexChanged);
             // 
-            // tbDescription_DT
+            // txtDescription_DT
             // 
-            this.tbDescription_DT.Location = new System.Drawing.Point(331, 193);
-            this.tbDescription_DT.Multiline = true;
-            this.tbDescription_DT.Name = "tbDescription_DT";
-            this.tbDescription_DT.Size = new System.Drawing.Size(275, 59);
-            this.tbDescription_DT.TabIndex = 20;
+            this.txtDescription_DT.Location = new System.Drawing.Point(331, 193);
+            this.txtDescription_DT.Multiline = true;
+            this.txtDescription_DT.Name = "txtDescription_DT";
+            this.txtDescription_DT.Size = new System.Drawing.Size(275, 59);
+            this.txtDescription_DT.TabIndex = 20;
             // 
-            // tbProductID_DT
+            // txtProductID_DT
             // 
-            this.tbProductID_DT.Enabled = false;
-            this.tbProductID_DT.Location = new System.Drawing.Point(114, 29);
-            this.tbProductID_DT.Name = "tbProductID_DT";
-            this.tbProductID_DT.Size = new System.Drawing.Size(151, 22);
-            this.tbProductID_DT.TabIndex = 15;
+            this.txtProductID_DT.Enabled = false;
+            this.txtProductID_DT.Location = new System.Drawing.Point(114, 29);
+            this.txtProductID_DT.Name = "txtProductID_DT";
+            this.txtProductID_DT.Size = new System.Drawing.Size(151, 22);
+            this.txtProductID_DT.TabIndex = 15;
             // 
-            // tbSalePrice_DT
+            // txtSalePrice_DT
             // 
-            this.tbSalePrice_DT.Location = new System.Drawing.Point(114, 190);
-            this.tbSalePrice_DT.Name = "tbSalePrice_DT";
-            this.tbSalePrice_DT.Size = new System.Drawing.Size(151, 22);
-            this.tbSalePrice_DT.TabIndex = 14;
+            this.txtSalePrice_DT.Location = new System.Drawing.Point(114, 190);
+            this.txtSalePrice_DT.Name = "txtSalePrice_DT";
+            this.txtSalePrice_DT.Size = new System.Drawing.Size(151, 22);
+            this.txtSalePrice_DT.TabIndex = 14;
             // 
-            // tbCostPrice_DT
+            // txtCostPrice_DT
             // 
-            this.tbCostPrice_DT.Location = new System.Drawing.Point(114, 148);
-            this.tbCostPrice_DT.Name = "tbCostPrice_DT";
-            this.tbCostPrice_DT.Size = new System.Drawing.Size(151, 22);
-            this.tbCostPrice_DT.TabIndex = 13;
+            this.txtCostPrice_DT.Location = new System.Drawing.Point(114, 148);
+            this.txtCostPrice_DT.Name = "txtCostPrice_DT";
+            this.txtCostPrice_DT.Size = new System.Drawing.Size(151, 22);
+            this.txtCostPrice_DT.TabIndex = 13;
             // 
-            // tbQuantity_DT
+            // txtQuantity_DT
             // 
-            this.tbQuantity_DT.Location = new System.Drawing.Point(114, 236);
-            this.tbQuantity_DT.Name = "tbQuantity_DT";
-            this.tbQuantity_DT.Size = new System.Drawing.Size(151, 22);
-            this.tbQuantity_DT.TabIndex = 12;
+            this.txtQuantity_DT.Location = new System.Drawing.Point(114, 236);
+            this.txtQuantity_DT.Name = "txtQuantity_DT";
+            this.txtQuantity_DT.Size = new System.Drawing.Size(151, 22);
+            this.txtQuantity_DT.TabIndex = 12;
             // 
             // label11
             // 
@@ -897,6 +903,30 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Thông Tin Nhân Viên ";
             // 
+            // btChangePosition
+            // 
+            this.btChangePosition.Enabled = false;
+            this.btChangePosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.btChangePosition.Location = new System.Drawing.Point(652, 161);
+            this.btChangePosition.Name = "btChangePosition";
+            this.btChangePosition.Size = new System.Drawing.Size(238, 33);
+            this.btChangePosition.TabIndex = 17;
+            this.btChangePosition.Text = "Chuyển Chức Vụ";
+            this.btChangePosition.UseVisualStyleBackColor = true;
+            this.btChangePosition.Click += new System.EventHandler(this.btChangePosition_Click);
+            // 
+            // btResetPasswork
+            // 
+            this.btResetPasswork.Enabled = false;
+            this.btResetPasswork.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.btResetPasswork.Location = new System.Drawing.Point(917, 161);
+            this.btResetPasswork.Name = "btResetPasswork";
+            this.btResetPasswork.Size = new System.Drawing.Size(213, 33);
+            this.btResetPasswork.TabIndex = 16;
+            this.btResetPasswork.Text = "Reset Mật Khẩu";
+            this.btResetPasswork.UseVisualStyleBackColor = true;
+            this.btResetPasswork.Click += new System.EventHandler(this.btResetPasswork_Click);
+            // 
             // tbUsenameNV
             // 
             this.tbUsenameNV.Enabled = false;
@@ -993,30 +1023,6 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Mã Nhân Viên ";
             // 
-            // btResetPasswork
-            // 
-            this.btResetPasswork.Enabled = false;
-            this.btResetPasswork.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.btResetPasswork.Location = new System.Drawing.Point(917, 161);
-            this.btResetPasswork.Name = "btResetPasswork";
-            this.btResetPasswork.Size = new System.Drawing.Size(213, 33);
-            this.btResetPasswork.TabIndex = 16;
-            this.btResetPasswork.Text = "Reset Mật Khẩu";
-            this.btResetPasswork.UseVisualStyleBackColor = true;
-            this.btResetPasswork.Click += new System.EventHandler(this.btResetPasswork_Click);
-            // 
-            // btChangePosition
-            // 
-            this.btChangePosition.Enabled = false;
-            this.btChangePosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.btChangePosition.Location = new System.Drawing.Point(652, 161);
-            this.btChangePosition.Name = "btChangePosition";
-            this.btChangePosition.Size = new System.Drawing.Size(238, 33);
-            this.btChangePosition.TabIndex = 17;
-            this.btChangePosition.Text = "Chuyển Chức Vụ";
-            this.btChangePosition.UseVisualStyleBackColor = true;
-            this.btChangePosition.Click += new System.EventHandler(this.btChangePosition_Click);
-            // 
             // FDoanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1031,8 +1037,8 @@
             this.tabPage2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProduct_DT)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gb_TTDT.ResumeLayout(false);
+            this.gb_TTDT.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -1058,7 +1064,7 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dtgvProduct_DT;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gb_TTDT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label11;
@@ -1068,17 +1074,17 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbProductID_DT;
-        private System.Windows.Forms.TextBox tbSalePrice_DT;
-        private System.Windows.Forms.TextBox tbCostPrice_DT;
-        private System.Windows.Forms.TextBox tbQuantity_DT;
+        private System.Windows.Forms.TextBox txtProductID_DT;
+        private System.Windows.Forms.TextBox txtSalePrice_DT;
+        private System.Windows.Forms.TextBox txtCostPrice_DT;
+        private System.Windows.Forms.TextBox txtQuantity_DT;
         private System.Windows.Forms.Button btShow_DT;
         private System.Windows.Forms.Button btExitDT;
         private System.Windows.Forms.Button btDel_DT;
         private System.Windows.Forms.Button btEdit_DT;
         private System.Windows.Forms.Button btSave_DT;
         private System.Windows.Forms.Button btAdd_DT;
-        private System.Windows.Forms.TextBox tbDescription_DT;
+        private System.Windows.Forms.TextBox txtDescription_DT;
         private System.Windows.Forms.ComboBox cbbManufacturer_DT;
         private System.Windows.Forms.ComboBox cbbCategory_DT;
         private System.Windows.Forms.Label label15;
@@ -1116,9 +1122,9 @@
         private System.Windows.Forms.DataGridView dtgv_NV;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox tbManufacturer_DT;
-        private System.Windows.Forms.TextBox tbCatagory_DT;
-        private System.Windows.Forms.TextBox tbProductName_DT;
+        private System.Windows.Forms.TextBox txtManufacturer_DT;
+        private System.Windows.Forms.TextBox txtCatagory_DT;
+        private System.Windows.Forms.TextBox txtProductName_DT;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbSDT_KH;
         private System.Windows.Forms.Panel panel1;

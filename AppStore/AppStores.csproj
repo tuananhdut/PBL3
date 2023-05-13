@@ -62,10 +62,12 @@
   <ItemGroup>
     <Compile Include="BLL\AccountBLL.cs" />
     <Compile Include="BLL\Authorization.cs" />
+    <Compile Include="BLL\CatagoryBLL.cs" />
     <Compile Include="BLL\CustomerBLL.cs" />
     <Compile Include="BLL\DTO\CBBItem.cs" />
     <Compile Include="BLL\InvoiceBLL.cs" />
     <Compile Include="BLL\InvoiceDetailBLL.cs" />
+    <Compile Include="BLL\ManufactureBLL.cs" />
     <Compile Include="BLL\ProductBLL.cs" />
     <Compile Include="BLL\DTO\Account.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="BLL\DTO\Manufacturer.cs" />
     <Compile Include="BLL\DTO\Person.cs" />
     <Compile Include="BLL\DTO\Product.cs" />
+    <Compile Include="DAL\ManufactureDAL.cs" />
     <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="GUI\FBaoCao.cs">
       <SubType>Form</SubType>

@@ -4,6 +4,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DAL
 {
@@ -31,12 +32,12 @@ namespace DAL
         public List<Product> getALLProduct()
         {
            
-                return db.Products.ToList();  
+                return db.Products.Where(p=> p.Flag==true).ToList();
   
         }
         public Product getProductByID(int id)
         {
-               return db.Products.Where(p => p.ProductID == id).FirstOrDefault();
+               return db.Products.Where(p => p.ProductID == id && p.Flag == true).FirstOrDefault();
         }
         
         public void updateAndAddProduct(Product p)
@@ -64,5 +65,11 @@ namespace DAL
         {
             return db.Products.Where(p => p.ManufacturerID == ID).ToList();
         }
+        public dynamic Indanhsach()
+        {
+            return db.Products.Where(p => p.Flag == true).Select(p => new { p.ProductID, p.ProductName,p.CostPrice, p.SalePrice, p.Description,p.Quantity ,p.Manufacturer.ManufacturerName, p.Category.CategoryName }).ToList();
+
+        }
+
     }
 }

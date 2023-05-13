@@ -46,7 +46,12 @@ namespace BLL
         public void DeleteBLL(int del)
         {
             Product p = ProductDAL.Intance.getProductByID(del);
-            ProductDAL.Intance.deleteProduct(p);
+            p.Flag = false;
+            ProductDAL.Intance.updateAndAddProduct(p);
+        }
+        public dynamic IndanhsachBLL()
+        {
+            return ProductDAL.Intance.Indanhsach();
         }
         //public List <Product> TimKiemTheoGiaBLL(int gia1, int gia2)
         //{
