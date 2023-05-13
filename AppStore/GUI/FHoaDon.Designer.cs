@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbEmployeeID = new System.Windows.Forms.TextBox();
             this.cbbCustomerID = new System.Windows.Forms.ComboBox();
@@ -109,6 +108,7 @@
             // 
             // tbEmployeeID
             // 
+            this.tbEmployeeID.Enabled = false;
             this.tbEmployeeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmployeeID.Location = new System.Drawing.Point(196, 106);
             this.tbEmployeeID.Name = "tbEmployeeID";
@@ -151,6 +151,7 @@
             // 
             // tbEmployeeName
             // 
+            this.tbEmployeeName.Enabled = false;
             this.tbEmployeeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbEmployeeName.Location = new System.Drawing.Point(196, 143);
             this.tbEmployeeName.Name = "tbEmployeeName";
@@ -307,14 +308,6 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvInvoiceDetail.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvInvoiceDetail.Location = new System.Drawing.Point(32, 117);
             this.dtgvInvoiceDetail.Name = "dtgvInvoiceDetail";
             this.dtgvInvoiceDetail.RowHeadersWidth = 51;
