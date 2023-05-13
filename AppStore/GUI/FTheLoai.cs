@@ -22,6 +22,8 @@ namespace GiaoDien
 
         private void btAdd_TL_Click(object sender, EventArgs e)
         {
+            txtMaTL.Text = "";
+            txtTenTL.Text = "";
             gbTTTL.Enabled = true;
             btDel_DT.Enabled = false;
             btEdit_DT.Enabled = false;
@@ -61,6 +63,7 @@ namespace GiaoDien
 
             if (dtgv_DSTL.SelectedRows.Count > 0)
             {
+                gbTTTL.Enabled = true;
                 DataGridViewRow r = dtgv_DSTL.CurrentRow;
                 int edit = Convert.ToInt32(r.Cells[0].Value);
                 Category a = CatagoryBLL.Intance.getCategoryBLL(edit);
@@ -89,5 +92,13 @@ namespace GiaoDien
             }
             ViewTL();
         }
+
+        private void btExitDT_Click(object sender, EventArgs e)
+        {
+            txtMaTL.Text = "";
+            txtTenTL.Text = "";
+            gbTTTL.Enabled = false;
+        }
+        
     }
 }

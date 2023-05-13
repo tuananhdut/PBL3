@@ -95,21 +95,23 @@ namespace GiaoDien
 
         }
         // Tìm kiếm điện thoại
+        //Chỉnh tên cột sau khi binding code
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            //dtgv_DSTKDT.Columns[0].HeaderText = "Mã điện thoại";
-            //dtgv_DSTKDT.Columns[1].HeaderText = "Tên điện thoại";
-            //dtgv_DSTKDT.Columns[2].HeaderText = "Giá bán";
-            //dtgv_DSTKDT.Columns[3].HeaderText = "Màu sắc";
-            //dtgv_DSTKDT.Columns[4].HeaderText = "Số lượng";
-            //dtgv_DSTKDT.Columns[5].HeaderText = "Hãng";
-            //dtgv_DSTKDT.Columns[6].HeaderText = "Thể loại";
+            dtgv_DSTKDT.Columns[0].HeaderText = "Mã điện thoại";
+            dtgv_DSTKDT.Columns[1].HeaderText = "Tên điện thoại";
+            dtgv_DSTKDT.Columns[2].HeaderText = "Giá bán";
+            dtgv_DSTKDT.Columns[3].HeaderText = "Màu sắc";
+            dtgv_DSTKDT.Columns[4].HeaderText = "Số lượng";
+            dtgv_DSTKDT.Columns[5].HeaderText = "Hãng";
+            dtgv_DSTKDT.Columns[6].HeaderText = "Thể loại";
         }
 
         private void but_resert_Click(object sender, EventArgs e)
         {
             SetThongTinTK();
         }
+        // Set thông tin tìm kiếm về Null
         private void SetThongTinTK()
         {
             txtTenDT.Text = "";
@@ -129,22 +131,23 @@ namespace GiaoDien
             List<Product> products = new List<Product>();
             dtgv_DSTKDT.DataSource = products; 
         }
-
+        // Tìm kiếm
         private void but_Search_Click(object sender, EventArgs e)
         {
-            List<Product> result = ProductBLL.Intance.GetProductsBLL();
-            if (txtMaDT.Text=="" && txtTenDT.Text=="" && txtGiaMin.Text=="" && txtGiaMax.Text=="" && txtTenTL.Text=="" && txtTenHang.Text == "")
+            List<Product> result = new List<Product>();
+            if (txtMaDT.Text == "" && txtTenDT.Text == "" && txtGiaMin.Text == "" && txtGiaMax.Text == "" && txtTenTL.Text == "" && txtTenHang.Text == "")
             {
-                result =new List<Product>();
-            }else
+                MessageBox.Show("Vui lòng nhập thông tin tìm kiếm ");
+            } else
             {
-                string TenDT= txtTenDT.Text.ToString();
+                string TenDT = txtTenDT.Text.ToString();
                 string MaDT = txtMaDT.Text.ToString();
                 string GiaMax = txtGiaMax.Text.ToString();
                 string GiaMin = txtGiaMin.Text.ToString();
                 string MaHang = cbbMaHang.Text.ToString();
                 string MaTL = cbbMaTL.Text.ToString();
-                dtgv_DSTKDT.DataSource = ProductBLL.Intance.TimKiem(TenDT,MaDT,GiaMax,GiaMin,MaHang,MaTL);
+                result = ProductBLL.Intance.TimKiem(TenDT, MaDT, GiaMax, GiaMin, MaHang, MaTL);
+                dtgv_DSTKDT.DataSource = result.Select(p => new { p.ProductID, p.ProductName, p.CostPrice, p.Description,p.Quantity ,p.Manufacturer.ManufacturerName, p.Category.CategoryName }).ToList();
             }
             
         }

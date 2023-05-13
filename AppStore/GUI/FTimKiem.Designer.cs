@@ -162,6 +162,8 @@
             // 
             // dtgv_DSTKDT
             // 
+            this.dtgv_DSTKDT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv_DSTKDT.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgv_DSTKDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_DSTKDT.Location = new System.Drawing.Point(18, 345);
             this.dtgv_DSTKDT.Name = "dtgv_DSTKDT";

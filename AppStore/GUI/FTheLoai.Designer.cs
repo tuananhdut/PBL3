@@ -69,6 +69,7 @@
             this.btExitDT.TabIndex = 4;
             this.btExitDT.Text = "Bỏ Qua";
             this.btExitDT.UseVisualStyleBackColor = true;
+            this.btExitDT.Click += new System.EventHandler(this.btExitDT_Click);
             // 
             // btDel_DT
             // 
@@ -123,12 +124,14 @@
             // 
             // dtgv_DSTL
             // 
+            this.dtgv_DSTL.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_DSTL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_DSTL.Location = new System.Drawing.Point(217, 23);
             this.dtgv_DSTL.Name = "dtgv_DSTL";
             this.dtgv_DSTL.RowHeadersWidth = 51;
             this.dtgv_DSTL.RowTemplate.Height = 24;
-            this.dtgv_DSTL.Size = new System.Drawing.Size(657, 126);
+            this.dtgv_DSTL.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgv_DSTL.Size = new System.Drawing.Size(642, 126);
             this.dtgv_DSTL.TabIndex = 0;
             // 
             // gbTTTL

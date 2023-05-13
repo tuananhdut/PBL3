@@ -51,13 +51,18 @@ namespace GiaoDien
             }
             SetBang();
         }
-        
+        // Set Thông tin hãng về null
         private void SetTTHang()
         {
             txt_MaHang.Text = "";
             txt_TenHang.Text = "";
             txt_DiaChi.Text = "";
+            btAdd_DT.Enabled = true;
+            btDel_DT.Enabled= true;
+            btEdit_DT.Enabled= true;
+            gb_HangSX.Enabled = false;
         }
+        // In bảng ra datagirdview
         private void SetBang()
         {
             dtgv_DSHSX.DataSource = ManufactureBLL.Intance.GetManufacturesBLL();

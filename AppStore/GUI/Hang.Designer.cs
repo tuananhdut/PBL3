@@ -57,6 +57,7 @@
             this.gb_HangSX.Controls.Add(this.label2);
             this.gb_HangSX.Controls.Add(this.label1);
             this.gb_HangSX.Controls.Add(this.txt_MaHang);
+            this.gb_HangSX.Enabled = false;
             this.gb_HangSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.gb_HangSX.Location = new System.Drawing.Point(12, 12);
             this.gb_HangSX.Name = "gb_HangSX";
@@ -127,11 +128,13 @@
             // 
             // dtgv_DSHSX
             // 
+            this.dtgv_DSHSX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_DSHSX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_DSHSX.Location = new System.Drawing.Point(247, 23);
             this.dtgv_DSHSX.Name = "dtgv_DSHSX";
             this.dtgv_DSHSX.RowHeadersWidth = 51;
             this.dtgv_DSHSX.RowTemplate.Height = 24;
+            this.dtgv_DSHSX.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv_DSHSX.Size = new System.Drawing.Size(633, 126);
             this.dtgv_DSHSX.TabIndex = 0;
             // 
