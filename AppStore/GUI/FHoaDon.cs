@@ -163,7 +163,7 @@ namespace GiaoDien
              
                 textBox11.Text = price.ToString();
                 InvoiceDetailBLL.Intance.addOrUpdateInvoiceDetail(CTHD);
-                loangDTGVInvoiceDetail(CTHD.InvoiceID-1);
+                loangDTGVInvoiceDetail(CTHD.InvoiceID);
             }
             // các textbox thông tin mặt hàng rỗng
             setNullThongTinMatHang();

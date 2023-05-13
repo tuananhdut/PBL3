@@ -65,11 +65,14 @@ namespace DAL
         {
             return db.Products.Where(p => p.ManufacturerID == ID).ToList();
         }
-        public dynamic Indanhsach()
+        public dynamic IndanhsachDM()
         {
             return db.Products.Where(p => p.Flag == true).Select(p => new { p.ProductID, p.ProductName,p.CostPrice, p.SalePrice, p.Description,p.Quantity ,p.Manufacturer.ManufacturerName, p.Category.CategoryName }).ToList();
 
         }
-
+        //public List<Product> InDanhsachTK()
+        //{
+        //    return db.Products    
+        //}
     }
 }

@@ -1,4 +1,5 @@
-﻿using AppStore.BLL.DTO;
+﻿using AppStore.BLL;
+using AppStore.BLL.DTO;
 using BLL;
 using DAL;
 using System;
@@ -20,6 +21,8 @@ namespace GiaoDien
         public FTimKiem()
         {
             InitializeComponent();
+            txtGiaMin.Text = "0";
+            SetCBB_TK();
         }
         private void btSearchCustomer_Click(object sender, EventArgs e)
         {
@@ -27,7 +30,7 @@ namespace GiaoDien
             try
             {
                 int id = Convert.ToInt32(tbCustomerID.Text);
-                li = CustomerBLL.Intance.searchCustomer(tbCustomerName.Text, tbCustomerAddress.Text, tbCustomerPhoneNumber.Text,id);
+                li = CustomerBLL.Intance.searchCustomer(tbCustomerName.Text, tbCustomerAddress.Text, tbCustomerPhoneNumber.Text, id);
             }
             catch (Exception)
             {
@@ -75,7 +78,7 @@ namespace GiaoDien
             try
             {
                 int id = Convert.ToInt32(tbEmployssID.Text);
-                li = AccountBLL.Intance.searchAccount(tbCustomerName.Text, tbEmployssAddress.Text, tbEmployssPhone.Text,id);
+                li = AccountBLL.Intance.searchAccount(tbCustomerName.Text, tbEmployssAddress.Text, tbEmployssPhone.Text, id);
             }
             catch (Exception)
             {
@@ -89,17 +92,18 @@ namespace GiaoDien
                     dtgvEmployss.Rows.Add(account.AccountID, account.FullName, account.PhoneNumber, account.Address);
                 }
             }
-           
+
         }
         // Tìm kiếm điện thoại
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            dtgv_DSTKDT.Columns[0].HeaderText = "Mã điện thoại";
-            dtgv_DSTKDT.Columns[1].HeaderText = "Tên điện thoại";
-            dtgv_DSTKDT.Columns[2].HeaderText = "Giá bán";
-            dtgv_DSTKDT.Columns[3].HeaderText = "Màu sắc";
-            dtgv_DSTKDT.Columns[4].HeaderText = "Hãng";
-            dtgv_DSTKDT.Columns[5].HeaderText = "Thể loại";
+            //dtgv_DSTKDT.Columns[0].HeaderText = "Mã điện thoại";
+            //dtgv_DSTKDT.Columns[1].HeaderText = "Tên điện thoại";
+            //dtgv_DSTKDT.Columns[2].HeaderText = "Giá bán";
+            //dtgv_DSTKDT.Columns[3].HeaderText = "Màu sắc";
+            //dtgv_DSTKDT.Columns[4].HeaderText = "Số lượng";
+            //dtgv_DSTKDT.Columns[5].HeaderText = "Hãng";
+            //dtgv_DSTKDT.Columns[6].HeaderText = "Thể loại";
         }
 
         private void but_resert_Click(object sender, EventArgs e)
@@ -116,13 +120,55 @@ namespace GiaoDien
             txtTenTL.Text = "";
             cbbMaHang.Text = "";
             cbbMaTL.Text = "";
+            txtTenDT.Enabled = true;
+            txtMaDT.Enabled = true;
+            txtGiaMin.Enabled = true;
+            txtGiaMax.Enabled = true;
+            cbbMaHang.Enabled = true;
+            cbbMaTL.Enabled = true;
+            List<Product> products = new List<Product>();
+            dtgv_DSTKDT.DataSource = products; 
         }
 
         private void but_Search_Click(object sender, EventArgs e)
         {
-            //if(txtTenDT.Text==""&& )
-            //List<Product> result = new List<Product>();
+            List<Product> result = ProductBLL.Intance.GetProductsBLL();
+            if (txtMaDT.Text=="" && txtTenDT.Text=="" && txtGiaMin.Text=="" && txtGiaMax.Text=="" && txtTenTL.Text=="" && txtTenHang.Text == "")
+            {
+                result =new List<Product>();
+            }else
+            {
+                string TenDT= txtTenDT.Text.ToString();
+                string MaDT = txtMaDT.Text.ToString();
+                string GiaMax = txtGiaMax.Text.ToString();
+                string GiaMin = txtGiaMin.Text.ToString();
+                string MaHang = cbbMaHang.Text.ToString();
+                string MaTL = cbbMaTL.Text.ToString();
+                dtgv_DSTKDT.DataSource = ProductBLL.Intance.TimKiem(TenDT,MaDT,GiaMax,GiaMin,MaHang,MaTL);
+            }
             
+        }
+        // Set ComboxBox Tim Kiem
+        private void SetCBB_TK()
+        {
+            CatagoryBLL cb1 = new CatagoryBLL();
+            cbbMaTL.Items.AddRange(cb1.getAllCBBCatagory().ToArray());
+            ManufactureBLL cb2 = new ManufactureBLL();
+            cbbMaHang.Items.AddRange(cb2.getAllCBBManuFacture().ToArray());
+        }
+
+        private void cbbMaTL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int ID = Convert.ToInt32(cbbMaTL.Text);
+            Category find = CatagoryBLL.Intance.getCategoryBLL(ID);
+            txtTenTL.Text = find.CategoryName;
+        }
+
+        private void cbbMaHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int ID = Convert.ToInt32(cbbMaHang.Text);
+            Manufacturer find = ManufactureBLL.Intance.getManufactureBLL(ID);
+            txtTenHang.Text = find.ManufacturerName;
         }
     }
 }

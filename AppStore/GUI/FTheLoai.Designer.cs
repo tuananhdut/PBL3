@@ -32,19 +32,19 @@
             this.btExitDT = new System.Windows.Forms.Button();
             this.btDel_DT = new System.Windows.Forms.Button();
             this.btEdit_DT = new System.Windows.Forms.Button();
-            this.btSave_DT = new System.Windows.Forms.Button();
-            this.btAdd_DT = new System.Windows.Forms.Button();
+            this.btSave_TL = new System.Windows.Forms.Button();
+            this.btAdd_TL = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dtgv_DSTL = new System.Windows.Forms.DataGridView();
+            this.gbTTTL = new System.Windows.Forms.GroupBox();
+            this.txtTenTL = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMaTL = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_DSTL)).BeginInit();
+            this.gbTTTL.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -52,8 +52,8 @@
             this.groupBox3.Controls.Add(this.btExitDT);
             this.groupBox3.Controls.Add(this.btDel_DT);
             this.groupBox3.Controls.Add(this.btEdit_DT);
-            this.groupBox3.Controls.Add(this.btSave_DT);
-            this.groupBox3.Controls.Add(this.btAdd_DT);
+            this.groupBox3.Controls.Add(this.btSave_TL);
+            this.groupBox3.Controls.Add(this.btAdd_TL);
             this.groupBox3.Location = new System.Drawing.Point(12, 345);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1055, 93);
@@ -78,6 +78,7 @@
             this.btDel_DT.TabIndex = 3;
             this.btDel_DT.Text = "Xóa";
             this.btDel_DT.UseVisualStyleBackColor = true;
+            this.btDel_DT.Click += new System.EventHandler(this.btDel_DT_Click);
             // 
             // btEdit_DT
             // 
@@ -87,28 +88,31 @@
             this.btEdit_DT.TabIndex = 2;
             this.btEdit_DT.Text = "Sửa";
             this.btEdit_DT.UseVisualStyleBackColor = true;
+            this.btEdit_DT.Click += new System.EventHandler(this.btEdit_DT_Click);
             // 
-            // btSave_DT
+            // btSave_TL
             // 
-            this.btSave_DT.Location = new System.Drawing.Point(260, 33);
-            this.btSave_DT.Name = "btSave_DT";
-            this.btSave_DT.Size = new System.Drawing.Size(117, 50);
-            this.btSave_DT.TabIndex = 1;
-            this.btSave_DT.Text = "Lưu";
-            this.btSave_DT.UseVisualStyleBackColor = true;
+            this.btSave_TL.Location = new System.Drawing.Point(260, 33);
+            this.btSave_TL.Name = "btSave_TL";
+            this.btSave_TL.Size = new System.Drawing.Size(117, 50);
+            this.btSave_TL.TabIndex = 1;
+            this.btSave_TL.Text = "Lưu";
+            this.btSave_TL.UseVisualStyleBackColor = true;
+            this.btSave_TL.Click += new System.EventHandler(this.btSave_DT_Click);
             // 
-            // btAdd_DT
+            // btAdd_TL
             // 
-            this.btAdd_DT.Location = new System.Drawing.Point(58, 33);
-            this.btAdd_DT.Name = "btAdd_DT";
-            this.btAdd_DT.Size = new System.Drawing.Size(117, 50);
-            this.btAdd_DT.TabIndex = 0;
-            this.btAdd_DT.Text = "Thêm";
-            this.btAdd_DT.UseVisualStyleBackColor = true;
+            this.btAdd_TL.Location = new System.Drawing.Point(58, 33);
+            this.btAdd_TL.Name = "btAdd_TL";
+            this.btAdd_TL.Size = new System.Drawing.Size(117, 50);
+            this.btAdd_TL.TabIndex = 0;
+            this.btAdd_TL.Text = "Thêm";
+            this.btAdd_TL.UseVisualStyleBackColor = true;
+            this.btAdd_TL.Click += new System.EventHandler(this.btAdd_TL_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dtgv_DSTL);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(12, 184);
             this.groupBox2.Name = "groupBox2";
@@ -117,36 +121,37 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Thể Loại Điện Thoại";
             // 
-            // dataGridView1
+            // dtgv_DSTL
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1043, 126);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgv_DSTL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_DSTL.Location = new System.Drawing.Point(217, 23);
+            this.dtgv_DSTL.Name = "dtgv_DSTL";
+            this.dtgv_DSTL.RowHeadersWidth = 51;
+            this.dtgv_DSTL.RowTemplate.Height = 24;
+            this.dtgv_DSTL.Size = new System.Drawing.Size(657, 126);
+            this.dtgv_DSTL.TabIndex = 0;
             // 
-            // groupBox1
+            // gbTTTL
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1055, 155);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông Tin Thể Loại Điện Thoại";
+            this.gbTTTL.Controls.Add(this.txtTenTL);
+            this.gbTTTL.Controls.Add(this.label2);
+            this.gbTTTL.Controls.Add(this.label1);
+            this.gbTTTL.Controls.Add(this.txtMaTL);
+            this.gbTTTL.Enabled = false;
+            this.gbTTTL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.gbTTTL.Location = new System.Drawing.Point(12, 12);
+            this.gbTTTL.Name = "gbTTTL";
+            this.gbTTTL.Size = new System.Drawing.Size(1055, 155);
+            this.gbTTTL.TabIndex = 6;
+            this.gbTTTL.TabStop = false;
+            this.gbTTTL.Text = "Thông Tin Thể Loại Điện Thoại";
             // 
-            // textBox2
+            // txtTenTL
             // 
-            this.textBox2.Location = new System.Drawing.Point(453, 94);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(241, 24);
-            this.textBox2.TabIndex = 4;
+            this.txtTenTL.Location = new System.Drawing.Point(453, 94);
+            this.txtTenTL.Name = "txtTenTL";
+            this.txtTenTL.Size = new System.Drawing.Size(241, 24);
+            this.txtTenTL.TabIndex = 4;
             // 
             // label2
             // 
@@ -166,12 +171,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã Thể loại";
             // 
-            // textBox1
+            // txtMaTL
             // 
-            this.textBox1.Location = new System.Drawing.Point(453, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 24);
-            this.textBox1.TabIndex = 0;
+            this.txtMaTL.Enabled = false;
+            this.txtMaTL.Location = new System.Drawing.Point(453, 56);
+            this.txtMaTL.Name = "txtMaTL";
+            this.txtMaTL.Size = new System.Drawing.Size(241, 24);
+            this.txtMaTL.TabIndex = 0;
             // 
             // FTheLoai
             // 
@@ -180,14 +186,14 @@
             this.ClientSize = new System.Drawing.Size(1079, 450);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbTTTL);
             this.Name = "FTheLoai";
             this.Text = "FTheLoai";
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_DSTL)).EndInit();
+            this.gbTTTL.ResumeLayout(false);
+            this.gbTTTL.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -198,14 +204,14 @@
         private System.Windows.Forms.Button btExitDT;
         private System.Windows.Forms.Button btDel_DT;
         private System.Windows.Forms.Button btEdit_DT;
-        private System.Windows.Forms.Button btSave_DT;
-        private System.Windows.Forms.Button btAdd_DT;
+        private System.Windows.Forms.Button btSave_TL;
+        private System.Windows.Forms.Button btAdd_TL;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridView dtgv_DSTL;
+        private System.Windows.Forms.GroupBox gbTTTL;
+        private System.Windows.Forms.TextBox txtTenTL;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMaTL;
     }
 }

@@ -46,10 +46,6 @@ D:\Code VisualStudio\codenet\PBL3\PBL3\AppStore\obj\Debug\GiaoDien.FQuanLyTaiKho
 D:\Code VisualStudio\codenet\PBL3\PBL3\AppStore\obj\Debug\GiaoDien.FTheLoai.resources
 D:\Code VisualStudio\codenet\PBL3\PBL3\AppStore\obj\Debug\GiaoDien.FTimKiem.resources
 D:\Code VisualStudio\codenet\PBL3\PBL3\AppStore\obj\Debug\GiaoDien.Hang.resources
-D:\Code VisualStudio\codenet\PBL3\PBL3\AppStore\obj\Debug\AppStore.Migrations.TA1.resources
-D:\Code VisualStudio\codenet\PBL3\PBL3\AppStore\obj\Debug\AppStore.Migrations.TA2.resources
-D:\Code VisualStudio\codenet\PBL3\PBL3\AppStore\obj\Debug\AppStore.Migrations.TA3.resources
-D:\Code VisualStudio\codenet\PBL3\PBL3\AppStore\obj\Debug\AppStore.Migrations.TA4.resources
 D:\Code VisualStudio\codenet\PBL3\PBL3\AppStore\obj\Debug\AppStore.Properties.Resources.resources
 D:\Code VisualStudio\codenet\PBL3\PBL3\AppStore\obj\Debug\AppStore.csproj.GenerateResource.cache
 D:\Code VisualStudio\codenet\PBL3\PBL3\AppStore\obj\Debug\AppStore.csproj.CoreCompileInputs.cache
