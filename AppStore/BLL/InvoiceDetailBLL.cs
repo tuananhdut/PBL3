@@ -30,7 +30,7 @@ namespace BLL
         public void addOrUpdateInvoiceDetail(InvoiceDetail invoiceDetail) => InvoiceDetailDAL.Intance.addOrUpdateInvoiceDetail(invoiceDetail);
 
         //
-        public List<InvoiceDetail> getListInvoiceDetailByInvoiceID(int id)
+        public dynamic getListInvoiceDetailByInvoiceID(int id)
         {
             return InvoiceDetailDAL.Intance.getListInvoiceDetailByInvoiceID(id);
         }

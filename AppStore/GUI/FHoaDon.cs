@@ -145,6 +145,8 @@ namespace GiaoDien
                 tbInvoiceID.Text = HD.InvoiceID.ToString();
             }
 
+            //
+            MessageBox.Show(tbInvoiceID.Text);
 
             // tạo chi tiết hóa đơn mới 
             if (cbbProductID.Text==null||tbQuantityProduct.Text==""||tbSale.Text=="")
@@ -163,8 +165,10 @@ namespace GiaoDien
              
                 textBox11.Text = price.ToString();
                 InvoiceDetailBLL.Intance.addOrUpdateInvoiceDetail(CTHD);
-                loangDTGVInvoiceDetail(CTHD.InvoiceID-1);
+               
             }
+            loangDTGVInvoiceDetail(Convert.ToInt32(tbInvoiceID.Text));
+
             // các textbox thông tin mặt hàng rỗng
             setNullThongTinMatHang();
             
@@ -179,11 +183,13 @@ namespace GiaoDien
         public static double price = 0;
         private void loangDTGVInvoiceDetail(int invoiceID)
         {
-            dtgvInvoiceDetail.Rows.Clear();
-            foreach (var item in InvoiceDetailBLL.Intance.getListInvoiceDetailByInvoiceID(invoiceID))
-            {
-                dtgvInvoiceDetail.Rows.Add(item.Product.ProductName, item.Product.SalePrice, item.Quantity, item.SalePrice);
-            }
+            dtgvInvoiceDetail.DataSource = InvoiceDetailBLL.Intance.getListInvoiceDetailByInvoiceID(invoiceID);
+            //dtgvInvoiceDetail.Rows.Clear();
+
+            /*    foreach (InvoiceDetail item in InvoiceDetailBLL.Intance.getListInvoiceDetailByInvoiceID(invoiceID))
+                {
+                    dtgvInvoiceDetail.Rows.Add( item.Product.ProductName, item.Quantity, item.SalePrice);
+                }*/
         }
         private void btUpdateInvoice_Click(object sender, EventArgs e)
         {

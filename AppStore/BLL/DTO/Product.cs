@@ -11,10 +11,10 @@ namespace DAL
     [Table("Product")]
     public class Product
     {
-        /*public Product()
+        public Product()
         {
             this.InvoiceDetails = new HashSet<InvoiceDetail>();
-        }*/
+        }
         [Key]
         public int ProductID { get; set; }
         [ForeignKey("Category")]
