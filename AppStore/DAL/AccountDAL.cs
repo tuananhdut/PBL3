@@ -58,5 +58,10 @@ namespace DAL
             db.Accounts.Remove(acc);
             db.SaveChanges();
         }
+
+        public dynamic getAllAccountShow()
+        {
+            return db.Accounts.Where(p => p.Flag == true).Select(p=>new {p.AccountID,p.FullName,p.Position,p.PhoneNumber,p.Address}).ToList();
+        }
     }
 }

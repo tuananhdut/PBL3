@@ -37,5 +37,10 @@ namespace GiaoDien
                 this.Close();
             }
         }
+
+        private void btExitForm_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

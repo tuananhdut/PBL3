@@ -145,5 +145,9 @@ namespace BLL
             }
             return li;
         }
+        public dynamic getAllAccountShow()
+        {
+            return AccountDAL.Intance.getAllAccountShow();
+        }
     }
 }

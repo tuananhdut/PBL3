@@ -97,12 +97,9 @@
             this.btSaveNV = new System.Windows.Forms.Button();
             this.btAdd_NV = new System.Windows.Forms.Button();
             this.dtgv_NV = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btChangePosition = new System.Windows.Forms.Button();
+            this.btResetPasswork = new System.Windows.Forms.Button();
             this.tbUsenameNV = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbPhoneNumber_NV = new System.Windows.Forms.TextBox();
@@ -113,8 +110,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.btResetPasswork = new System.Windows.Forms.Button();
-            this.btChangePosition = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -840,41 +840,6 @@
             this.dtgv_NV.Size = new System.Drawing.Size(1158, 226);
             this.dtgv_NV.TabIndex = 6;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã Nhân Viên";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 140;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên Hiển Thị";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 140;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Chức Vụ";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 140;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Số Điện Thoại";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 140;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Địa Chỉ";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 255;
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.btChangePosition);
@@ -896,6 +861,30 @@
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Thông Tin Nhân Viên ";
+            // 
+            // btChangePosition
+            // 
+            this.btChangePosition.Enabled = false;
+            this.btChangePosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.btChangePosition.Location = new System.Drawing.Point(652, 161);
+            this.btChangePosition.Name = "btChangePosition";
+            this.btChangePosition.Size = new System.Drawing.Size(238, 33);
+            this.btChangePosition.TabIndex = 17;
+            this.btChangePosition.Text = "Chuyển Chức Vụ";
+            this.btChangePosition.UseVisualStyleBackColor = true;
+            this.btChangePosition.Click += new System.EventHandler(this.btChangePosition_Click);
+            // 
+            // btResetPasswork
+            // 
+            this.btResetPasswork.Enabled = false;
+            this.btResetPasswork.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.btResetPasswork.Location = new System.Drawing.Point(917, 161);
+            this.btResetPasswork.Name = "btResetPasswork";
+            this.btResetPasswork.Size = new System.Drawing.Size(213, 33);
+            this.btResetPasswork.TabIndex = 16;
+            this.btResetPasswork.Text = "Reset Mật Khẩu";
+            this.btResetPasswork.UseVisualStyleBackColor = true;
+            this.btResetPasswork.Click += new System.EventHandler(this.btResetPasswork_Click);
             // 
             // tbUsenameNV
             // 
@@ -993,29 +982,45 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Mã Nhân Viên ";
             // 
-            // btResetPasswork
+            // Column1
             // 
-            this.btResetPasswork.Enabled = false;
-            this.btResetPasswork.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.btResetPasswork.Location = new System.Drawing.Point(917, 161);
-            this.btResetPasswork.Name = "btResetPasswork";
-            this.btResetPasswork.Size = new System.Drawing.Size(213, 33);
-            this.btResetPasswork.TabIndex = 16;
-            this.btResetPasswork.Text = "Reset Mật Khẩu";
-            this.btResetPasswork.UseVisualStyleBackColor = true;
-            this.btResetPasswork.Click += new System.EventHandler(this.btResetPasswork_Click);
+            this.Column1.DataPropertyName = "AccountID";
+            this.Column1.HeaderText = "Mã Nhân Viên";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 140;
             // 
-            // btChangePosition
+            // Column2
             // 
-            this.btChangePosition.Enabled = false;
-            this.btChangePosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.btChangePosition.Location = new System.Drawing.Point(652, 161);
-            this.btChangePosition.Name = "btChangePosition";
-            this.btChangePosition.Size = new System.Drawing.Size(238, 33);
-            this.btChangePosition.TabIndex = 17;
-            this.btChangePosition.Text = "Chuyển Chức Vụ";
-            this.btChangePosition.UseVisualStyleBackColor = true;
-            this.btChangePosition.Click += new System.EventHandler(this.btChangePosition_Click);
+            this.Column2.DataPropertyName = "FullName";
+            this.Column2.HeaderText = "Tên Hiển Thị";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 140;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Position";
+            this.Column3.HeaderText = "Chức Vụ";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 140;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "PhoneNumber";
+            this.Column4.HeaderText = "Số Điện Thoại";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 140;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Address";
+            this.Column5.HeaderText = "Địa Chỉ";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 255;
             // 
             // FDoanhMuc
             // 
@@ -1127,16 +1132,16 @@
         private System.Windows.Forms.TextBox tbPhoneNumber_NV;
         private System.Windows.Forms.TextBox tbUsenameNV;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.Button btResetPasswork;
         private System.Windows.Forms.Button btChangePosition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

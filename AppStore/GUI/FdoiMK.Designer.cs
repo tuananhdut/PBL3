@@ -98,6 +98,7 @@
             this.btExitForm.TabIndex = 6;
             this.btExitForm.Text = "Thoát";
             this.btExitForm.UseVisualStyleBackColor = true;
+            this.btExitForm.Click += new System.EventHandler(this.btExitForm_Click);
             // 
             // btChangPasswork
             // 

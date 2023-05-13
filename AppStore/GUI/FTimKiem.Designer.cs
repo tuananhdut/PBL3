@@ -98,6 +98,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.dtgvEmployss = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tbEmployssPhone = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.tbEmployssAddress = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.btSearchEmployss = new System.Windows.Forms.Button();
@@ -110,8 +112,6 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbEmployssPhone = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -855,6 +855,24 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông Tin Tìm kiếm Nhân Viên";
             // 
+            // tbEmployssPhone
+            // 
+            this.tbEmployssPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.tbEmployssPhone.Location = new System.Drawing.Point(824, 36);
+            this.tbEmployssPhone.Name = "tbEmployssPhone";
+            this.tbEmployssPhone.Size = new System.Drawing.Size(220, 27);
+            this.tbEmployssPhone.TabIndex = 27;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label25.Location = new System.Drawing.Point(663, 41);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(98, 17);
+            this.label25.TabIndex = 26;
+            this.label25.Text = "Số Điện Thoại";
+            // 
             // tbEmployssAddress
             // 
             this.tbEmployssAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
@@ -931,6 +949,7 @@
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "AccountID";
             this.Column5.HeaderText = "Mã Nhân Viên";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
@@ -938,6 +957,7 @@
             // 
             // Column6
             // 
+            this.Column6.DataPropertyName = "FullName";
             this.Column6.HeaderText = "Tên Nhân Viên ";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
@@ -945,6 +965,7 @@
             // 
             // Column7
             // 
+            this.Column7.DataPropertyName = "PhonrNumber";
             this.Column7.HeaderText = "Số Điện Thoại";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
@@ -952,28 +973,11 @@
             // 
             // Column8
             // 
+            this.Column8.DataPropertyName = "Address";
             this.Column8.HeaderText = "Địa Chỉ";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             this.Column8.Width = 205;
-            // 
-            // tbEmployssPhone
-            // 
-            this.tbEmployssPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.tbEmployssPhone.Location = new System.Drawing.Point(824, 36);
-            this.tbEmployssPhone.Name = "tbEmployssPhone";
-            this.tbEmployssPhone.Size = new System.Drawing.Size(220, 27);
-            this.tbEmployssPhone.TabIndex = 27;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label25.Location = new System.Drawing.Point(663, 41);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(98, 17);
-            this.label25.TabIndex = 26;
-            this.label25.Text = "Số Điện Thoại";
             // 
             // FTimKiem
             // 
@@ -1088,11 +1092,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.TextBox tbEmployssPhone;
+        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.TextBox tbEmployssPhone;
-        private System.Windows.Forms.Label label25;
     }
 }
