@@ -507,10 +507,15 @@ namespace GiaoDien
         {
             if (dtgv_NV.SelectedRows.Count == 1)
             {
-                DataGridViewRow row = dtgv_NV.SelectedRows[0];
-                int id = Convert.ToInt32(row.Cells[0].Value.ToString());
-                AccountBLL.Intance.removeAccountByID(id);
-                loangDTGVAccount();
+                DialogResult result = MessageBox.Show("Bạn có muốn xóa tài khoản này không?", "Xác nhận", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    DataGridViewRow row = dtgv_NV.SelectedRows[0];
+                    int id = Convert.ToInt32(row.Cells[0].Value.ToString());
+                    AccountBLL.Intance.removeAccountByID(id);
+                    loangDTGVAccount();
+                    MessageBox.Show("Xóa tài khoản thành công", "Thông Báo");
+                }
             }
             else
             {
