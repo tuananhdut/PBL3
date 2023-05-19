@@ -28,56 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.gb_HangSX = new System.Windows.Forms.GroupBox();
+            this.txt_DiaChi = new System.Windows.Forms.TextBox();
+            this.txt_TenHang = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_MaHang = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgv_DSHSX = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btExitDT = new System.Windows.Forms.Button();
             this.btDel_DT = new System.Windows.Forms.Button();
             this.btEdit_DT = new System.Windows.Forms.Button();
             this.btSave_DT = new System.Windows.Forms.Button();
             this.btAdd_DT = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.gb_HangSX.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_DSHSX)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gb_HangSX
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1055, 155);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông Tin Hãng Sản Xuất";
+            this.gb_HangSX.Controls.Add(this.txt_DiaChi);
+            this.gb_HangSX.Controls.Add(this.txt_TenHang);
+            this.gb_HangSX.Controls.Add(this.label3);
+            this.gb_HangSX.Controls.Add(this.label2);
+            this.gb_HangSX.Controls.Add(this.label1);
+            this.gb_HangSX.Controls.Add(this.txt_MaHang);
+            this.gb_HangSX.Enabled = false;
+            this.gb_HangSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.gb_HangSX.Location = new System.Drawing.Point(12, 12);
+            this.gb_HangSX.Name = "gb_HangSX";
+            this.gb_HangSX.Size = new System.Drawing.Size(1055, 155);
+            this.gb_HangSX.TabIndex = 0;
+            this.gb_HangSX.TabStop = false;
+            this.gb_HangSX.Text = "Thông Tin Hãng Sản Xuất";
             // 
-            // textBox3
+            // txt_DiaChi
             // 
-            this.textBox3.Location = new System.Drawing.Point(515, 112);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(241, 24);
-            this.textBox3.TabIndex = 5;
+            this.txt_DiaChi.Location = new System.Drawing.Point(515, 112);
+            this.txt_DiaChi.Name = "txt_DiaChi";
+            this.txt_DiaChi.Size = new System.Drawing.Size(241, 24);
+            this.txt_DiaChi.TabIndex = 5;
             // 
-            // textBox2
+            // txt_TenHang
             // 
-            this.textBox2.Location = new System.Drawing.Point(515, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(241, 24);
-            this.textBox2.TabIndex = 4;
+            this.txt_TenHang.Location = new System.Drawing.Point(515, 71);
+            this.txt_TenHang.Name = "txt_TenHang";
+            this.txt_TenHang.Size = new System.Drawing.Size(241, 24);
+            this.txt_TenHang.TabIndex = 4;
             // 
             // label3
             // 
@@ -106,16 +107,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã Hãng Sản Xuất";
             // 
-            // textBox1
+            // txt_MaHang
             // 
-            this.textBox1.Location = new System.Drawing.Point(515, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 24);
-            this.textBox1.TabIndex = 0;
+            this.txt_MaHang.Location = new System.Drawing.Point(515, 32);
+            this.txt_MaHang.Name = "txt_MaHang";
+            this.txt_MaHang.Size = new System.Drawing.Size(241, 24);
+            this.txt_MaHang.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dtgv_DSHSX);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(12, 184);
             this.groupBox2.Name = "groupBox2";
@@ -124,15 +125,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Hãng Sản Xuất";
             // 
-            // dataGridView1
+            // dtgv_DSHSX
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1043, 126);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgv_DSHSX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv_DSHSX.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgv_DSHSX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_DSHSX.Location = new System.Drawing.Point(260, 23);
+            this.dtgv_DSHSX.Name = "dtgv_DSHSX";
+            this.dtgv_DSHSX.RowHeadersWidth = 51;
+            this.dtgv_DSHSX.RowTemplate.Height = 24;
+            this.dtgv_DSHSX.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgv_DSHSX.Size = new System.Drawing.Size(611, 126);
+            this.dtgv_DSHSX.TabIndex = 0;
+            this.dtgv_DSHSX.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtgv_DSHSX_DataBindingComplete);
             // 
             // groupBox3
             // 
@@ -156,6 +161,7 @@
             this.btExitDT.TabIndex = 4;
             this.btExitDT.Text = "Bỏ Qua";
             this.btExitDT.UseVisualStyleBackColor = true;
+            this.btExitDT.Click += new System.EventHandler(this.btExitDT_Click);
             // 
             // btDel_DT
             // 
@@ -165,6 +171,7 @@
             this.btDel_DT.TabIndex = 3;
             this.btDel_DT.Text = "Xóa";
             this.btDel_DT.UseVisualStyleBackColor = true;
+            this.btDel_DT.Click += new System.EventHandler(this.btDel_DT_Click);
             // 
             // btEdit_DT
             // 
@@ -174,6 +181,7 @@
             this.btEdit_DT.TabIndex = 2;
             this.btEdit_DT.Text = "Sửa";
             this.btEdit_DT.UseVisualStyleBackColor = true;
+            this.btEdit_DT.Click += new System.EventHandler(this.btEdit_DT_Click);
             // 
             // btSave_DT
             // 
@@ -183,6 +191,7 @@
             this.btSave_DT.TabIndex = 1;
             this.btSave_DT.Text = "Lưu";
             this.btSave_DT.UseVisualStyleBackColor = true;
+            this.btSave_DT.Click += new System.EventHandler(this.btSave_DT_Click);
             // 
             // btAdd_DT
             // 
@@ -192,6 +201,7 @@
             this.btAdd_DT.TabIndex = 0;
             this.btAdd_DT.Text = "Thêm";
             this.btAdd_DT.UseVisualStyleBackColor = true;
+            this.btAdd_DT.Click += new System.EventHandler(this.btAdd_DT_Click);
             // 
             // Hang
             // 
@@ -200,13 +210,13 @@
             this.ClientSize = new System.Drawing.Size(1079, 450);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gb_HangSX);
             this.Name = "Hang";
             this.Text = "Hang";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gb_HangSX.ResumeLayout(false);
+            this.gb_HangSX.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_DSHSX)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -214,7 +224,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gb_HangSX;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btExitDT;
@@ -225,9 +235,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_MaHang;
+        private System.Windows.Forms.DataGridView dtgv_DSHSX;
+        private System.Windows.Forms.TextBox txt_DiaChi;
+        private System.Windows.Forms.TextBox txt_TenHang;
     }
 }
