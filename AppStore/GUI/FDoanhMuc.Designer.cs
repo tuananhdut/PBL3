@@ -43,7 +43,6 @@
             this.btSave_DT = new System.Windows.Forms.Button();
             this.btAdd_DT = new System.Windows.Forms.Button();
             this.dtgvProduct_DT = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gb_TTDT = new System.Windows.Forms.GroupBox();
             this.txtProductName_DT = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -190,7 +189,6 @@
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.dtgvProduct_DT);
-            this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.gb_TTDT);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -296,15 +294,6 @@
             this.dtgvProduct_DT.Size = new System.Drawing.Size(1134, 181);
             this.dtgvProduct_DT.TabIndex = 3;
             this.dtgvProduct_DT.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtgvProduct_DT_DataBindingComplete);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(721, 16);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(428, 272);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "HÌnh Ảnh";
             // 
             // gb_TTDT
             // 
@@ -1063,7 +1052,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dtgvProduct_DT;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox gb_TTDT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;

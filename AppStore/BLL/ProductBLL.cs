@@ -53,18 +53,43 @@ namespace BLL
         {
             return ProductDAL.Intance.Indanhsach();
         }
-        //public List <Product> TimKiemTheoGiaBLL(int gia1, int gia2)
-        //{
-        //    return ProductDAL.Intance.TimKiemTheoGia(gia1, gia2);
-        //}
-        //public List<Product> TimKiemTheoTLBLL(int ID)
-        //{
-        //    return ProductDAL.Intance.TimKiemTheoMaTL(ID);
-        //}
-        //public List<Product> TimKiemTheoHangBLL(int ID)
-        //{
-        //    return ProductDAL.Intance.TimKiemTheoMaHang(ID);
-        //}
+        public List<Product> TimKiem(string TenDT, string MaDT, string GiaMax, string GiaMin, string MaHang, string MaTL)
+
+        {
+            List<Product> result = ProductDAL.Intance.getALLProduct();
+            if (TenDT != "")
+            {
+                result = result.Where(p => p.ProductName == TenDT).ToList();
+            }
+            if (MaDT != "")
+            {
+                int IDDT = Convert.ToInt32(MaDT);
+                result = result.Where(p => p.ProductID == IDDT).ToList();
+
+            }
+            if (MaTL != "")
+            {
+                int IDTL = Convert.ToInt32(MaTL);
+                result = result.Where(p => p.CategoryID == IDTL).ToList();
+
+            }
+            if (MaHang != "")
+            {
+                int IDH = Convert.ToInt32(MaHang);
+                result = result.Where(p => p.ManufacturerID == IDH).ToList();
+            }
+            if (Convert.ToInt32(GiaMin) >= 0)
+            {
+                result = result.Where(p => p.SalePrice >= Convert.ToInt32(GiaMin)).ToList();
+            }
+            if (GiaMax != "")
+            {
+                int GiaMaxDT = Convert.ToInt32(GiaMax);
+                int GiaMinDT = Convert.ToInt32(GiaMin);
+                result = result.Where(p => p.SalePrice >= GiaMinDT && p.SalePrice <= GiaMaxDT).ToList();
+            }
+            return result;
+        }
 
     }
 }

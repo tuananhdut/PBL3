@@ -33,6 +33,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dtgv_DSTKDT = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtGiaMax = new System.Windows.Forms.TextBox();
+            this.txtGiaMin = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.but_Search = new System.Windows.Forms.Button();
             this.but_resert = new System.Windows.Forms.Button();
             this.cbbMaHang = new System.Windows.Forms.ComboBox();
@@ -106,10 +110,6 @@
             this.tbEmployssID = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.txtGiaMin = new System.Windows.Forms.TextBox();
-            this.txtGiaMax = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_DSTKDT)).BeginInit();
@@ -199,6 +199,40 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Tìm Kiếm";
             // 
+            // txtGiaMax
+            // 
+            this.txtGiaMax.Location = new System.Drawing.Point(189, 212);
+            this.txtGiaMax.Name = "txtGiaMax";
+            this.txtGiaMax.Size = new System.Drawing.Size(220, 27);
+            this.txtGiaMax.TabIndex = 27;
+            // 
+            // txtGiaMin
+            // 
+            this.txtGiaMin.Location = new System.Drawing.Point(189, 152);
+            this.txtGiaMin.Name = "txtGiaMin";
+            this.txtGiaMin.Size = new System.Drawing.Size(220, 27);
+            this.txtGiaMin.TabIndex = 26;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label29.Location = new System.Drawing.Point(28, 217);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(86, 17);
+            this.label29.TabIndex = 25;
+            this.label29.Text = "Mức giá max";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(28, 157);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 17);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Mức giá min";
+            // 
             // but_Search
             // 
             this.but_Search.Location = new System.Drawing.Point(933, 184);
@@ -226,6 +260,7 @@
             this.cbbMaHang.Name = "cbbMaHang";
             this.cbbMaHang.Size = new System.Drawing.Size(220, 28);
             this.cbbMaHang.TabIndex = 12;
+            this.cbbMaHang.SelectedIndexChanged += new System.EventHandler(this.cbbMaHang_SelectedIndexChanged);
             // 
             // cbbMaTL
             // 
@@ -234,6 +269,7 @@
             this.cbbMaTL.Name = "cbbMaTL";
             this.cbbMaTL.Size = new System.Drawing.Size(220, 28);
             this.cbbMaTL.TabIndex = 11;
+            this.cbbMaTL.SelectedIndexChanged += new System.EventHandler(this.cbbMaTL_SelectedIndexChanged);
             // 
             // txtTenHang
             // 
@@ -311,9 +347,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label2.Location = new System.Drawing.Point(26, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 17);
+            this.label2.Size = new System.Drawing.Size(99, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Tên ĐiệnThoại";
+            this.label2.Text = "Tên sản phẩm";
             // 
             // label1
             // 
@@ -321,9 +357,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label1.Location = new System.Drawing.Point(28, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 17);
+            this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Mã Điện Thoại";
+            this.label1.Text = "Mã sản phẩm";
             // 
             // tabPage2
             // 
@@ -910,40 +946,6 @@
             this.label28.Size = new System.Drawing.Size(97, 17);
             this.label28.TabIndex = 0;
             this.label28.Text = "Mã Nhân Viên";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(28, 157);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Mức giá min";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label29.Location = new System.Drawing.Point(28, 217);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(86, 17);
-            this.label29.TabIndex = 25;
-            this.label29.Text = "Mức giá max";
-            // 
-            // txtGiaMin
-            // 
-            this.txtGiaMin.Location = new System.Drawing.Point(189, 152);
-            this.txtGiaMin.Name = "txtGiaMin";
-            this.txtGiaMin.Size = new System.Drawing.Size(220, 27);
-            this.txtGiaMin.TabIndex = 26;
-            // 
-            // txtGiaMax
-            // 
-            this.txtGiaMax.Location = new System.Drawing.Point(189, 212);
-            this.txtGiaMax.Name = "txtGiaMax";
-            this.txtGiaMax.Size = new System.Drawing.Size(220, 27);
-            this.txtGiaMax.TabIndex = 27;
             // 
             // FTimKiem
             // 
