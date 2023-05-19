@@ -21,6 +21,7 @@ namespace GiaoDien
         public FTimKiem()
         {
             InitializeComponent();
+            SetCBB_TK();
             txtGiaMin.Text = "0";
         }
         private void btSearchCustomer_Click(object sender, EventArgs e)
