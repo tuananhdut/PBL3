@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -26,13 +27,21 @@ namespace BLL
         {
         }
 
-        // add  invoiceDetail
-        public void addOrUpdateInvoiceDetail(InvoiceDetail invoiceDetail) => InvoiceDetailDAL.Intance.addOrUpdateInvoiceDetail(invoiceDetail);
+        public bool AddInvoiceDetail(InvoiceDetail ct) => InvoiceDetailDAL.Intance.addInvoiceDetail(ct);
 
         //
-        public dynamic getListInvoiceDetailByInvoiceID(int id)
+        public List<InvoiceDetail> getListInvoiceDetailByInvoiceID(int id)
         {
             return InvoiceDetailDAL.Intance.getListInvoiceDetailByInvoiceID(id);
+        }
+        public InvoiceDetail getInvoiceFromProduct(int id)
+        {
+            return InvoiceDetailDAL.Intance.getInvoiceDetailByProduct(id);
+        }
+
+        public List<InvoiceDetail> getAllInvoiceDetail()
+        {
+            return InvoiceDetailDAL.Intance.GetInvoiceDetails();
         }
 
 

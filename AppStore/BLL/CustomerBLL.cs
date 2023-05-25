@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -76,6 +77,10 @@ namespace BLL
                 li = li.Where(p => p.PhoneNumber == phone).ToList();
             }
             return li;
+        }
+        public Customer getCustomerByPhone(string phone)
+        {
+            return CustomerDAL.Intance.GetCustomerByPhoneAndNameAndAddred(phone);
         }
     }
 }
