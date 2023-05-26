@@ -56,7 +56,7 @@ namespace GiaoDien
                 for (DateTime i = date.AddDays(-6); i <= date; i = i.AddDays(1))
                 {
                     string s = i.ToString("dd/MM/yyyy");
-                 //   chart1.Series[0].Points.AddXY(s, InvoiceBLL.Intance.revenueByDate(i));
+                    chart1.Series[0].Points.AddXY(s, InvoiceBLL.Intance.revenueByDate(i));
                 }
             }
             else
@@ -66,7 +66,7 @@ namespace GiaoDien
                 for (DateTime i = date.AddDays(-27); i <= date; i = i.AddDays(1))
                 {
                     string s = i.ToString("dd/MM/yyyy");
-                   // chart1.Series[0].Points.AddXY(s, InvoiceBLL.Intance.revenueByDate(i));
+                    chart1.Series[0].Points.AddXY(s, InvoiceBLL.Intance.revenueByDate(i));
                 }
             }
             else
@@ -76,7 +76,7 @@ namespace GiaoDien
                 for (DateTime i = date.AddDays(-59); i <= date; i = i.AddDays(1))
                 {
                     string s = i.ToString("dd/MM/yyyy");
-                   // chart1.Series[0].Points.AddXY(s, InvoiceBLL.Intance.revenueByDate(i));
+                    chart1.Series[0].Points.AddXY(s, InvoiceBLL.Intance.revenueByDate(i));
                 }
             }
         }

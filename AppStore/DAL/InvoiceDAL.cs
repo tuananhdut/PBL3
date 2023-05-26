@@ -51,6 +51,11 @@ namespace DAL
         {
             return db.Invoices.ToList();
         }
+        public List<Invoice> getInvoiceByDate(DateTime date)
+        {
+            return db.Invoices
+                .Where(p => p.InvoiceDate.Day == date.Day && p.InvoiceDate.Month == date.Month && p.InvoiceDate.Year == date.Year).ToList();
+        }
 
     }
 }
