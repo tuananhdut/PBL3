@@ -24,7 +24,7 @@ namespace DAL
         [ForeignKey("Customer")]
         public int CustomerID { get; set; }
         public System.DateTime InvoiceDate { get; set; }
-        public int TotalAmount { get; set; }
+        public double TotalAmount { get; set; }
         public virtual Account Account { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual ICollection<InvoiceDetail> InvoiceDetails { get; set; }

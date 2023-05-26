@@ -38,6 +38,15 @@ namespace BLL
         {
             return InvoiceDAL.Intance.getAllInvoices();
         }
+        public double revenueByDate(DateTime date)
+        {
+            double x = 0;
+            foreach (var item in InvoiceDAL.Intance.getInvoiceByDate(date))
+            {
+                x += item.TotalAmount;
+            }
+            return x;
+        }
 
     }
 }
