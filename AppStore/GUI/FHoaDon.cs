@@ -19,10 +19,25 @@ namespace GiaoDien
         {
             InitializeComponent();
             this.acc = acc;
+            dtgvInvoiceDetail.Columns.Add("column1", "tên sản phẩm");
+            dtgvInvoiceDetail.Columns.Add("column2", "địa chỉ");
+            dtgvInvoiceDetail.Columns.Add("column3", "tên khách hàng");
+            dtgvInvoiceDetail.Columns.Add("column4", "số lượng");
+            dtgvInvoiceDetail.Columns.Add("column5", "giá bán");
+            dtgvInvoiceDetail.Columns.Add("column6", "tổng tiền");
+            dtgvInvoiceDetail.Columns.Add("column6", "di  động");
+            dtgvInvoiceDetail.Columns.Add("column6", "mã  chi tiết hóa đơn");
             setCBBProuctID();
             setCBBCustomerID();
+            setCBBInvoiceId();
         }
-        
+        private void setCBBInvoiceId()
+        {
+            cbbInvoiceID.Items.AddRange(InvoiceBLL.Intance.getAllInvoice().ToArray());
+            cbbInvoiceID.DisplayMember = "InvoiceID";
+
+
+        }
         private void setCBBCustomerID()
         {
             //CustomerBLL bll = new CustomerBLL();
