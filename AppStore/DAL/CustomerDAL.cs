@@ -52,5 +52,11 @@ namespace DAL
         {
             return db.Customers.Where(p => p.CustomerID == id && p.Flag == true).Select(e => e.Invoices.Count).FirstOrDefault();
         }
+        public Customer GetCustomerByPhoneAndNameAndAddred
+           (string Phone)
+        {
+            return db.Customers
+                .FirstOrDefault(p => p.PhoneNumber == Phone);
+        }
     }
 }

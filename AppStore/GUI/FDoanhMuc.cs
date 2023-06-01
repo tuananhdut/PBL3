@@ -271,30 +271,35 @@ namespace GiaoDien
                 MessageBox.Show("vui lòng nhập đầy đủ thông tin");
             } else
             {
-                Customer kh = new Customer()
+                DialogResult result = MessageBox.Show("Bạn có muốn lưu khách hàng này không?", "Xác nhận", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
                 {
-                    FullName = tbCustomerName_KH.Text,
-                    Address = tbAddress_KH.Text,
-                    PhoneNumber = tbSDT_KH.Text
-                };
-                if (tbCustomerID_KH.Text != "") kh.CustomerID = Convert.ToInt32(tbCustomerID_KH.Text);
-                CustomerBLL.Intance.addAndUpdateCustomer(kh);
-                MessageBox.Show("thêm hoặc sửa thành công","Thông Báo");
-                tbCustomerID_KH.Text = kh.CustomerID.ToString();
+                    Customer kh = new Customer()
+                    {
+                        FullName = tbCustomerName_KH.Text,
+                        Address = tbAddress_KH.Text,
+                        PhoneNumber = tbSDT_KH.Text
+                    };
+                    if (tbCustomerID_KH.Text != "") kh.CustomerID = Convert.ToInt32(tbCustomerID_KH.Text);
+                    CustomerBLL.Intance.addAndUpdateCustomer(kh);
+                    tbCustomerID_KH.Text = kh.CustomerID.ToString();
 
-                //mở các hành động khác
-                btEdit_Kh.Enabled = true;
-                btDelete_KH.Enabled = true;
-                btAddKH.Enabled = true;
+                    //mở các hành động khác
+                    btEdit_Kh.Enabled = true;
+                    btDelete_KH.Enabled = true;
+                    btAddKH.Enabled = true;
 
-                //cập nhật lại danh sách
-                loangDTGVCustomer();
+                    //cập nhật lại danh sách
+                    loangDTGVCustomer();
 
-                // khóa hành động lưu 
-                btSave_Kh.Enabled = false;
+                    // khóa hành động lưu 
+                    btSave_Kh.Enabled = false;
 
-                //khóa các tb để nhập
-                hideCustomerInformation();
+                    //khóa các tb để nhập
+                    hideCustomerInformation();
+                    MessageBox.Show("Lưu khách hàng thành công", "Thông Báo");
+                }
+              
             }
         }
         private void btEdit_Kh_Click(object sender, EventArgs e)
@@ -341,8 +346,14 @@ namespace GiaoDien
         {
             if (dtgv_KH.SelectedRows.Count == 1)
             {
-                CustomerBLL.Intance.removeCustomer(Convert.ToInt32(dtgv_KH.SelectedRows[0].Cells[0].Value));
-                loangDTGVCustomer();
+                DialogResult result = MessageBox.Show("Bạn có xóa khách hàng này không?", "Xác nhận", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    CustomerBLL.Intance.removeCustomer(Convert.ToInt32(dtgv_KH.SelectedRows[0].Cells[0].Value));
+                    loangDTGVCustomer();
+                    MessageBox.Show("Xóa khách hàng thành công", "Thông Báo");
+                }
+               
             }
             else
             {
@@ -414,32 +425,38 @@ namespace GiaoDien
             } else
             {
                 try
-                { 
-                    // xử lý 
-                    Account account = new Account();
-                    account.Address = tbAddress_NV.Text;
-                    account.FullName = tbFullname_NV.Text;
-                    account.Username = tbUsenameNV.Text;
-                    account.PhoneNumber = tbPhoneNumber_NV.Text;
-                    if (tbEmployeeID_NV.Text != "")
+                {
+                    DialogResult result = MessageBox.Show("Bạn có muốn lưu nhân viên này không?", "Xác nhận", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
                     {
-                        account.AccountID = Convert.ToInt32(tbEmployeeID_NV.Text);
+                        // xử lý 
+                        Account account = new Account();
+                        account.Address = tbAddress_NV.Text;
+                        account.FullName = tbFullname_NV.Text;
+                        account.Username = tbUsenameNV.Text;
+                        account.PhoneNumber = tbPhoneNumber_NV.Text;
+                        if (tbEmployeeID_NV.Text != "")
+                        {
+                            account.AccountID = Convert.ToInt32(tbEmployeeID_NV.Text);
+                        }
+                        AccountBLL.Intance.addOrUpdateAccount(account);
+                        tbEmployeeID_NV.Text = account.AccountID.ToString();
+                        loangDTGVAccount();
+
+                        // khóa các tb thông tin nhân viên 
+                        lockingEmployeeInformation();
+
+                        //khóa bt save
+                        btSaveNV.Enabled = false;
+
+                        // mở khóa các chức năng khác
+                        btEditNV.Enabled = true;
+                        btDeleteNV.Enabled = true;
+                        btShowNV.Enabled = true;
+                        btAdd_NV.Enabled = true;
+                        MessageBox.Show("Lưu nhân viên thành công", "Thông Báo");
                     }
-                    AccountBLL.Intance.addOrUpdateAccount(account);
-                    tbEmployeeID_NV.Text = account.AccountID.ToString();
-                    loangDTGVAccount();
 
-                    // khóa các tb thông tin nhân viên 
-                    lockingEmployeeInformation();
-
-                    //khóa bt save
-                    btSaveNV.Enabled = false;
-
-                    // mở khóa các chức năng khác
-                    btEditNV.Enabled = true;
-                    btDeleteNV.Enabled = true;
-                    btShowNV.Enabled = true;
-                    btAdd_NV.Enabled = true;
 
                 }
                 catch (ArgumentException ex )
@@ -507,10 +524,15 @@ namespace GiaoDien
         {
             if (dtgv_NV.SelectedRows.Count == 1)
             {
-                DataGridViewRow row = dtgv_NV.SelectedRows[0];
-                int id = Convert.ToInt32(row.Cells[0].Value.ToString());
-                AccountBLL.Intance.removeAccountByID(id);
-                loangDTGVAccount();
+                DialogResult result = MessageBox.Show("Bạn có muốn xóa tài khoản này không?", "Xác nhận", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    DataGridViewRow row = dtgv_NV.SelectedRows[0];
+                    int id = Convert.ToInt32(row.Cells[0].Value.ToString());
+                    AccountBLL.Intance.removeAccountByID(id);
+                    loangDTGVAccount();
+                    MessageBox.Show("Xóa tài khoản thành công", "Thông Báo");
+                }
             }
             else
             {

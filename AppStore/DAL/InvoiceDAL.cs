@@ -29,19 +29,33 @@ namespace DAL
         {
             db = new AppStore();
         }
-
-        // add invoice
-        public void addOrUpdateInvoice(Invoice hd)
+        public bool addInvoice(Invoice hd)
         {
-            db.Invoices.AddOrUpdate(hd);
-            db.SaveChanges();
+            try
+            {
+                db.Invoices.AddOrUpdate(hd);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
-
+        public Invoice getInvoiceById(int id)
+        {
+            Invoice i = db.Invoices.Find(id);
+            return i;
+        }
+        public List<Invoice> getAllInvoices()
+        {
+            return db.Invoices.ToList();
+        }
         public List<Invoice> getInvoiceByDate(DateTime date)
         {
             return db.Invoices
                 .Where(p => p.InvoiceDate.Day == date.Day && p.InvoiceDate.Month == date.Month && p.InvoiceDate.Year == date.Year).ToList();
         }
-     
+
     }
 }

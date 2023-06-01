@@ -70,6 +70,11 @@ namespace DAL
             return db.Products.Where(p => p.Flag == true).Select(p => new { p.ProductID, p.ProductName,p.CostPrice, p.SalePrice, p.Description,p.Quantity ,p.Manufacturer.ManufacturerName, p.Category.CategoryName }).ToList();
 
         }
+        // duc
+        public Product getProductByName(string name)
+        {
+            return db.Products.Where(p => p.ProductName == name).FirstOrDefault();
+        }
 
     }
 }

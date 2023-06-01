@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -28,18 +29,24 @@ namespace BLL
         }
 
         // add invoice
-        public void addOrUpdateInvoice(Invoice hd) => InvoiceDAL.Intance.addOrUpdateInvoice(hd);
-
-        // trả về doanh thu của ngày
-        public int revenueByDate(DateTime date)
+        public bool addInvoice(Invoice hd) => InvoiceDAL.Intance.addInvoice(hd);
+        public Invoice getInvoiceById(int id)
         {
-            int x = 0;
+            return InvoiceDAL.Intance.getInvoiceById(id);
+        }
+        public List<Invoice> getAllInvoice()
+        {
+            return InvoiceDAL.Intance.getAllInvoices();
+        }
+        public double revenueByDate(DateTime date)
+        {
+            double x = 0;
             foreach (var item in InvoiceDAL.Intance.getInvoiceByDate(date))
             {
-                x += item.TotalAmount;    
+                x += item.TotalAmount;
             }
             return x;
         }
-       
+
     }
 }

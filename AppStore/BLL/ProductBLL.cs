@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
+
 
 namespace BLL
 {
@@ -90,6 +90,10 @@ namespace BLL
                 result = result.Where(p => p.SalePrice >= GiaMinDT && p.SalePrice <= GiaMaxDT).ToList();
             }
             return result;
+        }
+        public Product getProdcutByName(string name)
+        {
+            return ProductDAL.Intance.getProductByName(name);
         }
 
     }
