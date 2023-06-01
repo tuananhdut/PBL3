@@ -302,6 +302,17 @@ namespace GiaoDien
         {
             Export(@"D:\\pbl_3\\PBL3_appstore\\xuatfile.xlsx");
         }
-        
+
+        private void dtgvInvoiceDetail_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indexRow = e.RowIndex;
+            DataGridViewRow row = dtgvInvoiceDetail.Rows[indexRow];
+            tbProductName.Text = row.Cells[0].Value.ToString();
+            tbAddressCustomer.Text = row.Cells[1].Value.ToString();
+            tbCustomerName.Text = row.Cells[2].Value.ToString();
+            tbQuantityProduct.Text = row.Cells[3].Value.ToString();
+            tbSale.Text = row.Cells[4].Value.ToString();
+            tbPhoneNumber.Text = row.Cells[6].Value.ToString();
+        }
     }
 }

@@ -100,9 +100,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(862, 149);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -113,7 +113,7 @@
             this.tbEmployeeID.Enabled = false;
             this.tbEmployeeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmployeeID.Location = new System.Drawing.Point(147, 86);
-            this.tbEmployeeID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmployeeID.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmployeeID.Name = "tbEmployeeID";
             this.tbEmployeeID.Size = new System.Drawing.Size(225, 23);
             this.tbEmployeeID.TabIndex = 16;
@@ -123,7 +123,7 @@
             this.cbbCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.cbbCustomerID.FormattingEnabled = true;
             this.cbbCustomerID.Location = new System.Drawing.Point(598, 21);
-            this.cbbCustomerID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbCustomerID.Margin = new System.Windows.Forms.Padding(2);
             this.cbbCustomerID.Name = "cbbCustomerID";
             this.cbbCustomerID.Size = new System.Drawing.Size(243, 25);
             this.cbbCustomerID.TabIndex = 15;
@@ -133,7 +133,7 @@
             // 
             this.tbPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbPhoneNumber.Location = new System.Drawing.Point(598, 116);
-            this.tbPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbPhoneNumber.Name = "tbPhoneNumber";
             this.tbPhoneNumber.Size = new System.Drawing.Size(243, 23);
             this.tbPhoneNumber.TabIndex = 13;
@@ -142,7 +142,7 @@
             // 
             this.tbAddressCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbAddressCustomer.Location = new System.Drawing.Point(598, 84);
-            this.tbAddressCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAddressCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.tbAddressCustomer.Name = "tbAddressCustomer";
             this.tbAddressCustomer.Size = new System.Drawing.Size(243, 23);
             this.tbAddressCustomer.TabIndex = 12;
@@ -151,7 +151,7 @@
             // 
             this.tbCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbCustomerName.Location = new System.Drawing.Point(598, 51);
-            this.tbCustomerName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCustomerName.Margin = new System.Windows.Forms.Padding(2);
             this.tbCustomerName.Name = "tbCustomerName";
             this.tbCustomerName.Size = new System.Drawing.Size(243, 23);
             this.tbCustomerName.TabIndex = 11;
@@ -161,7 +161,7 @@
             this.tbEmployeeName.Enabled = false;
             this.tbEmployeeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbEmployeeName.Location = new System.Drawing.Point(147, 116);
-            this.tbEmployeeName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmployeeName.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmployeeName.Name = "tbEmployeeName";
             this.tbEmployeeName.Size = new System.Drawing.Size(225, 23);
             this.tbEmployeeName.TabIndex = 10;
@@ -171,7 +171,7 @@
             this.tbInvoiceDate.Enabled = false;
             this.tbInvoiceDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbInvoiceDate.Location = new System.Drawing.Point(147, 51);
-            this.tbInvoiceDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbInvoiceDate.Margin = new System.Windows.Forms.Padding(2);
             this.tbInvoiceDate.Name = "tbInvoiceDate";
             this.tbInvoiceDate.Size = new System.Drawing.Size(225, 23);
             this.tbInvoiceDate.TabIndex = 9;
@@ -181,7 +181,7 @@
             this.tbInvoiceID.Enabled = false;
             this.tbInvoiceID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbInvoiceID.Location = new System.Drawing.Point(147, 22);
-            this.tbInvoiceID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbInvoiceID.Margin = new System.Windows.Forms.Padding(2);
             this.tbInvoiceID.Name = "tbInvoiceID";
             this.tbInvoiceID.Size = new System.Drawing.Size(225, 23);
             this.tbInvoiceID.TabIndex = 8;
@@ -293,9 +293,9 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(16, 168);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(862, 258);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -306,7 +306,7 @@
             this.tbTotalAmount.Enabled = false;
             this.tbTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbTotalAmount.Location = new System.Drawing.Point(731, 232);
-            this.tbTotalAmount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTotalAmount.Margin = new System.Windows.Forms.Padding(2);
             this.tbTotalAmount.Name = "tbTotalAmount";
             this.tbTotalAmount.Size = new System.Drawing.Size(110, 23);
             this.tbTotalAmount.TabIndex = 30;
@@ -331,12 +331,14 @@
             this.Column3,
             this.Column4});
             this.dtgvInvoiceDetail.Location = new System.Drawing.Point(24, 95);
-            this.dtgvInvoiceDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvInvoiceDetail.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvInvoiceDetail.Name = "dtgvInvoiceDetail";
             this.dtgvInvoiceDetail.RowHeadersWidth = 51;
             this.dtgvInvoiceDetail.RowTemplate.Height = 24;
             this.dtgvInvoiceDetail.Size = new System.Drawing.Size(817, 122);
             this.dtgvInvoiceDetail.TabIndex = 28;
+            this.dtgvInvoiceDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvInvoiceDetail_CellClick);
+            
             // 
             // Column1
             // 
@@ -371,7 +373,7 @@
             this.textBox11.Enabled = false;
             this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.textBox11.Location = new System.Drawing.Point(690, 58);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(152, 23);
             this.textBox11.TabIndex = 27;
@@ -381,7 +383,7 @@
             this.tbSalePrice.Enabled = false;
             this.tbSalePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbSalePrice.Location = new System.Drawing.Point(690, 22);
-            this.tbSalePrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSalePrice.Margin = new System.Windows.Forms.Padding(2);
             this.tbSalePrice.Name = "tbSalePrice";
             this.tbSalePrice.Size = new System.Drawing.Size(152, 23);
             this.tbSalePrice.TabIndex = 26;
@@ -390,7 +392,7 @@
             // 
             this.tbSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbSale.Location = new System.Drawing.Point(415, 58);
-            this.tbSale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSale.Margin = new System.Windows.Forms.Padding(2);
             this.tbSale.Name = "tbSale";
             this.tbSale.Size = new System.Drawing.Size(152, 23);
             this.tbSale.TabIndex = 25;
@@ -399,7 +401,7 @@
             // 
             this.tbQuantityProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbQuantityProduct.Location = new System.Drawing.Point(415, 21);
-            this.tbQuantityProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbQuantityProduct.Margin = new System.Windows.Forms.Padding(2);
             this.tbQuantityProduct.Name = "tbQuantityProduct";
             this.tbQuantityProduct.Size = new System.Drawing.Size(152, 23);
             this.tbQuantityProduct.TabIndex = 24;
@@ -409,7 +411,7 @@
             this.tbProductName.Enabled = false;
             this.tbProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbProductName.Location = new System.Drawing.Point(124, 58);
-            this.tbProductName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbProductName.Margin = new System.Windows.Forms.Padding(2);
             this.tbProductName.Name = "tbProductName";
             this.tbProductName.Size = new System.Drawing.Size(152, 23);
             this.tbProductName.TabIndex = 23;
@@ -419,7 +421,7 @@
             this.cbbProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.cbbProductID.FormattingEnabled = true;
             this.cbbProductID.Location = new System.Drawing.Point(124, 22);
-            this.cbbProductID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbProductID.Margin = new System.Windows.Forms.Padding(2);
             this.cbbProductID.Name = "cbbProductID";
             this.cbbProductID.Size = new System.Drawing.Size(152, 25);
             this.cbbProductID.TabIndex = 22;
@@ -502,9 +504,9 @@
             this.groupBox7.Controls.Add(this.btSaveInvoice);
             this.groupBox7.Controls.Add(this.btAddInvoice);
             this.groupBox7.Location = new System.Drawing.Point(16, 431);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox7.Size = new System.Drawing.Size(862, 88);
             this.groupBox7.TabIndex = 8;
             this.groupBox7.TabStop = false;
@@ -514,7 +516,7 @@
             // 
             this.cbbInvoiceID.FormattingEnabled = true;
             this.cbbInvoiceID.Location = new System.Drawing.Point(625, 48);
-            this.cbbInvoiceID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbInvoiceID.Margin = new System.Windows.Forms.Padding(2);
             this.cbbInvoiceID.Name = "cbbInvoiceID";
             this.cbbInvoiceID.Size = new System.Drawing.Size(123, 21);
             this.cbbInvoiceID.TabIndex = 7;
@@ -533,7 +535,7 @@
             // btChecking
             // 
             this.btChecking.Location = new System.Drawing.Point(763, 27);
-            this.btChecking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btChecking.Margin = new System.Windows.Forms.Padding(2);
             this.btChecking.Name = "btChecking";
             this.btChecking.Size = new System.Drawing.Size(88, 41);
             this.btChecking.TabIndex = 5;
@@ -543,7 +545,7 @@
             // btPrintInvoice
             // 
             this.btPrintInvoice.Location = new System.Drawing.Point(415, 27);
-            this.btPrintInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btPrintInvoice.Margin = new System.Windows.Forms.Padding(2);
             this.btPrintInvoice.Name = "btPrintInvoice";
             this.btPrintInvoice.Size = new System.Drawing.Size(88, 41);
             this.btPrintInvoice.TabIndex = 4;
@@ -554,7 +556,7 @@
             // btExitInvoice
             // 
             this.btExitInvoice.Location = new System.Drawing.Point(315, 27);
-            this.btExitInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btExitInvoice.Margin = new System.Windows.Forms.Padding(2);
             this.btExitInvoice.Name = "btExitInvoice";
             this.btExitInvoice.Size = new System.Drawing.Size(88, 41);
             this.btExitInvoice.TabIndex = 3;
@@ -565,7 +567,7 @@
             // btUpdateInvoice
             // 
             this.btUpdateInvoice.Location = new System.Drawing.Point(215, 27);
-            this.btUpdateInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btUpdateInvoice.Margin = new System.Windows.Forms.Padding(2);
             this.btUpdateInvoice.Name = "btUpdateInvoice";
             this.btUpdateInvoice.Size = new System.Drawing.Size(88, 41);
             this.btUpdateInvoice.TabIndex = 2;
@@ -576,7 +578,7 @@
             // btSaveInvoice
             // 
             this.btSaveInvoice.Location = new System.Drawing.Point(112, 27);
-            this.btSaveInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSaveInvoice.Margin = new System.Windows.Forms.Padding(2);
             this.btSaveInvoice.Name = "btSaveInvoice";
             this.btSaveInvoice.Size = new System.Drawing.Size(88, 41);
             this.btSaveInvoice.TabIndex = 1;
@@ -587,7 +589,7 @@
             // btAddInvoice
             // 
             this.btAddInvoice.Location = new System.Drawing.Point(8, 27);
-            this.btAddInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btAddInvoice.Margin = new System.Windows.Forms.Padding(2);
             this.btAddInvoice.Name = "btAddInvoice";
             this.btAddInvoice.Size = new System.Drawing.Size(88, 41);
             this.btAddInvoice.TabIndex = 0;
@@ -603,7 +605,7 @@
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FHoaDon";
             this.Text = "FHoaDon";
             this.groupBox1.ResumeLayout(false);
