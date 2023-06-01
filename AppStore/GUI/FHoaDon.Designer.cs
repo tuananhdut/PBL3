@@ -49,10 +49,6 @@
             this.tbTotalAmount = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dtgvInvoiceDetail = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.tbSalePrice = new System.Windows.Forms.TextBox();
             this.tbSale = new System.Windows.Forms.TextBox();
@@ -325,11 +321,6 @@
             // dtgvInvoiceDetail
             // 
             this.dtgvInvoiceDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvInvoiceDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
             this.dtgvInvoiceDetail.Location = new System.Drawing.Point(24, 95);
             this.dtgvInvoiceDetail.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvInvoiceDetail.Name = "dtgvInvoiceDetail";
@@ -338,35 +329,7 @@
             this.dtgvInvoiceDetail.Size = new System.Drawing.Size(817, 122);
             this.dtgvInvoiceDetail.TabIndex = 28;
             this.dtgvInvoiceDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvInvoiceDetail_CellClick);
-            
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Tên điện thoại";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Giá";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "số lượng";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 180;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Giảm Giá";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 180;
+            this.dtgvInvoiceDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvInvoiceDetail_CellContentClick);
             // 
             // textBox11
             // 
@@ -663,9 +626,5 @@
         private System.Windows.Forms.ComboBox cbbInvoiceID;
         private System.Windows.Forms.TextBox tbEmployeeID;
         private System.Windows.Forms.ComboBox cbbProductID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

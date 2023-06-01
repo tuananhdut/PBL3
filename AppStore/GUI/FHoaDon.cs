@@ -21,11 +21,29 @@ namespace GiaoDien
         {
             InitializeComponent();
             this.acc = acc;
+            dtgvInvoiceDetail.Columns.Add("column1", "tên sản phẩm");
+            dtgvInvoiceDetail.Columns.Add("column2", "địa chỉ");
+            dtgvInvoiceDetail.Columns.Add("column3", "tên khách hàng");
+            dtgvInvoiceDetail.Columns.Add("column4", "số lượng");
+            dtgvInvoiceDetail.Columns.Add("column5", "giá bán");
+            dtgvInvoiceDetail.Columns.Add("column6", "tổng tiền");
+            dtgvInvoiceDetail.Columns.Add("column7", "di  động");
+            dtgvInvoiceDetail.Columns.Add("column8", "mã  chi tiết hóa đơn");
             setCBBProuctID();
             setCBBCustomerID();
             setCBBInvoiceId();
         }
-        
+        public void addColumnToDtg()
+        {
+            dtgvInvoiceDetail.Columns.Add("column1", "tên sản phẩm");
+            dtgvInvoiceDetail.Columns.Add("column2", "địa chỉ");
+            dtgvInvoiceDetail.Columns.Add("column3", "tên khách hàng");
+            dtgvInvoiceDetail.Columns.Add("column4", "số lượng");
+            dtgvInvoiceDetail.Columns.Add("column5", "giá bán");
+            dtgvInvoiceDetail.Columns.Add("column6", "tổng tiền");
+            dtgvInvoiceDetail.Columns.Add("column6", "di  động");
+            dtgvInvoiceDetail.Columns.Add("column6", "mã  chi tiết hóa đơn");
+        }
         private void setCBBCustomerID()
         {
             //CustomerBLL bll = new CustomerBLL();
@@ -96,7 +114,7 @@ namespace GiaoDien
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.Commercial;
             using (ExcelPackage pck = new ExcelPackage())
             {
-                pck.Workbook.Worksheets.Add("InvoideDetail").Cells[1, 1].LoadFromCollection(InvoiceDetailBLL.Intance.getAllInvoiceDetail(), true);
+                pck.Workbook.Worksheets.Add("InvoideDetail").Cells[1, 1].LoadFromCollection(InvoiceBLL.Intance.getAllInvoice(), true);
                 pck.SaveAs(new FileInfo(file));
             }
         }
@@ -143,6 +161,7 @@ namespace GiaoDien
             Object> _list = new List<Object>();
         private void btSaveInvoice_Click(object sender, EventArgs e)
         {
+            // tạo khách hàng mới hoặc sử dụng lại khách hàng cũ
             if (cbbCustomerID.Text == "")
             {
                 if (tbAddressCustomer.Text == "" || tbCustomerName.Text == "" || tbPhoneNumber.Text == "")
@@ -159,7 +178,7 @@ namespace GiaoDien
                         PhoneNumber = tbPhoneNumber.Text
                     };
                     //add customer
-                    // CustomerBLL bll = new CustomerBLL();
+                    
                     CustomerBLL.Intance.addAndUpdateCustomer(kh);
                     // gán customerId Cho cbb CustomerID
                     cbbCustomerID.Text = kh.CustomerID.ToString();
@@ -176,7 +195,7 @@ namespace GiaoDien
                     TotalAmount = 0
                 };
 
-               // InvoiceBLL bLL = new InvoiceBLL();
+              
                 InvoiceBLL.Intance.addInvoice(HD);
                 tbInvoiceID.Text = HD.InvoiceID.ToString();
             }
@@ -200,7 +219,7 @@ namespace GiaoDien
 
 
                 MessageBox.Show("ok");
-                // InvoiceDetailBLL bLL1 = new InvoiceDetailBLL();
+                //  InvoiceDetailBLL bLL1 = new InvoiceDetailBLL();
                 InvoiceDetailBLL.Intance.AddInvoiceDetail(CTHD);
                 double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
                 price += tinhtien;
@@ -236,12 +255,7 @@ namespace GiaoDien
         private void loangDTGVInvoiceDetail(int invoiceID)
         {
             dtgvInvoiceDetail.DataSource = InvoiceDetailBLL.Intance.getListInvoiceDetailByInvoiceID(invoiceID);
-            //dtgvInvoiceDetail.Rows.Clear();
-
-            /*    foreach (InvoiceDetail item in InvoiceDetailBLL.Intance.getListInvoiceDetailByInvoiceID(invoiceID))
-                {
-                    dtgvInvoiceDetail.Rows.Add( item.Product.ProductName, item.Quantity, item.SalePrice);
-                }*/
+           
         }
 
         System.Data.DataTable table = new System.Data.DataTable();
@@ -300,7 +314,7 @@ namespace GiaoDien
 
         private void btPrintInvoice_Click(object sender, EventArgs e)
         {
-            Export(@"D:\\pbl_3\\PBL3_appstore\\xuatfile.xlsx");
+            Export(@"D:\\pbl_3\\PBL3_appstore\\xuatfile2.xlsx");
         }
 
         private void dtgvInvoiceDetail_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -313,6 +327,11 @@ namespace GiaoDien
             tbQuantityProduct.Text = row.Cells[3].Value.ToString();
             tbSale.Text = row.Cells[4].Value.ToString();
             tbPhoneNumber.Text = row.Cells[6].Value.ToString();
+        }
+
+        private void dtgvInvoiceDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
