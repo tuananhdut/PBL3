@@ -162,11 +162,13 @@
             // 
             // dtgv_DSTKDT
             // 
+            this.dtgv_DSTKDT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_DSTKDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_DSTKDT.Location = new System.Drawing.Point(18, 345);
             this.dtgv_DSTKDT.Name = "dtgv_DSTKDT";
             this.dtgv_DSTKDT.RowHeadersWidth = 51;
             this.dtgv_DSTKDT.RowTemplate.Height = 24;
+            this.dtgv_DSTKDT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv_DSTKDT.Size = new System.Drawing.Size(1146, 229);
             this.dtgv_DSTKDT.TabIndex = 1;
             this.dtgv_DSTKDT.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
@@ -386,6 +388,7 @@
             // 
             // dtgvCustomer
             // 
+            this.dtgvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -405,28 +408,24 @@
             this.Column1.HeaderText = "Mã Khách Hàng";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 150;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Tên Khách Hàng";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 170;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Số Điện Thoại";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 170;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Địa Chỉ";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 315;
             // 
             // groupBox2
             // 
@@ -794,6 +793,7 @@
             // 
             // dtgvEmployss
             // 
+            this.dtgvEmployss.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvEmployss.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvEmployss.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column5,
@@ -812,28 +812,24 @@
             this.Column5.HeaderText = "Mã Nhân Viên";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 200;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Tên Nhân Viên ";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
-            this.Column6.Width = 200;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Số Điện Thoại";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
-            this.Column7.Width = 200;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "Địa Chỉ";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
-            this.Column8.Width = 205;
             // 
             // groupBox4
             // 
