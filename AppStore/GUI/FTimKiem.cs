@@ -106,7 +106,7 @@ namespace GiaoDien
             dtgv_DSTKDT.Columns[5].HeaderText = "Hãng";
             dtgv_DSTKDT.Columns[6].HeaderText = "Thể loại";
         }
-
+        // Button Resert
         private void but_resert_Click(object sender, EventArgs e)
         {
             SetThongTinTK();
@@ -134,7 +134,7 @@ namespace GiaoDien
         private void but_Search_Click(object sender, EventArgs e)
         {
             List<Product> result = new List<Product>();
-            if (txtMaDT.Text == "" && txtTenDT.Text == "" && txtGiaMin.Text == "" && txtGiaMax.Text == "" && txtTenTL.Text == "" && txtTenHang.Text == "")
+            if (txtMaDT.Text == "" && txtTenDT.Text == "" && txtGiaMax.Text == "" && txtTenTL.Text == "" && txtTenHang.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập thông tin tìm kiếm ");
             }
@@ -147,7 +147,7 @@ namespace GiaoDien
                 string MaHang = cbbMaHang.Text.ToString();
                 string MaTL = cbbMaTL.Text.ToString();
                 result = ProductBLL.Intance.TimKiem(TenDT, MaDT, GiaMax, GiaMin, MaHang, MaTL);
-                dtgv_DSTKDT.DataSource = result.Select(p => new { p.ProductID, p.ProductName, p.CostPrice, p.Description, p.Quantity, p.Manufacturer.ManufacturerName, p.Category.CategoryName }).ToList();
+                dtgv_DSTKDT.DataSource = result.Select(p => new { p.ProductID, p.ProductName, p.SalePrice, p.Description, p.Quantity, p.Manufacturer.ManufacturerName, p.Category.CategoryName }).ToList();
             }
         }
         private void SetCBB_TK()
