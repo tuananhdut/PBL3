@@ -78,6 +78,12 @@ namespace DAL
             return db.InvoiceDetails.ToList();
 
         }
+        public void DeleteInvoiceDetail(int id)
+        {
+            var p = db.InvoiceDetails.Find(id);
+            db.InvoiceDetails.Remove(p);
+            db.SaveChanges();
+        }
 
         public void Save(InvoiceDetail i)
         {

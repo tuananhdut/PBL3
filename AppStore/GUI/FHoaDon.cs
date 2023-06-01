@@ -1,10 +1,12 @@
 ﻿using BLL;
 using DAL;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,7 @@ namespace GiaoDien
             this.acc = acc;
             setCBBProuctID();
             setCBBCustomerID();
+            setCBBInvoiceId();
         }
         
         private void setCBBCustomerID()
@@ -28,7 +31,15 @@ namespace GiaoDien
             //CustomerBLL bll = new CustomerBLL();
             cbbCustomerID.Items.AddRange(CustomerBLL.Intance.getALLCustomer().ToArray());
         }
-        
+        public double TotalPrice()
+        {
+            double b = 0;
+            foreach (DataGridViewRow item in this.dtgvInvoiceDetail.SelectedRows)
+            {
+                b += double.Parse(item.Cells[5].Value.ToString());
+            }
+            return b;
+        }
         private void btAddInvoice_Click(object sender, EventArgs e)
         {
 
@@ -49,8 +60,16 @@ namespace GiaoDien
             btChecking.Enabled = false;
 
         }
+        private void setCBBInvoiceId()
+        {
+            
 
-    
+            cbbInvoiceID.Items.AddRange(InvoiceBLL.Intance.getAllInvoice().ToArray());
+            cbbInvoiceID.DisplayMember = "InvoiceID";
+
+
+        }
+
 
         private void cbbCustomerID_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -71,7 +90,16 @@ namespace GiaoDien
             tbProductName.Text = p.ProductName;
             tbSalePrice.Text = p.SalePrice.ToString();
         }
-
+        private void Export(string file)
+        {
+         
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.Commercial;
+            using (ExcelPackage pck = new ExcelPackage())
+            {
+                pck.Workbook.Worksheets.Add("InvoideDetail").Cells[1, 1].LoadFromCollection(InvoiceDetailBLL.Intance.getAllInvoiceDetail(), true);
+                pck.SaveAs(new FileInfo(file));
+            }
+        }
         private void btExitInvoice_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow item in this.dtgvInvoiceDetail.SelectedRows)
@@ -80,10 +108,12 @@ namespace GiaoDien
                 {
 
                     dtgvInvoiceDetail.Rows.RemoveAt(item.Index);
+                    InvoiceDetailBLL.Intance.delteInvoiceDetail(int.Parse(item.Cells[7].Value.ToString()));
                     tbAddressCustomer.Text = "";
                     tbCustomerName.Text = "";
                     tbSale.Text = "";
                     tbQuantityProduct.Text = "";
+
                 }
             }
 
@@ -270,166 +300,8 @@ namespace GiaoDien
 
         private void btPrintInvoice_Click(object sender, EventArgs e)
         {
-            ExportFile((System.Data.DataTable)dtgvInvoiceDetail.DataSource, "tổng kết", "allproduct");
+            Export(@"D:\\pbl_3\\PBL3_appstore\\xuatfile.xlsx");
         }
-        public void ExportFile(System.Data.DataTable dataTable, string sheetName, string title)
-        {
-            //Tạo các đối tượng Excel
-
-            Microsoft.Office.Interop.Excel.Application oExcel = new Microsoft.Office.Interop.Excel.Application();
-
-            Microsoft.Office.Interop.Excel.Workbooks oBooks;
-
-            Microsoft.Office.Interop.Excel.Sheets oSheets;
-
-            Microsoft.Office.Interop.Excel.Workbook oBook;
-
-            Microsoft.Office.Interop.Excel.Worksheet oSheet;
-
-            //Tạo mới một Excel WorkBook 
-
-            oExcel.Visible = true;
-
-            oExcel.DisplayAlerts = false;
-
-            oExcel.Application.SheetsInNewWorkbook = 1;
-
-            oBooks = oExcel.Workbooks;
-
-            oBook = (Microsoft.Office.Interop.Excel.Workbook)(oExcel.Workbooks.Add(Type.Missing));
-
-            oSheets = oBook.Worksheets;
-
-            oSheet = (Microsoft.Office.Interop.Excel.Worksheet)oSheets.get_Item(1);
-
-            oSheet.Name = sheetName;
-
-            // Tạo phần Tiêu đề
-            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "G1");
-
-            head.MergeCells = true;
-
-            head.Value2 = title;
-
-            head.Font.Bold = true;
-
-            head.Font.Name = "Times New Roman";
-
-            //head.Font.Size = "20";
-
-            head.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
-            // Tạo tiêu đề cột 
-
-            Microsoft.Office.Interop.Excel.Range cl1 = oSheet.get_Range("A3", "A3");
-
-            cl1.Value2 = "Mã nhân viên";
-
-            cl1.ColumnWidth = 12;
-
-            Microsoft.Office.Interop.Excel.Range cl2 = oSheet.get_Range("B3", "B3");
-
-            cl2.Value2 = "Họ tên";
-
-            cl2.ColumnWidth = 25.0;
-
-            Microsoft.Office.Interop.Excel.Range cl3 = oSheet.get_Range("C3", "C3");
-
-            cl3.Value2 = "số điện thoại";
-            cl3.ColumnWidth = 12.0;
-
-            Microsoft.Office.Interop.Excel.Range cl4 = oSheet.get_Range("D3", "D3");
-
-            cl4.Value2 = "địa chỉ";
-
-            cl4.ColumnWidth = 10.5;
-
-            Microsoft.Office.Interop.Excel.Range cl5 = oSheet.get_Range("E3", "E3");
-
-            cl5.Value2 = "sản phẩm";
-
-            cl5.ColumnWidth = 20.5;
-
-            Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
-
-            cl6.Value2 = "Chức vụ";
-
-            cl6.ColumnWidth = 18.5;
-
-            Microsoft.Office.Interop.Excel.Range cl7 = oSheet.get_Range("G3", "G3");
-
-            cl7.Value2 = "Tình trạng";
-
-            cl7.ColumnWidth = 13.5;
-
-            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "G3");
-
-            rowHead.Font.Bold = true;
-
-            // Kẻ viền
-
-            rowHead.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
-
-            // Thiết lập màu nền
-
-            rowHead.Interior.ColorIndex = 6;
-
-            rowHead.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
-            // Tạo mảng theo datatable
-
-            object[,] arr = new object[dataTable.Rows.Count, dataTable.Columns.Count];
-
-            //Chuyển dữ liệu từ DataTable vào mảng đối tượng
-
-            for (int row = 0; row < dataTable.Rows.Count; row++)
-            {
-                DataRow dataRow = dataTable.Rows[row];
-
-                for (int col = 0; col < dataTable.Columns.Count; col++)
-                {
-                    arr[row, col] = dataRow[col];
-                }
-            }
-
-            //Thiết lập vùng điền dữ liệu
-
-            int rowStart = 4;
-
-            int columnStart = 1;
-
-            int rowEnd = rowStart + dataTable.Rows.Count - 2;
-
-            int columnEnd = dataTable.Columns.Count;
-
-            // Ô bắt đầu điền dữ liệu
-
-            Microsoft.Office.Interop.Excel.Range c1 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowStart, columnStart];
-
-            // Ô kết thúc điền dữ liệu
-
-            Microsoft.Office.Interop.Excel.Range c2 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowEnd, columnEnd];
-
-            // Lấy về vùng điền dữ liệu
-
-            Microsoft.Office.Interop.Excel.Range range = oSheet.get_Range(c1, c2);
-
-            //Điền dữ liệu vào vùng đã thiết lập
-
-            range.Value2 = arr;
-
-            // Kẻ viền
-
-            range.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
-
-            // Căn giữa cột mã nhân viên
-
-            //Microsoft.Office.Interop.Excel.Range c3 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowEnd, columnStart];
-
-            //Microsoft.Office.Interop.Excel.Range c4 = oSheet.get_Range(c1, c3);
-
-            //Căn giữa cả bảng 
-            oSheet.get_Range(c1, c2).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-        }
+        
     }
 }

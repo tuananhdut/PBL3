@@ -43,7 +43,10 @@ namespace BLL
         {
             return InvoiceDetailDAL.Intance.GetInvoiceDetails();
         }
-
+        public void delteInvoiceDetail(int id)
+        {
+            InvoiceDetailDAL.Intance.DeleteInvoiceDetail(id);
+        }
 
     }
 }
