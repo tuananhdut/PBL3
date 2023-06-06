@@ -201,18 +201,15 @@ namespace GiaoDien
             // Product p = ProductBLL.Intance.getProductById(int.Parse(cbbProductID.Text));
 
             Product p = ProductBLL.Intance.getProductById(idProduct.ProductID);
-            Invoice i = InvoiceBLL.Intance.GetInvoiceByCustomerIdAndEmployeeId(cusId.CustomerID, int.Parse(tbEmployeeID.Text));
-                // tạo hóa đơn mới 
-                // get invoide detail id
-                if(i != null) { 
+            Invoice i = InvoiceBLL.Intance.GetInvoiceByCustomerIdAndEmployeeId(cusId.CustomerID, int.Parse(tbEmployeeID.Text));                
+           
+            if (i != null )
+            {
                 InvoiceDetail iDetail = InvoiceDetailBLL.Intance.getInvoiceByProductIdAndInvoiceId(p.ProductID, i.InvoiceID);
-
-                // lay hoa don don boi customerid and employeeid;
-
                 iDetail.SalePrice += int.Parse(tbSalePrice.Text);
                 iDetail.Quantity += int.Parse(tbQuantityProduct.Text);
                 InvoiceBLL.Intance.Save();
-                
+
                 double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
                 price += tinhtien;
                 if (dtgvInvoiceDetail.Rows.Count > 1)
@@ -232,32 +229,25 @@ namespace GiaoDien
                 tbTotalAmount.Text = price.ToString();
                 textBox11.Text = tinhtien.ToString();
                 MessageBox.Show(iDetail.InvoiceDetailID.ToString());
-               
-              
+
             }
+            
             else
             {
                 if (tbInvoiceID.Text == "")
                 {
+                    var cusid = (Customer)cbbCustomerID.SelectedItem;
                     Invoice HD = new Invoice()
                     {
                         EmployeeID = Convert.ToInt32(tbEmployeeID.Text),
-                        CustomerID = Convert.ToInt32(cbbCustomerID.Text),
+                        CustomerID = cusId.CustomerID,
                         InvoiceDate = DateTime.Now,
                         TotalAmount = 0
                     };
                     InvoiceBLL.Intance.addInvoice(HD);
                     tbInvoiceID.Text = HD.InvoiceID.ToString();
-
-
                 }
                 // lay invoice id 
-                if (c != null && p != null)
-                {
-
-                }
-
-
                 // tạo chi tiết hóa đơn mới 
                 if (cbbProductID.Text == null || tbQuantityProduct.Text == "" || tbSale.Text == "")
                 {
@@ -265,16 +255,15 @@ namespace GiaoDien
                 }
                 else
                 {
+                    var iId = (Product)cbbProductID.SelectedItem;
                     InvoiceDetail CTHD = new InvoiceDetail()
                     {
-                        ProductID = Convert.ToInt32(cbbProductID.Text),
+                        ProductID =iId.ProductID,
                         InvoiceID = Convert.ToInt32(tbInvoiceID.Text),
                         Quantity = Convert.ToInt16(tbQuantityProduct.Text),
                         SalePrice = Convert.ToInt32(tbSale.Text),
 
                     };
-
-
                     MessageBox.Show("ok");
                     InvoiceDetailBLL.Intance.AddInvoiceDetail(CTHD);
                     double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
@@ -291,9 +280,6 @@ namespace GiaoDien
 
             // các textbox thông tin mặt hàng rỗng
             setNullThongTinMatHang();
-
-
-
             //mở khóa chức năng
             btPrintInvoice.Enabled = true;
             btUpdateInvoice.Enabled = true;
