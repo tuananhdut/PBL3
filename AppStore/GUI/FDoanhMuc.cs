@@ -410,7 +410,6 @@ namespace GiaoDien
             //khóa chức năng khác
             btEditNV.Enabled = false;
             btDeleteNV.Enabled = false;
-            btShowNV.Enabled = false;
 
             // mở khóa bt save
             btSaveNV.Enabled = true;
@@ -452,7 +451,6 @@ namespace GiaoDien
                         // mở khóa các chức năng khác
                         btEditNV.Enabled = true;
                         btDeleteNV.Enabled = true;
-                        btShowNV.Enabled = true;
                         btAdd_NV.Enabled = true;
                         MessageBox.Show("Lưu nhân viên thành công", "Thông Báo");
                     }
@@ -482,7 +480,6 @@ namespace GiaoDien
 
                 //khóa chức năng khác
                 btDeleteNV.Enabled = false;
-                btShowNV.Enabled = false;
                 btAdd_NV.Enabled = false;
 
                 // mở khóa bt save
@@ -517,7 +514,6 @@ namespace GiaoDien
             // mở khóa các chức năng khác
             btEditNV.Enabled = true;
             btDeleteNV.Enabled = true;
-            btShowNV.Enabled = true;
             btAdd_NV.Enabled = true;
         }
         private void btDeleteNV_Click(object sender, EventArgs e)
