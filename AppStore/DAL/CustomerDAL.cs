@@ -58,5 +58,10 @@ namespace DAL
             return db.Customers
                 .FirstOrDefault(p => p.PhoneNumber == Phone);
         }
+        public List<Customer> getAllCustomerByName(string name, int id)
+        {
+            var kq = (from i in db.Customers where i.FullName.Contains(name) && i.CustomerID == id select i).ToList();
+            return kq;
+        }
     }
 }

@@ -359,6 +359,7 @@
             this.tbSale.Name = "tbSale";
             this.tbSale.Size = new System.Drawing.Size(152, 23);
             this.tbSale.TabIndex = 25;
+            this.tbSale.TextChanged += new System.EventHandler(this.tbSale_TextChanged);
             // 
             // tbQuantityProduct
             // 
@@ -368,6 +369,7 @@
             this.tbQuantityProduct.Name = "tbQuantityProduct";
             this.tbQuantityProduct.Size = new System.Drawing.Size(152, 23);
             this.tbQuantityProduct.TabIndex = 24;
+            this.tbQuantityProduct.TextChanged += new System.EventHandler(this.tbQuantityProduct_TextChanged);
             // 
             // tbProductName
             // 
@@ -452,9 +454,10 @@
             this.label9.Location = new System.Drawing.Point(31, 27);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 13);
+            this.label9.Size = new System.Drawing.Size(73, 13);
             this.label9.TabIndex = 16;
-            this.label9.Text = "Mã Điện Thoại";
+            this.label9.Text = "Mã Sản phẩm";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // groupBox7
             // 
