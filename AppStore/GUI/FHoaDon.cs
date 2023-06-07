@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -201,37 +202,60 @@ namespace GiaoDien
             // Product p = ProductBLL.Intance.getProductById(int.Parse(cbbProductID.Text));
 
             Product p = ProductBLL.Intance.getProductById(idProduct.ProductID);
-            Invoice i = InvoiceBLL.Intance.GetInvoiceByCustomerIdAndEmployeeId(cusId.CustomerID, int.Parse(tbEmployeeID.Text));                
-           
-            if (i != null )
+            Invoice i = InvoiceBLL.Intance.GetInvoiceByCustomerIdAndEmployeeId(cusId.CustomerID, int.Parse(tbEmployeeID.Text));
+
+            if (i != null)
             {
                 InvoiceDetail iDetail = InvoiceDetailBLL.Intance.getInvoiceByProductIdAndInvoiceId(p.ProductID, i.InvoiceID);
-                iDetail.SalePrice += int.Parse(tbSalePrice.Text);
-                iDetail.Quantity += int.Parse(tbQuantityProduct.Text);
-                InvoiceBLL.Intance.Save();
-
-                double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
-                price += tinhtien;
-                if (dtgvInvoiceDetail.Rows.Count > 1)
+                if (iDetail != null)
                 {
-                    foreach (DataGridViewRow item in this.dtgvInvoiceDetail.Rows)
+                    iDetail.SalePrice += int.Parse(tbSalePrice.Text);
+                    iDetail.Quantity += int.Parse(tbQuantityProduct.Text);
+                    InvoiceBLL.Intance.Save();
+
+                    double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
+                    price += tinhtien;
+                    if (dtgvInvoiceDetail.Rows.Count > 1)
                     {
-                        if (item.Cells[7].Value.ToString() == iDetail.InvoiceDetailID.ToString())
+                        foreach (DataGridViewRow item in this.dtgvInvoiceDetail.Rows)
                         {
+                            if (item.Cells[7].Value.ToString() == iDetail.InvoiceDetailID.ToString())
+                            {
 
-                            dtgvInvoiceDetail.Rows.Remove(item);
+                                dtgvInvoiceDetail.Rows.Remove(item);
 
+                            }
                         }
                     }
+
+                    this.dtgvInvoiceDetail.Rows.Add(tbProductName.Text, tbAddressCustomer.Text, tbCustomerName.Text, iDetail.Quantity.ToString(), iDetail.SalePrice.ToString(), tinhtien.ToString(), tbPhoneNumber.Text, iDetail.InvoiceDetailID.ToString());
+                    tbTotalAmount.Text = price.ToString();
+                    textBox11.Text = tinhtien.ToString();
+                    MessageBox.Show(iDetail.InvoiceDetailID.ToString());
+
                 }
+                else
+                {
+                    InvoiceDetail CTHD = new InvoiceDetail()
+                    {
+                        ProductID = p.ProductID,
+                        InvoiceID = i.InvoiceID,
+                        Quantity = Convert.ToInt16(tbQuantityProduct.Text),
+                        SalePrice = Convert.ToInt32(tbSale.Text),
 
-                this.dtgvInvoiceDetail.Rows.Add(tbProductName.Text, tbAddressCustomer.Text, tbCustomerName.Text, iDetail.Quantity.ToString(), iDetail.SalePrice.ToString(), tinhtien.ToString(), tbPhoneNumber.Text, iDetail.InvoiceDetailID.ToString());
-                tbTotalAmount.Text = price.ToString();
-                textBox11.Text = tinhtien.ToString();
-                MessageBox.Show(iDetail.InvoiceDetailID.ToString());
+                    };
+                    MessageBox.Show("ok");
+                    InvoiceDetailBLL.Intance.AddInvoiceDetail(CTHD);
+                    double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
+                    price += tinhtien;
+                    MessageBox.Show(tinhtien.ToString());
 
+                    this.dtgvInvoiceDetail.Rows.Add(tbProductName.Text, tbAddressCustomer.Text, tbCustomerName.Text, CTHD.Quantity.ToString(), CTHD.SalePrice.ToString(), tinhtien.ToString(), tbPhoneNumber.Text, CTHD.InvoiceDetailID.ToString());
+                    tbTotalAmount.Text = price.ToString();
+                    textBox11.Text = tinhtien.ToString();
+                }
             }
-            
+
             else
             {
                 if (tbInvoiceID.Text == "")
@@ -258,7 +282,7 @@ namespace GiaoDien
                     var iId = (Product)cbbProductID.SelectedItem;
                     InvoiceDetail CTHD = new InvoiceDetail()
                     {
-                        ProductID =iId.ProductID,
+                        ProductID = iId.ProductID,
                         InvoiceID = Convert.ToInt32(tbInvoiceID.Text),
                         Quantity = Convert.ToInt16(tbQuantityProduct.Text),
                         SalePrice = Convert.ToInt32(tbSale.Text),
