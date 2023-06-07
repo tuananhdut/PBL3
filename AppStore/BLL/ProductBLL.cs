@@ -95,9 +95,6 @@ namespace BLL
         {
             return ProductDAL.Intance.getProductByName(name);
         }
-        public Product getProductById(int id)
-        {
-            return ProductDAL.Intance.getProductByID(id);
-        }
+
     }
 }
