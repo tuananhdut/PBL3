@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbEmployeeID = new System.Windows.Forms.TextBox();
             this.cbbCustomerID = new System.Windows.Forms.ComboBox();
@@ -50,10 +49,15 @@
             this.tbTotalAmount = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dtgvInvoiceDetail = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.tbSalePrice = new System.Windows.Forms.TextBox();
             this.tbSale = new System.Windows.Forms.TextBox();
             this.tbQuantityProduct = new System.Windows.Forms.TextBox();
+            this.tbProductName = new System.Windows.Forms.TextBox();
             this.cbbProductID = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -116,7 +120,6 @@
             // 
             // cbbCustomerID
             // 
-            this.cbbCustomerID.Enabled = false;
             this.cbbCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.cbbCustomerID.FormattingEnabled = true;
             this.cbbCustomerID.Location = new System.Drawing.Point(598, 21);
@@ -128,7 +131,6 @@
             // 
             // tbPhoneNumber
             // 
-            this.tbPhoneNumber.Enabled = false;
             this.tbPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbPhoneNumber.Location = new System.Drawing.Point(598, 116);
             this.tbPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
@@ -138,7 +140,6 @@
             // 
             // tbAddressCustomer
             // 
-            this.tbAddressCustomer.Enabled = false;
             this.tbAddressCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbAddressCustomer.Location = new System.Drawing.Point(598, 84);
             this.tbAddressCustomer.Margin = new System.Windows.Forms.Padding(2);
@@ -148,7 +149,6 @@
             // 
             // tbCustomerName
             // 
-            this.tbCustomerName.Enabled = false;
             this.tbCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbCustomerName.Location = new System.Drawing.Point(598, 51);
             this.tbCustomerName.Margin = new System.Windows.Forms.Padding(2);
@@ -283,6 +283,7 @@
             this.groupBox2.Controls.Add(this.tbSalePrice);
             this.groupBox2.Controls.Add(this.tbSale);
             this.groupBox2.Controls.Add(this.tbQuantityProduct);
+            this.groupBox2.Controls.Add(this.tbProductName);
             this.groupBox2.Controls.Add(this.cbbProductID);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
@@ -324,23 +325,48 @@
             // dtgvInvoiceDetail
             // 
             this.dtgvInvoiceDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvInvoiceDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.dtgvInvoiceDetail.Location = new System.Drawing.Point(24, 95);
             this.dtgvInvoiceDetail.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvInvoiceDetail.Name = "dtgvInvoiceDetail";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvInvoiceDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvInvoiceDetail.RowHeadersWidth = 51;
             this.dtgvInvoiceDetail.RowTemplate.Height = 24;
             this.dtgvInvoiceDetail.Size = new System.Drawing.Size(817, 122);
             this.dtgvInvoiceDetail.TabIndex = 28;
             this.dtgvInvoiceDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvInvoiceDetail_CellClick);
-            this.dtgvInvoiceDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvInvoiceDetail_CellContentClick);
+            
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Tên điện thoại";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Giá";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "số lượng";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 180;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Giảm Giá";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 180;
             // 
             // textBox11
             // 
@@ -364,30 +390,34 @@
             // 
             // tbSale
             // 
-            this.tbSale.Enabled = false;
             this.tbSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbSale.Location = new System.Drawing.Point(415, 58);
             this.tbSale.Margin = new System.Windows.Forms.Padding(2);
             this.tbSale.Name = "tbSale";
             this.tbSale.Size = new System.Drawing.Size(152, 23);
             this.tbSale.TabIndex = 25;
-            this.tbSale.TextChanged += new System.EventHandler(this.tbSale_TextChanged);
             // 
             // tbQuantityProduct
             // 
-            this.tbQuantityProduct.Enabled = false;
             this.tbQuantityProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbQuantityProduct.Location = new System.Drawing.Point(415, 21);
             this.tbQuantityProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.tbQuantityProduct.Multiline = true;
             this.tbQuantityProduct.Name = "tbQuantityProduct";
-            this.tbQuantityProduct.Size = new System.Drawing.Size(152, 20);
+            this.tbQuantityProduct.Size = new System.Drawing.Size(152, 23);
             this.tbQuantityProduct.TabIndex = 24;
-            this.tbQuantityProduct.TextChanged += new System.EventHandler(this.tbQuantityProduct_TextChanged);
+            // 
+            // tbProductName
+            // 
+            this.tbProductName.Enabled = false;
+            this.tbProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.tbProductName.Location = new System.Drawing.Point(124, 58);
+            this.tbProductName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbProductName.Name = "tbProductName";
+            this.tbProductName.Size = new System.Drawing.Size(152, 23);
+            this.tbProductName.TabIndex = 23;
             // 
             // cbbProductID
             // 
-            this.cbbProductID.Enabled = false;
             this.cbbProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.cbbProductID.FormattingEnabled = true;
             this.cbbProductID.Location = new System.Drawing.Point(124, 22);
@@ -448,8 +478,9 @@
             this.label10.Location = new System.Drawing.Point(31, 63);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 13);
+            this.label10.Size = new System.Drawing.Size(81, 13);
             this.label10.TabIndex = 17;
+            this.label10.Text = "Tên Điện Thoại";
             // 
             // label9
             // 
@@ -460,8 +491,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 13);
             this.label9.TabIndex = 16;
-            this.label9.Text = "Tên Sản phẩm";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.label9.Text = "Mã Điện Thoại";
             // 
             // groupBox7
             // 
@@ -613,6 +643,7 @@
         private System.Windows.Forms.TextBox tbSalePrice;
         private System.Windows.Forms.TextBox tbSale;
         private System.Windows.Forms.TextBox tbQuantityProduct;
+        private System.Windows.Forms.TextBox tbProductName;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -632,5 +663,9 @@
         private System.Windows.Forms.ComboBox cbbInvoiceID;
         private System.Windows.Forms.TextBox tbEmployeeID;
         private System.Windows.Forms.ComboBox cbbProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

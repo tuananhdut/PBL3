@@ -38,7 +38,6 @@ namespace DAL
         public Account getAccountByUsename(string usename)
         {
             return db.Accounts.Where(c => String.Compare(c.Username, usename, StringComparison.Ordinal)==0 && c.Flag ==true).FirstOrDefault();
-           
         }
 
         // trả về tất cả account (chỉ lấy các account chưa xóa)
@@ -62,11 +61,6 @@ namespace DAL
         public int getQuantityInvoiceByAccountID(int id)
         {
            return  db.Accounts.Where(p => p.AccountID == id && p.Flag == true).Select(e => e.Invoices.Count).FirstOrDefault();
-        }
-        public List<Account> getAllAccountByName(string name, int id)
-        {
-            var kq = (from i in db.Accounts where i.AccountID == id && i.FullName.Contains(name) select i).ToList();
-            return kq;
         }
     }
 }

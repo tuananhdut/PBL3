@@ -145,9 +145,5 @@ namespace BLL
             }
             return li;
         }
-        public List<Account> getAllcountByName(string name,int id)
-        {
-            return AccountDAL.Intance.getAllAccountByName(name, id);
-        }
     }
 }
