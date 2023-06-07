@@ -56,6 +56,18 @@ namespace DAL
             return db.Invoices
                 .Where(p => p.InvoiceDate.Day == date.Day && p.InvoiceDate.Month == date.Month && p.InvoiceDate.Year == date.Year).ToList();
         }
-
+        public List<Invoice> getInvoiceByCusidAndAccountId(int id, int id1,int id2)
+        {
+            return db.Invoices
+                .Where(p => p.CustomerID == id && p.Account.AccountID == id1 && p.InvoiceID == id2 ).ToList();
+        }
+        public Invoice GetInvoiceByCustomerIdAndEmployeeId(int cusId,int EmId)
+        {
+            return db.Invoices.Where(i => i.CustomerID == cusId && i.EmployeeID == EmId).FirstOrDefault();
+        }
+        public void Saveme()
+        {
+            db.SaveChanges();
+        }
     }
 }
