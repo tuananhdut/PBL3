@@ -47,48 +47,17 @@ namespace BLL
             }
             return x;
         }
-        // Tìm kiếm hóa đơn
-        public List<Invoice> TimkiemHoaDon(string MaHoaDon, string MaKH, string MaNV, string TenKH, string Day, string Month, string Year)
+        public List<Invoice> getInvoiceByCusidAndAccountId(int id, int id1, int id2)
         {
-            List<Invoice> result = new List<Invoice>();
-            result = InvoiceDAL.Intance.getAllInvoices().ToList();
-            if (MaHoaDon != "")
-            {
-                int MaHD = Convert.ToInt32(MaHoaDon);
-                result = result.Where(p => p.InvoiceID == MaHD).ToList();
-
-            }
-            if (MaKH != "")
-            {
-                int Ma = Convert.ToInt32(MaKH);
-                result = result.Where(p => p.CustomerID == Ma).ToList();
-            }
-            if (MaNV != "")
-            {
-                int ID = Convert.ToInt32(MaNV);
-                result = result.Where(p => p.EmployeeID == ID).ToList();
-            }
-            if (TenKH != "")
-            {
-                result = result.Where(p => p.Customer.FullName.IndexOf(TenKH, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
-            }
-            if (Convert.ToInt32(Day) > 0)
-            {
-                int day = Convert.ToInt32(Day);
-                result = result.Where(p => p.InvoiceDate.Day == day).ToList();
-            }
-            if (Convert.ToInt32(Month) > 0)
-            {
-                int month = Convert.ToInt32(Month);
-                result = result.Where(p => p.InvoiceDate.Month == month).ToList();
-            }
-            if (Convert.ToInt32(Year) > 0)
-            {
-                int year = Convert.ToInt32(Year);
-                result = result.Where(p => p.InvoiceDate.Year == year).ToList();
-            }
-            return result;
+            return InvoiceDAL.Intance.getInvoiceByCusidAndAccountId(id, id1,id2);
         }
-
+        public Invoice GetInvoiceByCustomerIdAndEmployeeId(int cusId, int EmId)
+        {
+            return InvoiceDAL.Intance.GetInvoiceByCustomerIdAndEmployeeId(cusId, EmId);
+        }
+        public void Save()
+        {
+            InvoiceDAL.Intance.Saveme();
+        }
     }
 }

@@ -579,8 +579,8 @@ namespace GiaoDien
 
         private void dtgvProduct_DT_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            dtgvProduct_DT.Columns[0].HeaderText = "Mã sản phẩm";
-            dtgvProduct_DT.Columns[1].HeaderText = "Tên sản phẩm";
+            dtgvProduct_DT.Columns[0].HeaderText = "Mã điện thoại";
+            dtgvProduct_DT.Columns[1].HeaderText = "Tên điện thoại";
             dtgvProduct_DT.Columns[2].HeaderText = "Giá nhập";
             dtgvProduct_DT.Columns[3].HeaderText = "Giá bán";
             dtgvProduct_DT.Columns[4].HeaderText = "Màu sắc";

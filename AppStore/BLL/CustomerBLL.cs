@@ -82,5 +82,9 @@ namespace BLL
         {
             return CustomerDAL.Intance.GetCustomerByPhoneAndNameAndAddred(phone);
         }
+        public List<Customer> getAllCustomerByName(string name, int id)
+        {
+            return CustomerDAL.Intance.getAllCustomerByName(name,id);
+        }
     }
 }
