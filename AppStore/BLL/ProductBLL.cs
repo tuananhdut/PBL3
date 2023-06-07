@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace BLL
 {
@@ -60,7 +60,7 @@ namespace BLL
             List<Product> result = ProductDAL.Intance.getALLProduct();
             if (TenDT != "")
             {
-                result = result.Where(p => p.ProductName == TenDT).ToList();
+                result = result.Where(p => p.ProductName.IndexOf(TenDT, StringComparison.OrdinalIgnoreCase)>=0).ToList();
             }
             if (MaDT != "")
             {

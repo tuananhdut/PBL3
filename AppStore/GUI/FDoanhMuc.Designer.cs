@@ -89,7 +89,6 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.btShowNV = new System.Windows.Forms.Button();
             this.btExitNV = new System.Windows.Forms.Button();
             this.btDeleteNV = new System.Windows.Forms.Button();
             this.btEditNV = new System.Windows.Forms.Button();
@@ -335,11 +334,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(328, 29);
+            this.label8.Location = new System.Drawing.Point(322, 32);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 16);
+            this.label8.Size = new System.Drawing.Size(93, 16);
             this.label8.TabIndex = 27;
-            this.label8.Text = "Tên Điện Thoại";
+            this.label8.Text = "Tên sản phẩm";
             // 
             // label23
             // 
@@ -489,9 +488,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 16);
+            this.label2.Size = new System.Drawing.Size(88, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Mã Điên Thoại ";
+            this.label2.Text = "Mã sản phẩm";
             // 
             // tabPage3
             // 
@@ -532,7 +531,7 @@
             // 
             // btExitKH
             // 
-            this.btExitKH.Location = new System.Drawing.Point(773, 33);
+            this.btExitKH.Location = new System.Drawing.Point(953, 33);
             this.btExitKH.Name = "btExitKH";
             this.btExitKH.Size = new System.Drawing.Size(117, 50);
             this.btExitKH.TabIndex = 4;
@@ -542,7 +541,7 @@
             // 
             // btDelete_KH
             // 
-            this.btDelete_KH.Location = new System.Drawing.Point(578, 33);
+            this.btDelete_KH.Location = new System.Drawing.Point(716, 33);
             this.btDelete_KH.Name = "btDelete_KH";
             this.btDelete_KH.Size = new System.Drawing.Size(117, 50);
             this.btDelete_KH.TabIndex = 3;
@@ -552,7 +551,7 @@
             // 
             // btEdit_Kh
             // 
-            this.btEdit_Kh.Location = new System.Drawing.Point(366, 33);
+            this.btEdit_Kh.Location = new System.Drawing.Point(487, 33);
             this.btEdit_Kh.Name = "btEdit_Kh";
             this.btEdit_Kh.Size = new System.Drawing.Size(117, 50);
             this.btEdit_Kh.TabIndex = 2;
@@ -563,7 +562,7 @@
             // btSave_Kh
             // 
             this.btSave_Kh.Enabled = false;
-            this.btSave_Kh.Location = new System.Drawing.Point(180, 33);
+            this.btSave_Kh.Location = new System.Drawing.Point(243, 33);
             this.btSave_Kh.Name = "btSave_Kh";
             this.btSave_Kh.Size = new System.Drawing.Size(117, 50);
             this.btSave_Kh.TabIndex = 1;
@@ -745,7 +744,6 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.btShowNV);
             this.groupBox7.Controls.Add(this.btExitNV);
             this.groupBox7.Controls.Add(this.btDeleteNV);
             this.groupBox7.Controls.Add(this.btEditNV);
@@ -758,18 +756,9 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Tác Vụ";
             // 
-            // btShowNV
-            // 
-            this.btShowNV.Location = new System.Drawing.Point(975, 33);
-            this.btShowNV.Name = "btShowNV";
-            this.btShowNV.Size = new System.Drawing.Size(117, 50);
-            this.btShowNV.TabIndex = 5;
-            this.btShowNV.Text = "Hiển Thị DS";
-            this.btShowNV.UseVisualStyleBackColor = true;
-            // 
             // btExitNV
             // 
-            this.btExitNV.Location = new System.Drawing.Point(773, 33);
+            this.btExitNV.Location = new System.Drawing.Point(981, 33);
             this.btExitNV.Name = "btExitNV";
             this.btExitNV.Size = new System.Drawing.Size(117, 50);
             this.btExitNV.TabIndex = 4;
@@ -779,7 +768,7 @@
             // 
             // btDeleteNV
             // 
-            this.btDeleteNV.Location = new System.Drawing.Point(578, 33);
+            this.btDeleteNV.Location = new System.Drawing.Point(756, 33);
             this.btDeleteNV.Name = "btDeleteNV";
             this.btDeleteNV.Size = new System.Drawing.Size(117, 50);
             this.btDeleteNV.TabIndex = 3;
@@ -789,7 +778,7 @@
             // 
             // btEditNV
             // 
-            this.btEditNV.Location = new System.Drawing.Point(366, 33);
+            this.btEditNV.Location = new System.Drawing.Point(507, 33);
             this.btEditNV.Name = "btEditNV";
             this.btEditNV.Size = new System.Drawing.Size(117, 50);
             this.btEditNV.TabIndex = 2;
@@ -800,7 +789,7 @@
             // btSaveNV
             // 
             this.btSaveNV.Enabled = false;
-            this.btSaveNV.Location = new System.Drawing.Point(180, 33);
+            this.btSaveNV.Location = new System.Drawing.Point(265, 33);
             this.btSaveNV.Name = "btSaveNV";
             this.btSaveNV.Size = new System.Drawing.Size(117, 50);
             this.btSaveNV.TabIndex = 1;
@@ -1055,9 +1044,6 @@
         private System.Windows.Forms.GroupBox gb_TTDT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -1101,7 +1087,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button btShowNV;
         private System.Windows.Forms.Button btExitNV;
         private System.Windows.Forms.Button btDeleteNV;
         private System.Windows.Forms.Button btEditNV;
@@ -1110,8 +1095,6 @@
         private System.Windows.Forms.DataGridView dtgv_NV;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox txtManufacturer_DT;
-        private System.Windows.Forms.TextBox txtCatagory_DT;
         private System.Windows.Forms.TextBox txtProductName_DT;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbSDT_KH;
@@ -1132,5 +1115,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.Button btResetPasswork;
         private System.Windows.Forms.Button btChangePosition;
+        private System.Windows.Forms.TextBox txtManufacturer_DT;
+        private System.Windows.Forms.TextBox txtCatagory_DT;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }

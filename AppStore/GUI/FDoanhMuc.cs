@@ -410,7 +410,6 @@ namespace GiaoDien
             //khóa chức năng khác
             btEditNV.Enabled = false;
             btDeleteNV.Enabled = false;
-            btShowNV.Enabled = false;
 
             // mở khóa bt save
             btSaveNV.Enabled = true;
@@ -452,7 +451,6 @@ namespace GiaoDien
                         // mở khóa các chức năng khác
                         btEditNV.Enabled = true;
                         btDeleteNV.Enabled = true;
-                        btShowNV.Enabled = true;
                         btAdd_NV.Enabled = true;
                         MessageBox.Show("Lưu nhân viên thành công", "Thông Báo");
                     }
@@ -482,7 +480,6 @@ namespace GiaoDien
 
                 //khóa chức năng khác
                 btDeleteNV.Enabled = false;
-                btShowNV.Enabled = false;
                 btAdd_NV.Enabled = false;
 
                 // mở khóa bt save
@@ -517,7 +514,6 @@ namespace GiaoDien
             // mở khóa các chức năng khác
             btEditNV.Enabled = true;
             btDeleteNV.Enabled = true;
-            btShowNV.Enabled = true;
             btAdd_NV.Enabled = true;
         }
         private void btDeleteNV_Click(object sender, EventArgs e)
@@ -579,8 +575,8 @@ namespace GiaoDien
 
         private void dtgvProduct_DT_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            dtgvProduct_DT.Columns[0].HeaderText = "Mã điện thoại";
-            dtgvProduct_DT.Columns[1].HeaderText = "Tên điện thoại";
+            dtgvProduct_DT.Columns[0].HeaderText = "Mã sản phẩm";
+            dtgvProduct_DT.Columns[1].HeaderText = "Tên sản phẩm";
             dtgvProduct_DT.Columns[2].HeaderText = "Giá nhập";
             dtgvProduct_DT.Columns[3].HeaderText = "Giá bán";
             dtgvProduct_DT.Columns[4].HeaderText = "Màu sắc";
