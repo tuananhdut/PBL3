@@ -48,7 +48,7 @@ namespace GiaoDien
 
         private void btCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            tbUsername.Text = AccountBLL.Intance.HashPassword(tbPasswork.Text);
         }
     }
 }
