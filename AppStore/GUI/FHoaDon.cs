@@ -1,6 +1,6 @@
 ﻿using BLL;
 using DAL;
-//using OfficeOpenXml;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,14 +24,6 @@ namespace GiaoDien
             setCBBProuctID();
             setCBBCustomerID();
             setCBBInvoiceId();
-            dtgvInvoiceDetail.Columns.Add("column1", "tên sản phẩm");
-            dtgvInvoiceDetail.Columns.Add("column2", "địa chỉ");
-            dtgvInvoiceDetail.Columns.Add("column3", "tên khách hàng");
-            dtgvInvoiceDetail.Columns.Add("column4", "số lượng");
-            dtgvInvoiceDetail.Columns.Add("column5", "giá bán");
-            dtgvInvoiceDetail.Columns.Add("column6", "tổng tiền");
-            dtgvInvoiceDetail.Columns.Add("column7", "di  động");
-            dtgvInvoiceDetail.Columns.Add("column8", "mã  chi tiết hóa đơn");
         }
         
         private void setCBBCustomerID()
@@ -101,12 +93,12 @@ namespace GiaoDien
         private void Export(string file)
         {
          
-            /*ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.Commercial;
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.Commercial;
             using (ExcelPackage pck = new ExcelPackage())
             {
                 pck.Workbook.Worksheets.Add("InvoideDetail").Cells[1, 1].LoadFromCollection(InvoiceDetailBLL.Intance.getAllInvoiceDetail(), true);
                 pck.SaveAs(new FileInfo(file));
-            }*/
+            }
         }
         private void btExitInvoice_Click(object sender, EventArgs e)
         {
