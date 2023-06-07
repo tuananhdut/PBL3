@@ -47,9 +47,6 @@ namespace BLL
         {
             InvoiceDetailDAL.Intance.DeleteInvoiceDetail(id);
         }
-        public InvoiceDetail getInvoiceByProductIdAndInvoiceId(int productId,int invoiceId)
-        {
-            return InvoiceDetailDAL.Intance.getInvoiceByProductIdAndInvoiceId(productId, invoiceId);
-        }
+
     }
 }

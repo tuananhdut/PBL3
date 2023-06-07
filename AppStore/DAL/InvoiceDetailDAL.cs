@@ -84,11 +84,6 @@ namespace DAL
             db.InvoiceDetails.Remove(p);
             db.SaveChanges();
         }
-        public InvoiceDetail getInvoiceByProductIdAndInvoiceId(int productId,int invoiceId)
-        {
-            var query = db.InvoiceDetails.Where(i => i.InvoiceID == invoiceId && i.ProductID == productId).FirstOrDefault();
-            return query;
-        }
 
         public void Save(InvoiceDetail i)
         {

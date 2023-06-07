@@ -75,9 +75,6 @@ namespace DAL
         {
             return db.Products.Where(p => p.ProductName == name).FirstOrDefault();
         }
-        public Product getProductById(int id)
-        {
-            return db.Products.Find(id);
-        }
+
     }
 }

@@ -22,8 +22,6 @@ namespace GiaoDien
         {
             InitializeComponent();
             SetCBB_TK();
-            setCBBCustomerID();
-            setCBBAccountId();
             txtGiaMin.Text = "0";
         }
         private void btSearchCustomer_Click(object sender, EventArgs e)
@@ -132,16 +130,6 @@ namespace GiaoDien
             cbbMaTL.Enabled = true;
             dtgv_DSTKDT.DataSource = null;
         }
-        private void setCBBCustomerID()
-        {
-            //CustomerBLL bll = new CustomerBLL();
-            comboBox6.Items.AddRange(CustomerBLL.Intance.getALLCustomer().ToArray());
-        }
-        private void setCBBAccountId()
-        {
-            //CustomerBLL bll = new CustomerBLL();
-            comboBox6.Items.AddRange(AccountBLL.Intance.getALLAcount().ToArray());
-        }
         // button tìm kiếm 
         private void but_Search_Click(object sender, EventArgs e)
         {
@@ -183,35 +171,6 @@ namespace GiaoDien
             Manufacturer find = ManufactureBLL.Intance.getManufactureBLL(ID);
             txtTenHang.Text = find.ManufacturerName;
         }
-
-
-        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
-        {
-         
-
-            Customer ct = (Customer)(comboBox6.SelectedItem);
-            textBox11.Text = ct.FullName;
-        }
-
-        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            Account account = (Account)(comboBox7.SelectedItem);
-            textBox13.Text = account.FullName;
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            // getl allcount
-            var account = AccountBLL.Intance.getAllcountByName(textBox11.Text, int.Parse(comboBox6.Text));
-            Account a = account.First();
-            // get All Customer 
-            var employee = CustomerBLL.Intance.getAllCustomerByName(textBox13.Text, int.Parse(comboBox6.Text));
-            Customer c = employee.First();
-            var invoice = InvoiceBLL.Intance.getInvoiceById(int.Parse(textBox12.Text));
-            dataGridView3.DataSource = InvoiceBLL.Intance.getInvoiceByCusidAndAccountId(a.AccountID, c.CustomerID, invoice.InvoiceID);
-            
-
         // Tìm kiếm hóa đơn
         private void butSearch_Click(object sender, EventArgs e)
         {
@@ -254,7 +213,6 @@ namespace GiaoDien
             dtgv_DstkHD.Columns[3].HeaderText = "Mã nhân viên";
             dtgv_DstkHD.Columns[4].HeaderText = "Ngày tạo hóa đơn";
             dtgv_DstkHD.Columns[5].HeaderText = "Tổng tiền";
-
 
         }
     }

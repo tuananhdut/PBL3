@@ -47,18 +47,6 @@ namespace BLL
             }
             return x;
         }
-        public List<Invoice> getInvoiceByCusidAndAccountId(int id, int id1, int id2)
-        {
-            return InvoiceDAL.Intance.getInvoiceByCusidAndAccountId(id, id1,id2);
-        }
-        public Invoice GetInvoiceByCustomerIdAndEmployeeId(int cusId, int EmId)
-        {
-            return InvoiceDAL.Intance.GetInvoiceByCustomerIdAndEmployeeId(cusId, EmId);
-        }
-        public void Save()
-        {
-            InvoiceDAL.Intance.Saveme();
-        }
         // Tìm kiếm hóa đơn
         public List<Invoice> TimkiemHoaDon(string MaHoaDon, string MaKH, string MaNV, string TenKH, string Day, string Month, string Year)
         {
@@ -101,7 +89,6 @@ namespace BLL
             }
             return result;
         }
-
 
     }
 }
