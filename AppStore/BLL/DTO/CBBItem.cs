@@ -12,7 +12,7 @@ namespace AppStore.BLL.DTO
         public string Text { get; set; }
         public override string ToString()
         {
-            return ID.ToString();
+            return Text.ToString();
         }
     }
 }

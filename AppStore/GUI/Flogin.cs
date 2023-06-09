@@ -31,6 +31,7 @@ namespace GiaoDien
         //
         private void btOk_Click(object sender, EventArgs e)
         {
+            // em bi loi o day nguyen
             Account acc = AccountBLL.Intance.CheckAccount(tbUsername.Text, tbPasswork.Text);
             if (acc!=null)
             {

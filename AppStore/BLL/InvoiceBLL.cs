@@ -63,5 +63,32 @@ namespace BLL
         {
             return InvoiceDAL.Intance.ExcelExport();
         }
+        public List<Invoice> TimkiemHoaDon(string MaHoaDon, string MaKH, string MaNV, string TenKH)
+        {
+            List<Invoice> result = new List<Invoice>();
+            result = InvoiceDAL.Intance.getAllInvoices().ToList();
+            if (MaHoaDon != "")
+            {
+                int MaHD = Convert.ToInt32(MaHoaDon);
+                result = result.Where(p => p.InvoiceID == MaHD).ToList();
+
+            }
+            if (MaKH != "")
+            {
+                int Ma = Convert.ToInt32(MaKH);
+                result = result.Where(p => p.CustomerID == Ma).ToList();
+            }
+            if (MaNV != "")
+            {
+                int ID = Convert.ToInt32(MaNV);
+                result = result.Where(p => p.EmployeeID == ID).ToList();
+            }
+            if (TenKH != "")
+            {
+                result = result.Where(p => p.Customer.FullName.IndexOf(TenKH, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+            }
+           
+            return result;
+        }
     }
 }
