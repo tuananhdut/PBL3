@@ -59,5 +59,9 @@ namespace BLL
         {
             InvoiceDAL.Intance.Saveme();
         }
+        public dynamic ExcelExport()
+        {
+            return InvoiceDAL.Intance.ExcelExport();
+        }
     }
 }

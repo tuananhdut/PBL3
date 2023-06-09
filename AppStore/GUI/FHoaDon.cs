@@ -126,11 +126,11 @@ namespace GiaoDien
         }
         private void Export(string file)
         {
-         
+
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.Commercial;
             using (ExcelPackage pck = new ExcelPackage())
             {
-                pck.Workbook.Worksheets.Add("InvoideDetail").Cells[1, 1].LoadFromCollection(InvoiceBLL.Intance.getAllInvoice(), true);
+                pck.Workbook.Worksheets.Add("InvoideDetail").Cells[1, 1].LoadFromCollection(InvoiceBLL.Intance.ExcelExport(), true);
                 pck.SaveAs(new FileInfo(file));
             }
         }
@@ -222,10 +222,12 @@ namespace GiaoDien
                 {
                     iDetail.SalePrice += int.Parse(tbSalePrice.Text);
                     iDetail.Quantity += int.Parse(tbQuantityProduct.Text);
-                    InvoiceBLL.Intance.Save();
+                    
 
                     double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
                     price += tinhtien;
+                    i.TotalAmount = price;
+                    InvoiceBLL.Intance.Save();
                     if (dtgvInvoiceDetail.Rows.Count > 1)
                     {
                         foreach (DataGridViewRow item in this.dtgvInvoiceDetail.Rows)
@@ -259,6 +261,8 @@ namespace GiaoDien
                     InvoiceDetailBLL.Intance.AddInvoiceDetail(CTHD);
                     double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
                     price += tinhtien;
+                    i.TotalAmount = price;
+                    InvoiceBLL.Intance.Save();
                     MessageBox.Show(tinhtien.ToString());
 
                     this.dtgvInvoiceDetail.Rows.Add(cbbProductID.Text, CTHD.Quantity.ToString(), CTHD.SalePrice.ToString(), tinhtien.ToString(), tbPhoneNumber.Text, CTHD.InvoiceDetailID.ToString());
@@ -288,8 +292,7 @@ namespace GiaoDien
                 {
                     MessageBox.Show("hãy nhập đầy đủ thông tin");
                 }
-                else
-                {
+                
                     var iId = (Product)cbbProductID.SelectedItem;
                     InvoiceDetail CTHD = new InvoiceDetail()
                     {
@@ -303,13 +306,15 @@ namespace GiaoDien
                     InvoiceDetailBLL.Intance.AddInvoiceDetail(CTHD);
                     double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
                     price += tinhtien;
+                CTHD.Invoice.TotalAmount = price;
+                InvoiceBLL.Intance.Save();
                     MessageBox.Show(tinhtien.ToString());
 
                     this.dtgvInvoiceDetail.Rows.Add(cbbProductID.Text, CTHD.Quantity.ToString(), CTHD.SalePrice.ToString(), tinhtien.ToString(), tbPhoneNumber.Text, CTHD.InvoiceDetailID.ToString());
                     tbTotalAmount.Text = price.ToString();
                     textBox11.Text = tinhtien.ToString();
 
-                };
+                
 
             }
 
@@ -403,7 +408,7 @@ namespace GiaoDien
 
         private void btPrintInvoice_Click(object sender, EventArgs e)
         {
-            Export(@"D:\\pbl_3\\PBL3_appstore\\xuatfile3.xlsx");
+            Export(@"D:\\pbl_3\\PBL3_appstore\\xuatfile4.xlsx");
         }
 
         private void dtgvInvoiceDetail_CellClick(object sender, DataGridViewCellEventArgs e)

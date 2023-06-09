@@ -69,5 +69,18 @@ namespace DAL
         {
             db.SaveChanges();
         }
+        public dynamic ExcelExport()
+        {
+            var query = (from i in db.Invoices
+                         select new
+                         {
+                             cusId = i.CustomerID,
+                             invoiceId = i.InvoiceID,
+                             totalAmount = i.TotalAmount,
+                             customerName = i.Customer.FullName,
+                             account = i.Account
+                         }).ToList();
+            return query;
+        }
     }
 }
