@@ -66,8 +66,14 @@ namespace GiaoDien
             return b;
         }
         private void btAddInvoice_Click(object sender, EventArgs e)
-        {
-
+        {// xóa dữ liệu hóa đơn cũ 
+           dtgvInvoiceDetail.Rows.Clear();
+            
+            var customer = (Customer)cbbCustomerID.SelectedItem;
+            if (customer != null)
+            {
+                InvoiceBLL.Intance.deleteInvoiceByCustomerId(customer.CustomerID);
+            }
             setNullThongTinChung();
             cbbProductID.Enabled = true;
             tbCustomerName.Enabled = true;
@@ -226,8 +232,9 @@ namespace GiaoDien
                     double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
                     price += tinhtien;
                     i.TotalAmount = price;
+                   
+                    cusId.Invoices.Add(i);
                     InvoiceBLL.Intance.Save();
-                    
                     if (dtgvInvoiceDetail.Rows.Count > 1)
                     {
                         foreach (DataGridViewRow item in this.dtgvInvoiceDetail.Rows)

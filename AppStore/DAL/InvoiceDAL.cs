@@ -69,6 +69,13 @@ namespace DAL
         {
             db.SaveChanges();
         }
+        public void deleteInvoiceByCustomerId(int id)
+        {
+          var kq =    db.Invoices
+                .Where(i => i.CustomerID == id).FirstOrDefault();
+            db.Invoices.Remove(kq);
+            db.SaveChanges();
+        }
         public dynamic ExcelExport()
         {
             var query = (from i in db.Invoices

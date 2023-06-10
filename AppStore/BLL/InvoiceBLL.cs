@@ -90,5 +90,9 @@ namespace BLL
            
             return result;
         }
+        public void deleteInvoiceByCustomerId(int id)
+        {
+            InvoiceDAL.Intance.deleteInvoiceByCustomerId(id);
+        }
     }
 }
