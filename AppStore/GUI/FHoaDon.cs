@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GiaoDien
 {
@@ -22,15 +23,15 @@ namespace GiaoDien
         {
             InitializeComponent();
             this.acc = acc;
-            dtgvInvoiceDetail.Columns.Add("column1", "Tên sản phẩm");
-          //  dtgvInvoiceDetail.Columns.Add("column2", "địa chỉ");
-        //    dtgvInvoiceDetail.Columns.Add("column3", "tên khách hàng");
-            dtgvInvoiceDetail.Columns.Add("column4", "Số lượng");
+            dtgvInvoiceDetail.Columns.Add("column0", "Tên sản phẩm");
+            dtgvInvoiceDetail.Columns.Add("column1", "Số lượng");
             dtgvInvoiceDetail.Columns[0].Width = 150;
-            dtgvInvoiceDetail.Columns.Add("column5", "Giá bán");
-            dtgvInvoiceDetail.Columns.Add("column6", "Tổng tiền");
-            dtgvInvoiceDetail.Columns.Add("column7", "Di  động");
-            dtgvInvoiceDetail.Columns.Add("column8", "Mã  chi tiết hóa đơn");
+            dtgvInvoiceDetail.Columns.Add("column2", "Giá bán");
+            dtgvInvoiceDetail.Columns.Add("column3", "Tổng tiền");
+            dtgvInvoiceDetail.Columns.Add("column4", "Di  động");
+            dtgvInvoiceDetail.Columns.Add("column5", "Mã  chi tiết hóa đơn"); 
+            dtgvInvoiceDetail.Columns[0].Width = 150;
+            
             dtgvInvoiceDetail.Columns[4].Width = 155;
             dtgvInvoiceDetail.Columns[5].Width = 160;
 
@@ -60,7 +61,7 @@ namespace GiaoDien
             double b = 0;
             foreach (DataGridViewRow item in this.dtgvInvoiceDetail.SelectedRows)
             {
-                b += double.Parse(item.Cells[5].Value.ToString());
+                b += double.Parse(item.Cells[3].Value.ToString());
             }
             return b;
         }
@@ -142,7 +143,7 @@ namespace GiaoDien
                 {
 
                     dtgvInvoiceDetail.Rows.RemoveAt(item.Index);
-                    InvoiceDetailBLL.Intance.delteInvoiceDetail(int.Parse(item.Cells[7].Value.ToString()));
+                    InvoiceDetailBLL.Intance.delteInvoiceDetail(int.Parse(item.Cells[5].Value.ToString()));
                     tbAddressCustomer.Text = "";
                     tbCustomerName.Text = "";
                     tbSale.Text = "";
@@ -156,7 +157,7 @@ namespace GiaoDien
         private void setNullThongTinMatHang()
         {
             cbbProductID.Text = "";
-          
+   
             tbQuantityProduct.Text = "";
             tbSale.Text = "";
             tbSalePrice.Text = "";
@@ -222,26 +223,33 @@ namespace GiaoDien
                 {
                     iDetail.SalePrice += int.Parse(tbSalePrice.Text);
                     iDetail.Quantity += int.Parse(tbQuantityProduct.Text);
-                    
-
                     double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
                     price += tinhtien;
                     i.TotalAmount = price;
                     InvoiceBLL.Intance.Save();
+                    
                     if (dtgvInvoiceDetail.Rows.Count > 1)
                     {
                         foreach (DataGridViewRow item in this.dtgvInvoiceDetail.Rows)
                         {
-                            if (item.Cells[7].Value.ToString() == iDetail.InvoiceDetailID.ToString())
-                            {
+                          
+                                foreach (DataGridViewCell _cell in item.Cells)
+                                {
+                                    if ((_cell.Value != null) && (!string.IsNullOrEmpty(_cell.Value.ToString())))
+                                    {
+                                        if (_cell.Value.ToString().CompareTo(iDetail.InvoiceDetailID.ToString()) == 0)
+                                            this.dtgvInvoiceDetail.Rows.Remove(item);
+                                    }
+                                }
+                            
 
-                                dtgvInvoiceDetail.Rows.Remove(item);
-
-                            }
                         }
                     }
+                    //
+                   
 
-                    this.dtgvInvoiceDetail.Rows.Add(cbbProductID.Text, tbAddressCustomer.Text, tbCustomerName.Text, iDetail.Quantity.ToString(), iDetail.SalePrice.ToString(), tinhtien.ToString(), tbPhoneNumber.Text, iDetail.InvoiceDetailID.ToString());
+
+                    this.dtgvInvoiceDetail.Rows.Add(cbbProductID.Text, iDetail.Quantity.ToString(), iDetail.SalePrice.ToString(), i.TotalAmount, tbPhoneNumber.Text.ToString(), iDetail.InvoiceDetailID.ToString());
                     tbTotalAmount.Text = price.ToString();
                     textBox11.Text = tinhtien.ToString();
                     MessageBox.Show(iDetail.InvoiceDetailID.ToString());
@@ -300,13 +308,13 @@ namespace GiaoDien
                         InvoiceID = Convert.ToInt32(tbInvoiceID.Text),
                         Quantity = Convert.ToInt16(tbQuantityProduct.Text),
                         SalePrice = Convert.ToInt32(tbSale.Text),
+                        
 
                     };
                     MessageBox.Show("ok");
                     InvoiceDetailBLL.Intance.AddInvoiceDetail(CTHD);
                     double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
                     price += tinhtien;
-                CTHD.Invoice.TotalAmount = price;
                 InvoiceBLL.Intance.Save();
                     MessageBox.Show(tinhtien.ToString());
 
@@ -321,6 +329,7 @@ namespace GiaoDien
             // các textbox thông tin mặt hàng rỗng
             setNullThongTinMatHang();
             //mở khóa chức năng
+            
             btPrintInvoice.Enabled = true;
             btUpdateInvoice.Enabled = true;
             btAddInvoice.Enabled = true;
@@ -349,14 +358,14 @@ namespace GiaoDien
         int indexRow;
         private void btUpdateInvoice_Click(object sender, EventArgs e)
         {
+           
+
             DataGridViewRow newRowData = dtgvInvoiceDetail.Rows[indexRow];
             newRowData.Cells[0].Value = cbbProductID.Text;
-            newRowData.Cells[1].Value = tbAddressCustomer.Text;
-            newRowData.Cells[2].Value = tbCustomerName.Text;
-            newRowData.Cells[3].Value = tbQuantityProduct.Text;
-            newRowData.Cells[4].Value = tbSale.Text;
-            newRowData.Cells[5].Value = tbTotalAmount.Text;
-            newRowData.Cells[6].Value = tbPhoneNumber.Text;
+            newRowData.Cells[1].Value = tbQuantityProduct.Text;
+            newRowData.Cells[2].Value = tbSale.Text;
+            newRowData.Cells[3].Value = tbTotalAmount.Text;
+            newRowData.Cells[4].Value = tbPhoneNumber.Text;
             // 
             var sotienhientai = double.Parse(tbTotalAmount.Text);
             var sotientru = double.Parse(textBox11.Text);
@@ -414,13 +423,13 @@ namespace GiaoDien
         private void dtgvInvoiceDetail_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexRow = e.RowIndex;
+           
             DataGridViewRow row = dtgvInvoiceDetail.Rows[indexRow];
             cbbProductID.Text = row.Cells[0].Value.ToString();
-            tbAddressCustomer.Text = row.Cells[1].Value.ToString();
-            tbCustomerName.Text = row.Cells[2].Value.ToString();
-            tbQuantityProduct.Text = row.Cells[3].Value.ToString();
-            tbSale.Text = row.Cells[4].Value.ToString();
-            tbPhoneNumber.Text = row.Cells[6].Value.ToString();
+            tbQuantityProduct.Text = row.Cells[1].Value.ToString();
+            tbSale.Text = row.Cells[2].Value.ToString();
+            tbPhoneNumber.Text = row.Cells[4].Value.ToString();
+            tbTotalAmount.Text = row.Cells[3].Value.ToString();
         }
 
         private void dtgvInvoiceDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
