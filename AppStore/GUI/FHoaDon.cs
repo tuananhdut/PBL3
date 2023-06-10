@@ -184,62 +184,74 @@ namespace GiaoDien
             Object> _list = new List<Object>();
         private void btSaveInvoice_Click(object sender, EventArgs e)
         {
-
-           
-            // tạo khách hàng mới hoặc sử dụng lại khách hàng cũ
-            if (cbbCustomerID.Text == "")
-            {
-                if (tbAddressCustomer.Text == "" || tbCustomerName.Text == "" || tbPhoneNumber.Text == "")
-                {
-                    MessageBox.Show("hãy nhập đầy đủ thông tin");
-                }
-                else
-                {
-                    Customer kh = new Customer()
-                    {
-
-                        Address = tbAddressCustomer.Text,
-                        FullName = tbCustomerName.Text,
-                        PhoneNumber = tbPhoneNumber.Text
-                    };
-                    //add customer
-                    
-                    CustomerBLL.Intance.addAndUpdateCustomer(kh);
-                    // gán customerId Cho cbb CustomerID
-                    cbbCustomerID.Text = kh.CustomerID.ToString();
-                }
-            }
-            // lay id customer
-            var cusId = (Customer)cbbCustomerID.SelectedItem;
-            // lay customer ra ;
-            Customer c = CustomerBLL.Intance.getCustomerByID(cusId.CustomerID);
-            // lay ma san pham
-            // 
             var idProduct = (Product)cbbProductID.SelectedItem;
-
-            // Product p = ProductBLL.Intance.getProductById(int.Parse(cbbProductID.Text));
-
             Product p = ProductBLL.Intance.getProductById(idProduct.ProductID);
-            Invoice i = InvoiceBLL.Intance.GetInvoiceByCustomerIdAndEmployeeId(cusId.CustomerID, int.Parse(tbEmployeeID.Text));
-
-            if (i != null)
+            if (p.Quantity < int.Parse(tbQuantityProduct.Text))
             {
-                InvoiceDetail iDetail = InvoiceDetailBLL.Intance.getInvoiceByProductIdAndInvoiceId(p.ProductID, i.InvoiceID);
-                if (iDetail != null)
+                DialogResult result = MessageBox.Show("Bạn có muốn nhập lại số lượng  không?", "Xác nhận", MessageBoxButtons.OKCancel);
+
+            }
+            else
+            {
+
+                // tạo khách hàng mới hoặc sử dụng lại khách hàng cũ
+                if (cbbCustomerID.Text == "")
                 {
-                    iDetail.SalePrice += int.Parse(tbSalePrice.Text);
-                    iDetail.Quantity += int.Parse(tbQuantityProduct.Text);
-                    double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
-                    price += tinhtien;
-                    i.TotalAmount = price;
-                   
-                    cusId.Invoices.Add(i);
-                    InvoiceBLL.Intance.Save();
-                    if (dtgvInvoiceDetail.Rows.Count > 1)
+                    if (tbAddressCustomer.Text == "" || tbCustomerName.Text == "" || tbPhoneNumber.Text == "")
                     {
-                        foreach (DataGridViewRow item in this.dtgvInvoiceDetail.Rows)
+                        MessageBox.Show("hãy nhập đầy đủ thông tin");
+                    }
+                    else
+                    {
+                        Customer kh = new Customer()
                         {
-                          
+
+                            Address = tbAddressCustomer.Text,
+                            FullName = tbCustomerName.Text,
+                            PhoneNumber = tbPhoneNumber.Text
+                        };
+                        //add customer
+
+                        CustomerBLL.Intance.addAndUpdateCustomer(kh);
+                        // gán customerId Cho cbb CustomerID
+                        cbbCustomerID.Text = kh.CustomerID.ToString();
+                    }
+                }
+                // lay id customer
+                var cusId = (Customer)cbbCustomerID.SelectedItem;
+                // lay customer ra ;
+                Customer c = CustomerBLL.Intance.getCustomerByID(cusId.CustomerID);
+                // lay ma san pham
+                // 
+               
+
+                // Product p = ProductBLL.Intance.getProductById(int.Parse(cbbProductID.Text));
+
+
+
+                Invoice i = InvoiceBLL.Intance.GetInvoiceByCustomerIdAndEmployeeId(cusId.CustomerID, int.Parse(tbEmployeeID.Text));
+                
+                if (i != null)
+                {
+                    p.Quantity -= int.Parse(tbQuantityProduct.Text);
+                    ProductBLL.Intance.saveMe();
+                    InvoiceDetail iDetail = InvoiceDetailBLL.Intance.getInvoiceByProductIdAndInvoiceId(p.ProductID, i.InvoiceID);
+                    if (iDetail != null)
+                    {
+                        iDetail.SalePrice += int.Parse(tbSalePrice.Text);
+                        iDetail.Quantity += int.Parse(tbQuantityProduct.Text);
+                        double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
+                        price += tinhtien;
+                        
+                        i.TotalAmount = price;
+
+                        cusId.Invoices.Add(i);
+                        InvoiceBLL.Intance.Save();
+                        if (dtgvInvoiceDetail.Rows.Count > 1)
+                        {
+                            foreach (DataGridViewRow item in this.dtgvInvoiceDetail.Rows)
+                            {
+
                                 foreach (DataGridViewCell _cell in item.Cells)
                                 {
                                     if ((_cell.Value != null) && (!string.IsNullOrEmpty(_cell.Value.ToString())))
@@ -248,66 +260,70 @@ namespace GiaoDien
                                             this.dtgvInvoiceDetail.Rows.Remove(item);
                                     }
                                 }
-                            
 
+
+                            }
                         }
+                        //
+
+
+
+                        this.dtgvInvoiceDetail.Rows.Add(cbbProductID.Text, iDetail.Quantity.ToString(), iDetail.SalePrice.ToString(), i.TotalAmount, tbPhoneNumber.Text.ToString(), iDetail.InvoiceDetailID.ToString());
+                        tbTotalAmount.Text = price.ToString();
+                        textBox11.Text = tinhtien.ToString();
+                        // MessageBox.Show(iDetail.InvoiceDetailID.ToString());
+
                     }
-                    //
-                   
+                    else
+                    {
+                        InvoiceDetail CTHD = new InvoiceDetail()
+                        {
+                            ProductID = p.ProductID,
+                            InvoiceID = i.InvoiceID,
+                            Quantity = Convert.ToInt16(tbQuantityProduct.Text),
+                            SalePrice = Convert.ToInt32(tbSale.Text),
 
+                        };
+                        MessageBox.Show("ok");
+                        InvoiceDetailBLL.Intance.AddInvoiceDetail(CTHD);
+                        double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
+                        price += tinhtien;
+                        i.TotalAmount = price;
+                        InvoiceBLL.Intance.Save();
+                        //   MessageBox.Show(tinhtien.ToString());
 
-                    this.dtgvInvoiceDetail.Rows.Add(cbbProductID.Text, iDetail.Quantity.ToString(), iDetail.SalePrice.ToString(), i.TotalAmount, tbPhoneNumber.Text.ToString(), iDetail.InvoiceDetailID.ToString());
-                    tbTotalAmount.Text = price.ToString();
-                    textBox11.Text = tinhtien.ToString();
-                   // MessageBox.Show(iDetail.InvoiceDetailID.ToString());
-
+                        this.dtgvInvoiceDetail.Rows.Add(cbbProductID.Text, CTHD.Quantity.ToString(), CTHD.SalePrice.ToString(), tinhtien.ToString(), tbPhoneNumber.Text, CTHD.InvoiceDetailID.ToString());
+                        tbTotalAmount.Text = price.ToString();
+                        textBox11.Text = tinhtien.ToString();
+                    }
                 }
+
                 else
                 {
-                    InvoiceDetail CTHD = new InvoiceDetail()
+                    if (tbInvoiceID.Text == "")
                     {
-                        ProductID = p.ProductID,
-                        InvoiceID = i.InvoiceID,
-                        Quantity = Convert.ToInt16(tbQuantityProduct.Text),
-                        SalePrice = Convert.ToInt32(tbSale.Text),
+                        var cusid = (Customer)cbbCustomerID.SelectedItem;
+                        var product = (Product)cbbProductID.SelectedItem;
+                        Invoice HD = new Invoice()
+                        {
+                            EmployeeID = Convert.ToInt32(tbEmployeeID.Text),
+                            CustomerID = cusId.CustomerID,
+                            InvoiceDate = DateTime.Now,
+                            TotalAmount = 0,
 
-                    };
-                    MessageBox.Show("ok");
-                    InvoiceDetailBLL.Intance.AddInvoiceDetail(CTHD);
-                    double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
-                    price += tinhtien;
-                    i.TotalAmount = price;
-                    InvoiceBLL.Intance.Save();
-                 //   MessageBox.Show(tinhtien.ToString());
-
-                    this.dtgvInvoiceDetail.Rows.Add(cbbProductID.Text, CTHD.Quantity.ToString(), CTHD.SalePrice.ToString(), tinhtien.ToString(), tbPhoneNumber.Text, CTHD.InvoiceDetailID.ToString());
-                    tbTotalAmount.Text = price.ToString();
-                    textBox11.Text = tinhtien.ToString();
-                }
-            }
-
-            else
-            {
-                if (tbInvoiceID.Text == "")
-                {
-                    var cusid = (Customer)cbbCustomerID.SelectedItem;
-                    Invoice HD = new Invoice()
+                        };
+                        product.Quantity -= int.Parse(tbQuantityProduct.Text);
+                        ProductBLL.Intance.saveMe();
+                        InvoiceBLL.Intance.addInvoice(HD);
+                        tbInvoiceID.Text = HD.InvoiceID.ToString();
+                    }
+                    // lay invoice id 
+                    // tạo chi tiết hóa đơn mới 
+                    if (cbbProductID.Text == null || tbQuantityProduct.Text == "" || tbSale.Text == "")
                     {
-                        EmployeeID = Convert.ToInt32(tbEmployeeID.Text),
-                        CustomerID = cusId.CustomerID,
-                        InvoiceDate = DateTime.Now,
-                        TotalAmount = 0
-                    };
-                    InvoiceBLL.Intance.addInvoice(HD);
-                    tbInvoiceID.Text = HD.InvoiceID.ToString();
-                }
-                // lay invoice id 
-                // tạo chi tiết hóa đơn mới 
-                if (cbbProductID.Text == null || tbQuantityProduct.Text == "" || tbSale.Text == "")
-                {
-                    MessageBox.Show("hãy nhập đầy đủ thông tin");
-                }
-                
+                        MessageBox.Show("hãy nhập đầy đủ thông tin");
+                    }
+
                     var iId = (Product)cbbProductID.SelectedItem;
                     InvoiceDetail CTHD = new InvoiceDetail()
                     {
@@ -315,37 +331,38 @@ namespace GiaoDien
                         InvoiceID = Convert.ToInt32(tbInvoiceID.Text),
                         Quantity = Convert.ToInt16(tbQuantityProduct.Text),
                         SalePrice = Convert.ToInt32(tbSale.Text),
-                        
+
 
                     };
                     MessageBox.Show("ok");
                     InvoiceDetailBLL.Intance.AddInvoiceDetail(CTHD);
                     double tinhtien = priceBeforDiscount(int.Parse(tbSalePrice.Text), int.Parse(tbQuantityProduct.Text), int.Parse(tbSale.Text));
                     price += tinhtien;
-                InvoiceBLL.Intance.Save();
+                    InvoiceBLL.Intance.Save();
                     MessageBox.Show(tinhtien.ToString());
 
                     this.dtgvInvoiceDetail.Rows.Add(cbbProductID.Text, CTHD.Quantity.ToString(), CTHD.SalePrice.ToString(), tinhtien.ToString(), tbPhoneNumber.Text, CTHD.InvoiceDetailID.ToString());
                     tbTotalAmount.Text = price.ToString();
                     textBox11.Text = tinhtien.ToString();
 
-                
 
+
+                }
+
+                // các textbox thông tin mặt hàng rỗng
+                setNullThongTinMatHang();
+                //mở khóa chức năng
+
+                btPrintInvoice.Enabled = true;
+                btUpdateInvoice.Enabled = true;
+                btAddInvoice.Enabled = true;
+                btChecking.Enabled = true;
+
+                cbbCustomerID.Enabled = false;
+                tbCustomerName.Enabled = false;
+                tbAddressCustomer.Enabled = false;
+                tbPhoneNumber.Enabled = false;
             }
-
-            // các textbox thông tin mặt hàng rỗng
-            setNullThongTinMatHang();
-            //mở khóa chức năng
-            
-            btPrintInvoice.Enabled = true;
-            btUpdateInvoice.Enabled = true;
-            btAddInvoice.Enabled = true;
-            btChecking.Enabled = true;
-             
-            cbbCustomerID.Enabled = false;
-            tbCustomerName.Enabled = false;
-            tbAddressCustomer.Enabled = false;
-            tbPhoneNumber.Enabled = false;
         }
         // tinh tien 
         public double priceBeforDiscount(int priceProduct, int quantity, int discount)
