@@ -22,7 +22,8 @@ namespace GiaoDien
 
         private void btAdd_DT_Click(object sender, EventArgs e)
         {
-            gb_HangSX.Enabled = true;
+            txt_DiaChi.Enabled = true;
+            txt_TenHang.Enabled = true;
             btAdd_DT.Enabled = false;
             btDel_DT.Enabled = false;
             btEdit_DT.Enabled = false;
@@ -59,7 +60,8 @@ namespace GiaoDien
             btAdd_DT.Enabled = true;
             btDel_DT.Enabled = true;
             btEdit_DT.Enabled = true;
-            gb_HangSX.Enabled = false;
+            txt_DiaChi.Enabled = false;
+            txt_TenHang.Enabled = false;
         }
         private void ViewHang()
         {
@@ -67,7 +69,8 @@ namespace GiaoDien
         }
         private void btEdit_DT_Click(object sender, EventArgs e)
         {
-            gb_HangSX.Enabled = true;
+            txt_TenHang.Enabled = true;
+            txt_DiaChi.Enabled = true;
             if (dtgv_DSHSX.SelectedRows.Count > 0)
             {
                 DataGridViewRow r = dtgv_DSHSX.CurrentRow;
