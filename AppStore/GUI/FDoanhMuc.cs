@@ -1,5 +1,6 @@
 ﻿
 using AppStore.BLL;
+using AppStore.BLL.DTO;
 using BLL;
 using DAL;
 using System;
@@ -66,8 +67,6 @@ namespace GiaoDien
             txtQuantity_DT.Text = "";
             txtDescription_DT.Text = "";
             txtProductName_DT.Text = "";
-            txtManufacturer_DT.Text = "";
-            txtCatagory_DT.Text = "";
             cbbCategory_DT.Text = "";
             cbbManufacturer_DT.Text = "";
         }
@@ -121,14 +120,12 @@ namespace GiaoDien
                 edit = ProductBLL.Intance.GetProductBLL(up);
                 txtProductID_DT.Text = Convert.ToString(edit.ProductID);
                 txtProductName_DT.Text = Convert.ToString(edit.ProductName);
-                cbbCategory_DT.Text = Convert.ToString(edit.CategoryID);
-                cbbManufacturer_DT.Text = Convert.ToString(edit.ManufacturerID);
                 txtCostPrice_DT.Text = Convert.ToString(edit.CostPrice);
                 txtSalePrice_DT.Text = Convert.ToString(edit.SalePrice);
                 txtQuantity_DT.Text = Convert.ToString(edit.Quantity);
                 txtDescription_DT.Text = Convert.ToString(edit.Description);
-                txtCatagory_DT.Text = Convert.ToString(edit.Category.CategoryName);
-                txtManufacturer_DT.Text = Convert.ToString(edit.Manufacturer.ManufacturerName);
+                cbbCategory_DT.Text = Convert.ToString(edit.Category.CategoryName);
+                cbbManufacturer_DT.Text = Convert.ToString(edit.Manufacturer.ManufacturerName);
             }
             else
             {
@@ -137,7 +134,7 @@ namespace GiaoDien
         }
         private void btSave_DT_Click_1(object sender, EventArgs e)
         {
-            if (txtProductName_DT.Text == "" || txtCostPrice_DT.Text == "" || txtSalePrice_DT.Text == "" || txtQuantity_DT.Text == "" || txtDescription_DT.Text == "" || txtCatagory_DT.Text == "" || txtManufacturer_DT.Text == "")
+            if (txtProductName_DT.Text == "" || txtCostPrice_DT.Text == "" || txtSalePrice_DT.Text == "" || txtQuantity_DT.Text == "" || txtDescription_DT.Text == "" || cbbCategory_DT.Text==""|| cbbManufacturer_DT.Text=="" )
             {
                 MessageBox.Show("Vui lòng nhập thông tin đầy đủ");
             }
@@ -146,10 +143,12 @@ namespace GiaoDien
                 DialogResult re = MessageBox.Show("Bạn có muốn lưu không?", "Xác nhận lưu", MessageBoxButtons.OKCancel);
                 if (re == DialogResult.OK)
                 {
+                    CBBItem item1 = (CBBItem)cbbCategory_DT.SelectedItem;
+                    CBBItem item2=(CBBItem)cbbManufacturer_DT.SelectedItem;
                     Product save = new Product()
                     {
-                        CategoryID = Convert.ToInt32(cbbCategory_DT.Text),
-                        ManufacturerID = Convert.ToInt32(cbbManufacturer_DT.Text),
+                        CategoryID = Convert.ToInt32(item1.ID),
+                        ManufacturerID = Convert.ToInt32(item2.ID),
                         ProductName = Convert.ToString(txtProductName_DT.Text),
                         CostPrice = Convert.ToInt32(txtCostPrice_DT.Text),
                         SalePrice = Convert.ToInt32(txtSalePrice_DT.Text),
@@ -190,15 +189,13 @@ namespace GiaoDien
         }
         private void cbbCategory_DT_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int ID = Convert.ToInt32(cbbCategory_DT.Text);
-            Category find = CatagoryBLL.Intance.getCategoryBLL(ID);
-            txtCatagory_DT.Text = find.CategoryName;
+            //int ID = Convert.ToInt32(cbbCategory_DT.Text);
+            //Category find = CatagoryBLL.Intance.getCategoryBLL(ID);
         }
         private void cbbManufacturer_DT_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int ID = Convert.ToInt32(cbbManufacturer_DT.Text);
-            Manufacturer find = ManufactureBLL.Intance.getManufactureBLL(ID);
-            txtManufacturer_DT.Text = find.ManufacturerName;
+            //int ID = Convert.ToInt32(cbbManufacturer_DT.Text);
+            //Manufacturer find = ManufactureBLL.Intance.getManufactureBLL(ID);
         }
         // Set Combox Danh muc Dien thoai hang va the loai
         private void SetCBB_DT()
@@ -579,8 +576,8 @@ namespace GiaoDien
 
         private void dtgvProduct_DT_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            dtgvProduct_DT.Columns[0].HeaderText = "Mã điện thoại";
-            dtgvProduct_DT.Columns[1].HeaderText = "Tên điện thoại";
+            dtgvProduct_DT.Columns[0].HeaderText = "Mã sản phẩm";
+            dtgvProduct_DT.Columns[1].HeaderText = "Tên sản phẩm ";
             dtgvProduct_DT.Columns[2].HeaderText = "Giá nhập";
             dtgvProduct_DT.Columns[3].HeaderText = "Giá bán";
             dtgvProduct_DT.Columns[4].HeaderText = "Màu sắc";
@@ -590,5 +587,7 @@ namespace GiaoDien
 
 
         }
+
+       
     }
 }

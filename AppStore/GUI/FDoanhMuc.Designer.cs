@@ -46,10 +46,6 @@
             this.gb_TTDT = new System.Windows.Forms.GroupBox();
             this.txtProductName_DT = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtManufacturer_DT = new System.Windows.Forms.TextBox();
-            this.txtCatagory_DT = new System.Windows.Forms.TextBox();
             this.cbbManufacturer_DT = new System.Windows.Forms.ComboBox();
             this.cbbCategory_DT = new System.Windows.Forms.ComboBox();
             this.txtDescription_DT = new System.Windows.Forms.TextBox();
@@ -299,10 +295,6 @@
             // 
             this.gb_TTDT.Controls.Add(this.txtProductName_DT);
             this.gb_TTDT.Controls.Add(this.label8);
-            this.gb_TTDT.Controls.Add(this.label23);
-            this.gb_TTDT.Controls.Add(this.label24);
-            this.gb_TTDT.Controls.Add(this.txtManufacturer_DT);
-            this.gb_TTDT.Controls.Add(this.txtCatagory_DT);
             this.gb_TTDT.Controls.Add(this.cbbManufacturer_DT);
             this.gb_TTDT.Controls.Add(this.cbbCategory_DT);
             this.gb_TTDT.Controls.Add(this.txtDescription_DT);
@@ -341,40 +333,6 @@
             this.label8.TabIndex = 27;
             this.label8.Text = "Tên Điện Thoại";
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(11, 109);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(56, 16);
-            this.label23.TabIndex = 26;
-            this.label23.Text = "Mã HSX";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(11, 68);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(78, 16);
-            this.label24.TabIndex = 25;
-            this.label24.Text = "Mã Thể loại";
-            // 
-            // txtManufacturer_DT
-            // 
-            this.txtManufacturer_DT.Enabled = false;
-            this.txtManufacturer_DT.Location = new System.Drawing.Point(427, 114);
-            this.txtManufacturer_DT.Name = "txtManufacturer_DT";
-            this.txtManufacturer_DT.Size = new System.Drawing.Size(179, 22);
-            this.txtManufacturer_DT.TabIndex = 24;
-            // 
-            // txtCatagory_DT
-            // 
-            this.txtCatagory_DT.Enabled = false;
-            this.txtCatagory_DT.Location = new System.Drawing.Point(427, 73);
-            this.txtCatagory_DT.Name = "txtCatagory_DT";
-            this.txtCatagory_DT.Size = new System.Drawing.Size(179, 22);
-            this.txtCatagory_DT.TabIndex = 23;
-            // 
             // cbbManufacturer_DT
             // 
             this.cbbManufacturer_DT.FormattingEnabled = true;
@@ -395,7 +353,7 @@
             // 
             // txtDescription_DT
             // 
-            this.txtDescription_DT.Location = new System.Drawing.Point(331, 193);
+            this.txtDescription_DT.Location = new System.Drawing.Point(331, 103);
             this.txtDescription_DT.Multiline = true;
             this.txtDescription_DT.Name = "txtDescription_DT";
             this.txtDescription_DT.Size = new System.Drawing.Size(275, 59);
@@ -433,16 +391,16 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(328, 154);
+            this.label11.Location = new System.Drawing.Point(328, 73);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 16);
+            this.label11.Size = new System.Drawing.Size(108, 16);
             this.label11.TabIndex = 9;
-            this.label11.Text = "Ghi Chú";
+            this.label11.Text = "Ghi chú màu sắc ";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(328, 114);
+            this.label10.Location = new System.Drawing.Point(14, 106);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 16);
             this.label10.TabIndex = 8;
@@ -451,7 +409,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(328, 73);
+            this.label9.Location = new System.Drawing.Point(11, 68);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 16);
             this.label9.TabIndex = 7;
@@ -1108,10 +1066,6 @@
         private System.Windows.Forms.Button btSaveNV;
         private System.Windows.Forms.Button btAdd_NV;
         private System.Windows.Forms.DataGridView dtgv_NV;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox txtManufacturer_DT;
-        private System.Windows.Forms.TextBox txtCatagory_DT;
         private System.Windows.Forms.TextBox txtProductName_DT;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbSDT_KH;
