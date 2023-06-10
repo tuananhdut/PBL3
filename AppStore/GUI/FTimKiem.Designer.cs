@@ -100,8 +100,6 @@
             this.tbEmployssID = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_DSTKDT)).BeginInit();
@@ -156,6 +154,8 @@
             // 
             // dtgv_DSTKDT
             // 
+            this.dtgv_DSTKDT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv_DSTKDT.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dtgv_DSTKDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_DSTKDT.Location = new System.Drawing.Point(19, 345);
             this.dtgv_DSTKDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -253,12 +253,11 @@
             // cbbMaHang
             // 
             this.cbbMaHang.FormattingEnabled = true;
-            this.cbbMaHang.Location = new System.Drawing.Point(899, 30);
+            this.cbbMaHang.Location = new System.Drawing.Point(896, 36);
             this.cbbMaHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbMaHang.Name = "cbbMaHang";
             this.cbbMaHang.Size = new System.Drawing.Size(220, 28);
             this.cbbMaHang.TabIndex = 12;
-            this.cbbMaHang.SelectedIndexChanged += new System.EventHandler(this.cbbMaHang_SelectedIndexChanged);
             // 
             // cbbMaTL
             // 
@@ -268,7 +267,6 @@
             this.cbbMaTL.Name = "cbbMaTL";
             this.cbbMaTL.Size = new System.Drawing.Size(220, 28);
             this.cbbMaTL.TabIndex = 11;
-            this.cbbMaTL.SelectedIndexChanged += new System.EventHandler(this.cbbMaTL_SelectedIndexChanged);
             // 
             // txtTenDT
             // 
@@ -290,7 +288,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label7.Location = new System.Drawing.Point(798, 36);
+            this.label7.Location = new System.Drawing.Point(797, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 17);
             this.label7.TabIndex = 6;
@@ -551,6 +549,7 @@
             // 
             // dtgv_DstkHD
             // 
+            this.dtgv_DstkHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_DstkHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_DstkHD.Location = new System.Drawing.Point(20, 353);
             this.dtgv_DstkHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -564,8 +563,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.cbb_MaNV);
             this.groupBox3.Controls.Add(this.cbb_MaKH);
             this.groupBox3.Controls.Add(this.txt_TenNV);
@@ -891,23 +888,6 @@
             this.label28.TabIndex = 0;
             this.label28.Text = "Mã Nhân Viên";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(218, 84);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
-            this.dateTimePicker1.TabIndex = 39;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(77, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 17);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "Ngày / Tháng / Năm";
-            // 
             // FTimKiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1016,7 +996,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtGiaMax;
         private System.Windows.Forms.TextBox txtGiaMin;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

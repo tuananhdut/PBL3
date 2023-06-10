@@ -137,29 +137,38 @@ namespace GiaoDien
         }
         private void setCBBAccountId()
         {
-            //CustomerBLL bll = new CustomerBLL();
-            cbb_MaKH.Items.AddRange(AccountBLL.Intance.getALLAcount().ToArray());
+            cbb_MaNV.Items.AddRange(AccountBLL.Intance.getALLAcount().ToArray());
         }
         // button tìm kiếm 
         private void but_Search_Click(object sender, EventArgs e)
         {
             List<Product> result = new List<Product>();
-            if (txtMaDT.Text == "" && txtTenDT.Text == "" && txtGiaMin.Text == "" && txtGiaMax.Text == "" && cbbMaHang.Text == "" && cbbMaTL.Text == "")
+            if (txtMaDT.Text == "" && txtTenDT.Text == "" && txtGiaMin.Text == "0" && txtGiaMax.Text == "" && cbbMaHang.Text == "" && cbbMaTL.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập thông tin tìm kiếm ");
             }
             else
             {
-                CBBItem item1 = (CBBItem)cbbMaHang.SelectedItem;
-                CBBItem item2 = (CBBItem)cbbMaTL.SelectedItem;
+                string MaHang="";
+                string MaTL="";
+                if (cbbMaHang.Text != "")
+                {
+                    CBBItem item1 = (CBBItem)cbbMaHang.SelectedItem;
+                    MaHang = Convert.ToString(item1.ID);
+                }
+                if (cbbMaTL.Text != "")
+                {
+                    CBBItem item2 = (CBBItem)cbbMaTL.SelectedItem;
+                    MaTL = Convert.ToString(item2.ID);
+
+                }
                 string TenDT = txtTenDT.Text.ToString();
                 string MaDT = txtMaDT.Text.ToString();
                 string GiaMax = txtGiaMax.Text.ToString();
                 string GiaMin = txtGiaMin.Text.ToString();
-                string MaHang = item1.ID.ToString();
-                string MaTL = item2.ID.ToString();
+                
                 result = ProductBLL.Intance.TimKiem(TenDT, MaDT, GiaMax, GiaMin, MaHang, MaTL);
-                dtgv_DSTKDT.DataSource = result.Select(p => new { p.ProductID, p.ProductName, p.CostPrice, p.Description, p.Quantity, p.Manufacturer.ManufacturerName, p.Category.CategoryName }).ToList();
+                dtgv_DSTKDT.DataSource = result.Select(p => new { p.ProductID, p.ProductName, p.SalePrice, p.Description, p.Quantity, p.Manufacturer.ManufacturerName, p.Category.CategoryName }).ToList();
             }
         }
         private void SetCBB_TK()
@@ -170,22 +179,8 @@ namespace GiaoDien
             cbbMaHang.Items.AddRange(cb2.getAllCBBManuFacture().ToArray());
         }
 
-        private void cbbMaTL_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //int ID = Convert.ToInt32(cbbMaTL.Text);
-            //Category find = CatagoryBLL.Intance.getCategoryBLL(ID);
-        }
-
-        private void cbbMaHang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //int ID = Convert.ToInt32(cbbMaHang.Text);
-            //Manufacturer find = ManufactureBLL.Intance.getManufactureBLL(ID);
-        }
-
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
-         
-
             Customer ct = (Customer)(cbb_MaKH.SelectedItem);
             txt_TenKH.Text = ct.FullName;
         }
@@ -210,14 +205,7 @@ namespace GiaoDien
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            //// getl allcount
-            //var account = AccountBLL.Intance.getAllcountByName(txt_TenKH.Text, int.Parse(cbbMaKH.Text));
-            //Account a = account.First();
-            //// get All Customer 
-            //var employee = CustomerBLL.Intance.getAllCustomerByName(txt_TenNV.Text, int.Parse(cbbMaKH.Text));
-            //Customer c = employee.First();
-            //var invoice = InvoiceBLL.Intance.getInvoiceById(int.Parse(txt_MaHD.Text));
-            //dtgv_DstkHD.DataSource = InvoiceBLL.Intance.getInvoiceByCusidAndAccountId(a.AccountID, c.CustomerID, invoice.InvoiceID);
+            
             if (txtMaHoaDon.Text == "" && cbb_MaKH.Text == "" && cbb_MaNV.Text == "" && txt_TenKH.Text == "" )
             {
                 MessageBox.Show("Vui lòng nhập thông tin tìm kiếm ");
@@ -228,7 +216,6 @@ namespace GiaoDien
                 string MaKH = cbb_MaKH.Text.ToString();
                 string MaNV = cbb_MaNV.Text.ToString();
                 string TenKH = txt_TenKH.Text.ToString();
-                DateTime time = dateTimePicker1.Value;
                 List<Invoice> result = InvoiceBLL.Intance.TimkiemHoaDon(MaHoaDon, MaKH, MaNV, TenKH);
                 dtgv_DstkHD.DataSource = result.Select(p => new { p.InvoiceID, p.CustomerID, p.Customer.FullName, p.EmployeeID, p.InvoiceDate, p.TotalAmount }).ToList();
             }
@@ -243,5 +230,6 @@ namespace GiaoDien
             dtgv_DstkHD.Columns[4].HeaderText = "Ngày tạo hóa đơn";
             dtgv_DstkHD.Columns[5].HeaderText = "Tổng tiền";
         }
+
     }
 }
