@@ -287,7 +287,7 @@
             this.dtgvProduct_DT.RowHeadersWidth = 51;
             this.dtgvProduct_DT.RowTemplate.Height = 24;
             this.dtgvProduct_DT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvProduct_DT.Size = new System.Drawing.Size(1134, 181);
+            this.dtgvProduct_DT.Size = new System.Drawing.Size(1148, 181);
             this.dtgvProduct_DT.TabIndex = 3;
             this.dtgvProduct_DT.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtgvProduct_DT_DataBindingComplete);
             // 
@@ -312,22 +312,22 @@
             this.gb_TTDT.Enabled = false;
             this.gb_TTDT.Location = new System.Drawing.Point(15, 16);
             this.gb_TTDT.Name = "gb_TTDT";
-            this.gb_TTDT.Size = new System.Drawing.Size(672, 272);
+            this.gb_TTDT.Size = new System.Drawing.Size(1148, 272);
             this.gb_TTDT.TabIndex = 1;
             this.gb_TTDT.TabStop = false;
             this.gb_TTDT.Text = "Thông Tin Điện Thoại";
             // 
             // txtProductName_DT
             // 
-            this.txtProductName_DT.Location = new System.Drawing.Point(427, 29);
+            this.txtProductName_DT.Location = new System.Drawing.Point(777, 49);
             this.txtProductName_DT.Name = "txtProductName_DT";
-            this.txtProductName_DT.Size = new System.Drawing.Size(179, 22);
+            this.txtProductName_DT.Size = new System.Drawing.Size(284, 22);
             this.txtProductName_DT.TabIndex = 28;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(328, 29);
+            this.label8.Location = new System.Drawing.Point(632, 52);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 16);
             this.label8.TabIndex = 27;
@@ -336,62 +336,62 @@
             // cbbManufacturer_DT
             // 
             this.cbbManufacturer_DT.FormattingEnabled = true;
-            this.cbbManufacturer_DT.Location = new System.Drawing.Point(114, 106);
+            this.cbbManufacturer_DT.Location = new System.Drawing.Point(184, 103);
             this.cbbManufacturer_DT.Name = "cbbManufacturer_DT";
-            this.cbbManufacturer_DT.Size = new System.Drawing.Size(151, 24);
+            this.cbbManufacturer_DT.Size = new System.Drawing.Size(282, 24);
             this.cbbManufacturer_DT.TabIndex = 22;
             this.cbbManufacturer_DT.SelectedIndexChanged += new System.EventHandler(this.cbbManufacturer_DT_SelectedIndexChanged);
             // 
             // cbbCategory_DT
             // 
             this.cbbCategory_DT.FormattingEnabled = true;
-            this.cbbCategory_DT.Location = new System.Drawing.Point(114, 65);
+            this.cbbCategory_DT.Location = new System.Drawing.Point(184, 65);
             this.cbbCategory_DT.Name = "cbbCategory_DT";
-            this.cbbCategory_DT.Size = new System.Drawing.Size(151, 24);
+            this.cbbCategory_DT.Size = new System.Drawing.Size(282, 24);
             this.cbbCategory_DT.TabIndex = 21;
             this.cbbCategory_DT.SelectedIndexChanged += new System.EventHandler(this.cbbCategory_DT_SelectedIndexChanged);
             // 
             // txtDescription_DT
             // 
-            this.txtDescription_DT.Location = new System.Drawing.Point(331, 103);
+            this.txtDescription_DT.Location = new System.Drawing.Point(635, 154);
             this.txtDescription_DT.Multiline = true;
             this.txtDescription_DT.Name = "txtDescription_DT";
-            this.txtDescription_DT.Size = new System.Drawing.Size(275, 59);
+            this.txtDescription_DT.Size = new System.Drawing.Size(426, 59);
             this.txtDescription_DT.TabIndex = 20;
             // 
             // txtProductID_DT
             // 
             this.txtProductID_DT.Enabled = false;
-            this.txtProductID_DT.Location = new System.Drawing.Point(114, 29);
+            this.txtProductID_DT.Location = new System.Drawing.Point(184, 29);
             this.txtProductID_DT.Name = "txtProductID_DT";
-            this.txtProductID_DT.Size = new System.Drawing.Size(151, 22);
+            this.txtProductID_DT.Size = new System.Drawing.Size(282, 22);
             this.txtProductID_DT.TabIndex = 15;
             // 
             // txtSalePrice_DT
             // 
-            this.txtSalePrice_DT.Location = new System.Drawing.Point(114, 190);
+            this.txtSalePrice_DT.Location = new System.Drawing.Point(184, 191);
             this.txtSalePrice_DT.Name = "txtSalePrice_DT";
-            this.txtSalePrice_DT.Size = new System.Drawing.Size(151, 22);
+            this.txtSalePrice_DT.Size = new System.Drawing.Size(282, 22);
             this.txtSalePrice_DT.TabIndex = 14;
             // 
             // txtCostPrice_DT
             // 
-            this.txtCostPrice_DT.Location = new System.Drawing.Point(114, 148);
+            this.txtCostPrice_DT.Location = new System.Drawing.Point(184, 148);
             this.txtCostPrice_DT.Name = "txtCostPrice_DT";
-            this.txtCostPrice_DT.Size = new System.Drawing.Size(151, 22);
+            this.txtCostPrice_DT.Size = new System.Drawing.Size(282, 22);
             this.txtCostPrice_DT.TabIndex = 13;
             // 
             // txtQuantity_DT
             // 
-            this.txtQuantity_DT.Location = new System.Drawing.Point(114, 236);
+            this.txtQuantity_DT.Location = new System.Drawing.Point(184, 230);
             this.txtQuantity_DT.Name = "txtQuantity_DT";
-            this.txtQuantity_DT.Size = new System.Drawing.Size(151, 22);
+            this.txtQuantity_DT.Size = new System.Drawing.Size(282, 22);
             this.txtQuantity_DT.TabIndex = 12;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(328, 73);
+            this.label11.Location = new System.Drawing.Point(632, 111);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(108, 16);
             this.label11.TabIndex = 9;
@@ -400,7 +400,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 106);
+            this.label10.Location = new System.Drawing.Point(37, 106);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 16);
             this.label10.TabIndex = 8;
@@ -409,7 +409,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 68);
+            this.label9.Location = new System.Drawing.Point(34, 68);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 16);
             this.label9.TabIndex = 7;
@@ -418,7 +418,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 193);
+            this.label7.Location = new System.Drawing.Point(34, 193);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 16);
             this.label7.TabIndex = 5;
@@ -427,7 +427,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 154);
+            this.label6.Location = new System.Drawing.Point(34, 154);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 16);
             this.label6.TabIndex = 4;
@@ -436,7 +436,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 236);
+            this.label5.Location = new System.Drawing.Point(34, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 16);
             this.label5.TabIndex = 3;
@@ -445,7 +445,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 32);
+            this.label2.Location = new System.Drawing.Point(34, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 16);
             this.label2.TabIndex = 0;

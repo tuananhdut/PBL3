@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gb_HangSX = new System.Windows.Forms.GroupBox();
             this.txt_DiaChi = new System.Windows.Forms.TextBox();
             this.txt_TenHang = new System.Windows.Forms.TextBox();
@@ -57,7 +59,6 @@
             this.gb_HangSX.Controls.Add(this.label2);
             this.gb_HangSX.Controls.Add(this.label1);
             this.gb_HangSX.Controls.Add(this.txt_MaHang);
-            this.gb_HangSX.Enabled = false;
             this.gb_HangSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.gb_HangSX.Location = new System.Drawing.Point(12, 12);
             this.gb_HangSX.Name = "gb_HangSX";
@@ -68,6 +69,7 @@
             // 
             // txt_DiaChi
             // 
+            this.txt_DiaChi.Enabled = false;
             this.txt_DiaChi.Location = new System.Drawing.Point(515, 112);
             this.txt_DiaChi.Name = "txt_DiaChi";
             this.txt_DiaChi.Size = new System.Drawing.Size(241, 24);
@@ -75,6 +77,7 @@
             // 
             // txt_TenHang
             // 
+            this.txt_TenHang.Enabled = false;
             this.txt_TenHang.Location = new System.Drawing.Point(515, 71);
             this.txt_TenHang.Name = "txt_TenHang";
             this.txt_TenHang.Size = new System.Drawing.Size(241, 24);
@@ -109,6 +112,7 @@
             // 
             // txt_MaHang
             // 
+            this.txt_MaHang.Enabled = false;
             this.txt_MaHang.Location = new System.Drawing.Point(515, 32);
             this.txt_MaHang.Name = "txt_MaHang";
             this.txt_MaHang.Size = new System.Drawing.Size(241, 24);
@@ -130,8 +134,24 @@
             this.dtgv_DSHSX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_DSHSX.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgv_DSHSX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv_DSHSX.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtgv_DSHSX.Location = new System.Drawing.Point(260, 23);
             this.dtgv_DSHSX.Name = "dtgv_DSHSX";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv_DSHSX.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgv_DSHSX.RowHeadersWidth = 51;
             this.dtgv_DSHSX.RowTemplate.Height = 24;
             this.dtgv_DSHSX.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

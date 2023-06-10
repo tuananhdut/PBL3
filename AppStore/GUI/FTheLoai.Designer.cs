@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btExitDT = new System.Windows.Forms.Button();
             this.btDel_DT = new System.Windows.Forms.Button();
@@ -127,6 +128,14 @@
             this.dtgv_DSTL.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_DSTL.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgv_DSTL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv_DSTL.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtgv_DSTL.Location = new System.Drawing.Point(260, 23);
             this.dtgv_DSTL.Name = "dtgv_DSTL";
             this.dtgv_DSTL.RowHeadersWidth = 51;
@@ -142,7 +151,6 @@
             this.gbTTTL.Controls.Add(this.label2);
             this.gbTTTL.Controls.Add(this.label1);
             this.gbTTTL.Controls.Add(this.txtMaTL);
-            this.gbTTTL.Enabled = false;
             this.gbTTTL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.gbTTTL.Location = new System.Drawing.Point(12, 12);
             this.gbTTTL.Name = "gbTTTL";
@@ -153,6 +161,7 @@
             // 
             // txtTenTL
             // 
+            this.txtTenTL.Enabled = false;
             this.txtTenTL.Location = new System.Drawing.Point(453, 94);
             this.txtTenTL.Name = "txtTenTL";
             this.txtTenTL.Size = new System.Drawing.Size(241, 24);

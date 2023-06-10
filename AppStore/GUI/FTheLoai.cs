@@ -25,7 +25,7 @@ namespace GiaoDien
         {
             txtMaTL.Text = "";
             txtTenTL.Text = "";
-            gbTTTL.Enabled = true;
+            txtTenTL.Enabled = true;            
             btDel_DT.Enabled = false;
             btEdit_DT.Enabled = false;
         }
@@ -47,7 +47,7 @@ namespace GiaoDien
                     add.CategoryID = Convert.ToInt32(txtMaTL.Text.ToString());
                 }
                 CatagoryBLL.Intance.AddorUpdateBLL(add);
-                gbTTTL.Enabled = false;
+                txtTenTL.Enabled = false;
                 btDel_DT.Enabled = true;
                 btEdit_DT.Enabled = true;
                 txtMaTL.Text = "";
@@ -65,7 +65,7 @@ namespace GiaoDien
         {
             if (dtgv_DSTL.SelectedRows.Count > 0)
             {
-                gbTTTL.Enabled = true;
+                txtTenTL.Enabled = true;
                 DataGridViewRow r = dtgv_DSTL.CurrentRow;
                 int edit = Convert.ToInt32(r.Cells[0].Value);
                 Category a = CatagoryBLL.Intance.getCategoryBLL(edit);
