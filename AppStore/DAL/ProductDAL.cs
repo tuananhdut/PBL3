@@ -79,5 +79,9 @@ namespace DAL
         {
             return db.Products.Find(id);
         }
+        public void saveMe()
+        {
+            db.SaveChanges();
+        }
     }
 }

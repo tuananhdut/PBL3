@@ -99,5 +99,9 @@ namespace BLL
         {
             return ProductDAL.Intance.getProductByID(id);
         }
+        public void saveMe()
+        {
+            ProductDAL.Intance.saveMe();
+        }
     }
 }
