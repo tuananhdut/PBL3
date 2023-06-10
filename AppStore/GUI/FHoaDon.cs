@@ -252,7 +252,7 @@ namespace GiaoDien
                     this.dtgvInvoiceDetail.Rows.Add(cbbProductID.Text, iDetail.Quantity.ToString(), iDetail.SalePrice.ToString(), i.TotalAmount, tbPhoneNumber.Text.ToString(), iDetail.InvoiceDetailID.ToString());
                     tbTotalAmount.Text = price.ToString();
                     textBox11.Text = tinhtien.ToString();
-                    MessageBox.Show(iDetail.InvoiceDetailID.ToString());
+                   // MessageBox.Show(iDetail.InvoiceDetailID.ToString());
 
                 }
                 else
@@ -271,7 +271,7 @@ namespace GiaoDien
                     price += tinhtien;
                     i.TotalAmount = price;
                     InvoiceBLL.Intance.Save();
-                    MessageBox.Show(tinhtien.ToString());
+                 //   MessageBox.Show(tinhtien.ToString());
 
                     this.dtgvInvoiceDetail.Rows.Add(cbbProductID.Text, CTHD.Quantity.ToString(), CTHD.SalePrice.ToString(), tinhtien.ToString(), tbPhoneNumber.Text, CTHD.InvoiceDetailID.ToString());
                     tbTotalAmount.Text = price.ToString();
@@ -441,7 +441,10 @@ namespace GiaoDien
         {
             try
             {
-                int temp = Convert.ToInt32(tbQuantityProduct.Text);
+                if (tbQuantityProduct.Text.Length > 0)
+                {
+                    int temp = Convert.ToInt32(tbQuantityProduct.Text);
+                }
             }
             catch (Exception h)
             {
@@ -453,7 +456,10 @@ namespace GiaoDien
         {
             try
             {
-                int temp = Convert.ToInt32(tbSale.Text);
+                if (tbQuantityProduct.Text.Length > 0)
+                {
+                    int temp = Convert.ToInt32(tbSale.Text);
+                }
                 if (tbSale.Text.ToString().Length > 2)
                 {
                     MessageBox.Show("Please provide number only 2");
